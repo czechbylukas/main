@@ -2,27 +2,111 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generátor tázacích vět A0</title>
-
-
-
+  <title>Generátor tázacích vět – CzechByLukas</title>
+  <link rel="stylesheet" href="../../shared/style.css">
+  <style>
+    main { padding: 2rem; }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #0056b3; }
+    #output p {
+      background: #f5f5f5;
+      padding: 10px;
+      border-radius: 6px;
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>Generátor tázacích vět A0</h1>
-    <p>Klikni na tlačítko a zobrazí se náhodná otázka:</p>
+    <aside id="menu"></aside>
 
-    <button id="generateBtn">🎲 Zobraz otázku</button>
+    <main>
+      <h1>Generátor tázacích vět A0</h1>
+      <p>Klikni na tlačítko a zobrazí se náhodná otázka:</p>
+      <button onclick="generateQuestion()">Zobraz otázku</button>
 
-    <div id="questionBox"></div>
-
-    <p class="back-link">
-      <!-- Link back to main page -->
-      <a href="../index.html">← Zpět na hlavní stránku</a>
-    </p>
+      <div id="output"></div>
+    </main>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // load the menu
+    fetch("../../shared/menu.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("menu").innerHTML = html);
+
+    // list of gender-neutral questions
+    const questions = [
+      "Kdy jsi včera vstal/a?",
+      "Co jsi jedla/jedl k večeři?",
+      "Kam jsi šla/šel po škole?",
+      "S kým jsi byla/byl odpoledne?",
+      "Proč jsi nepřišla/nepřišel na tu oslavu?",
+      "Co jsi dělala/dělal včera večer?",
+      "Kde jsi byla/byl o víkendu?",
+      "Kdy jsi psala/psal ten úkol?",
+      "Kam jsi včera jela/šel?",
+      "S kým jsi obědvala/obědval?",
+      "Co jsi dělala/dělal ráno?",
+      "Kde jsi byla/byl včera odpoledne?",
+      "Kdy jsi jela/šel domů?",
+      "Kam jsi šla/šel v neděli?",
+      "S kým jsi mluvila/mluvil ve škole?",
+      "Co jsi si koupila/koupil v obchodě?",
+      "Kdy jsi měla/měl oběd?",
+      "Kde jsi čekala/čekal na kamarádku?",
+      "Co jsi slyšela/slyšel v rádiu?",
+      "Proč jsi zůstala/zůstal doma?",
+      "Kdy jsi vstala/vstal dnes ráno?",
+      "Co jsi jedla/jedl k snídani?",
+      "Kde jsi byla/byl o víkendu?",
+      "Proč jsi nepřišla/nepřišel do školy?",
+      "S kým jsi seděla/seděl včera ve třídě?",
+      "Kam jsi šla/šel po obědě?",
+      "Co jsi četla/četl večer?",
+      "Kdy jsi volala/volal kamarádce?",
+      "Kde jsi koupila/koupil nové boty?",
+      "Proč jsi byla/byl unavená/unavený?",
+      "Kdy jsi naposledy cestovala cestoval vlakem?",
+      "Co jsi dělala/dělal během prázdnin?",
+      "Kde jsi koupila/koupil ten dárek?",
+      "Proč jsi neodpověděla/neodpověděl na zprávu?",
+      "S kým jsi jela/jel na dovolenou?",
+      "Kam jsi šla/šel po práci?",
+      "Co jsi slyšela/slyšel od kamarádky?",
+      "Kdy jsi začala/začal studovat češtinu?",
+      "Kde jsi ztratila/ztratil klíče?",
+      "Proč jsi změnila/změnil místo u stolu?",
+      "Kdy jsi poprvé byla/byl v tom městě?",
+      "Co jsi si vzala/vzal s sebou na výlet?",
+      "Proč jsi změnila/změnil svoje plány?",
+      "Kde jsi viděla/viděl ten film?",
+      "S kým jsi jela/jel autem?",
+      "Kam jsi dala/dal svůj pas?",
+      "Co jsi řekla/řekl kamarádce?",
+      "Kdy jsi zapomněla/zapomněl domácí úkol?",
+      "Proč jsi vstala/vstal tak brzy?",
+      "Kde jsi slyšela/slyšel tu písničku?",
+      "Kdy jsi naposledy mluvila/mluvil s někým, koho jsi dlouho neviděla/neviděl?",
+      "Co jsi udělala/udělal, když jsi zjistila, že ti nefunguje telefon?",
+      "Kam jsi šla/šel, když jsi potřebovala/potřeboval být chvíli sama/sám?",
+      "S kým jsi se radila/radil, než jsi udělala/udělal to důležité rozhodnutí?",
+      "Proč jsi nakonec nepřišla/nepřišel na tu oslavu?"
+    ];
+
+    function generateQuestion() {
+      const randomIndex = Math.floor(Math.random() * questions.length);
+      const question = questions[randomIndex];
+      document.getElementById("output").innerHTML = `<p>${question}</p>`;
+    }
+  </script>
 </body>
 </html>
