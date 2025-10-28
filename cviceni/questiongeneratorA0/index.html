@@ -4,203 +4,187 @@
   <meta charset="UTF-8">
   <title>Generátor tázacích vět – CzechByLukas</title>
 
-
-
-
-
-
-<!-- 
-  <link rel="stylesheet" href="../../css/style.css">
--->
-
-
-
-
-
-
- <style>
+  <!-- ✅ All styles hardcoded directly here -->
+  <style>
     body {
-        font-family: Arial, sans-serif;
-        background-color: #eaf8ea; /* light green background */
-        color: #222;
-        margin: 0;
-        padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #eaf8ea; /* light green background */
+      color: #222;
+      margin: 0;
+      padding: 20px;
     }
 
     h1, h2 {
-        color: #005500;
+      color: #005500;
+      text-align: center;
     }
 
     button {
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      display: block;
+      margin: 20px auto;
     }
 
     button:hover {
-        background-color: #45a049;
+      background-color: #45a049;
     }
 
     .container {
-        max-width: 600px;
-        margin: 0 auto;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
     }
-</style>
 
+    #output {
+      font-size: 1.2em;
+      text-align: center;
+      margin-top: 20px;
+      min-height: 2em;
+    }
+  </style>
 </head>
+
 <body>
   <div class="container">
-    <aside id="menu"></aside>
-
     <main>
       <h1>Generátor tázacích vět A0</h1>
-      <p>Klikni na tlačítko a zobrazí se náhodná otázka:</p>
+      <p style="text-align:center;">Klikni na tlačítko a zobrazí se náhodná otázka:</p>
       <button onclick="generateQuestion()">Zobraz otázku</button>
-
       <div id="output"></div>
     </main>
   </div>
 
-
-
-
-
+  <!-- ✅ Pure JS, no external fetch or dependencies -->
   <script>
-<!--
-    // load the menu
-    fetch("../../shared/menu.html")
-      .then(r => r.text())
-      .then(html => document.getElementById("menu").innerHTML = html);
--->
-    // list of gender-neutral questions
     const questions = [
-    "Jak se jmenuješ?",
-    "Odkud jsi?",
-    "Kolik je ti let?",
-    "Máš sourozence?",
-    "Kde bydlíš?",
-    "Co děláš ve volném čase?",
-    "Jaké máš oblíbené jídlo?",
-    "Kdy máš narozeniny?",
-    "Kdo je tvůj nejlepší přítel?",
-    "Kde jsi se narodil?",
-    "Proč se učíš česky?",
-    "V kolik hodin vstáváš?",
-    "Kolik knih máš doma?",
-    "Který film se ti líbí nejvíce?",
-    "Jaký sport tě baví?",
-    "Co chceš dělat zítra?",
-    "Odkud pochází tvoje rodina?",
-    "Čím cestuješ do školy?",
-    "Odkdy studuješ češtinu?",
-    "Dokdy plánuješ zůstat doma?",
-    "Jak často chodíš do kina?",
-    "Bez koho bys nebyl šťastný?",
-    "Ke komu chodíš na návštěvu?",
-    "O kom často mluvíš?",
-    "S kým trávíš volný čas?",
-    "Bez čeho nemůžeš žít?",
-    "K čemu potřebuješ tu knihu?",
-    "O čem si dnes povídal?",
-    "S čím se učíš nejraději?",
-    "Pro co jsi vděčný?",
-    "Čí je to batoh?",
-    "Jak se cítíš dnes?",
-    "Kam půjdeš odpoledne?",
-    "Máš rád hudbu?",
-    "Jak se máš?",
-    "Mluvíš česky?",
-    "Kdy jsi naposledy byl na výletě?",
-    "Kdo ti pomáhá s úkoly?",
-    "Kde se potkáme zítra?",
-    "Proč tě baví čtení?",
-    "V kolik hodin končí škola?",
-    "Kolik peněz máš u sebe?",
-    "Který den v týdnu je tvůj oblíbený?",
-    "Jaký je tvůj oblíbený film?",
-    "Co budeš dělat o víkendu?",
-    "Odkud máš tuhle informaci?",
-    "Čím se chceš živit v budoucnu?",
-    "Odkdy znáš svého kamaráda?",
-    "Dokdy budeš pracovat na projektu?",
-    "Jak často sportuješ?",
-    "Bez koho se cítíš osaměle?",
-    "Ke komu se obracíš pro radu?",
-    "O kom jsi se učil dnes?",
-    "S kým chodíš na procházky?",
-    "Bez čeho se neobejdeš při cestování?",
-    "K čemu slouží tato aplikace?",
-    "O čem sníš?",
-    "S čím máš problém?",
-    "Pro co bys utratil výhru?",
-    "Čí je to dům?",
-    "Jak jsi spokojený se školou?",
-    "Kam se chystáš v létě?",
-    "Máš rád sport?",
-    "Jak se cítíš po ránu?",
-    "Mluvíš anglicky?",
-    "Kdy odjíždíš na dovolenou?",
-    "Kdo tě inspiruje?",
-    "Kde pracuje tvoje maminka?",
-    "Proč chodíš do školy?",
-    "V kolik hodin jíš oběd?",
-    "Kolik hodin denně spíš?",
-    "Který jazyk se učíš?",
-    "Jaký je tvůj oblíbený předmět?",
-    "Co tě baví nejvíce?",
-    "Odkud pochází tvůj pes?",
-    "Čím jezdíš do práce?",
-    "Odkdy se zajímáš o hudbu?",
-    "Dokdy bude trvat prázdniny?",
-    "Jak často chodíš na výlety?",
-    "Bez koho bys nemohl žít?",
-    "Ke komu chodíš na kroužky?",
-    "O kom jsi slyšel dnes?",
-    "S kým se učíš doma?",
-    "Bez čeho se nedá vařit?",
-    "K čemu používáš mobil?",
-    "O čem je ten film?",
-    "S čím ti mohu pomoci?",
-    "Pro co se zajímáš?",
-    "Čí je to kolo?",
-    "Jak se učíš nové věci?",
-    "Kam jdeš po škole?",
-    "Máš rád zvířata?",
-    "Jak se připravuješ na test?",
-    "Mluvíš německy?",
-    "Kdy přijedeš domů?",
-    "Kdo je tvůj učitel?",
-    "Kde nakupuješ oblečení?",
-    "Proč se směješ?",
-    "V kolik hodin začíná film?",
-    "Kolik hodin jsi dnes spal?",
-    "Který sport tě baví nejvíce?",
-    "Jaký je tvůj oblíbený recept?",
-    "Co si dáš k večeři?",
-    "Odkud jsi získal tuto informaci?",
-    "Čím se bavíš ve volném čase?",
-    "Odkdy chodíš do školy?",
-    "Dokdy zůstaneš vzhůru?",
-    "Jak často telefonuješ s kamarády?",
-    "Bez koho bys nešel na oslavu?",
-    "Ke komu se chystáš zítra?",
-    "O kom sníš?",
-    "S kým hraješ fotbal?",
-    "Bez čeho nejde udělat domácí úkol?",
-    "K čemu ti slouží počítač?",
-    "O čem přemýšlíš?",
-    "S čím si nejlépe rozumíš?",
-    "Pro co jsi ochotný pracovat?",
-    "Čí je to auto?"
+      "Jak se jmenuješ?",
+      "Odkud jsi?",
+      "Kolik je ti let?",
+      "Máš sourozence?",
+      "Kde bydlíš?",
+      "Co děláš ve volném čase?",
+      "Jaké máš oblíbené jídlo?",
+      "Kdy máš narozeniny?",
+      "Kdo je tvůj nejlepší přítel?",
+      "Kde jsi se narodil?",
+      "Proč se učíš česky?",
+      "V kolik hodin vstáváš?",
+      "Kolik knih máš doma?",
+      "Který film se ti líbí nejvíce?",
+      "Jaký sport tě baví?",
+      "Co chceš dělat zítra?",
+      "Odkud pochází tvoje rodina?",
+      "Čím cestuješ do školy?",
+      "Odkdy studuješ češtinu?",
+      "Dokdy plánuješ zůstat doma?",
+      "Jak často chodíš do kina?",
+      "Bez koho bys nebyl šťastný?",
+      "Ke komu chodíš na návštěvu?",
+      "O kom často mluvíš?",
+      "S kým trávíš volný čas?",
+      "Bez čeho nemůžeš žít?",
+      "K čemu potřebuješ tu knihu?",
+      "O čem si dnes povídal?",
+      "S čím se učíš nejraději?",
+      "Pro co jsi vděčný?",
+      "Čí je to batoh?",
+      "Jak se cítíš dnes?",
+      "Kam půjdeš odpoledne?",
+      "Máš rád hudbu?",
+      "Jak se máš?",
+      "Mluvíš česky?",
+      "Kdy jsi naposledy byl na výletě?",
+      "Kdo ti pomáhá s úkoly?",
+      "Kde se potkáme zítra?",
+      "Proč tě baví čtení?",
+      "V kolik hodin končí škola?",
+      "Kolik peněz máš u sebe?",
+      "Který den v týdnu je tvůj oblíbený?",
+      "Jaký je tvůj oblíbený film?",
+      "Co budeš dělat o víkendu?",
+      "Odkud máš tuhle informaci?",
+      "Čím se chceš živit v budoucnu?",
+      "Odkdy znáš svého kamaráda?",
+      "Dokdy budeš pracovat na projektu?",
+      "Jak často sportuješ?",
+      "Bez koho se cítíš osaměle?",
+      "Ke komu se obracíš pro radu?",
+      "O kom jsi se učil dnes?",
+      "S kým chodíš na procházky?",
+      "Bez čeho se neobejdeš při cestování?",
+      "K čemu slouží tato aplikace?",
+      "O čem sníš?",
+      "S čím máš problém?",
+      "Pro co bys utratil výhru?",
+      "Čí je to dům?",
+      "Jak jsi spokojený se školou?",
+      "Kam se chystáš v létě?",
+      "Máš rád sport?",
+      "Jak se cítíš po ránu?",
+      "Mluvíš anglicky?",
+      "Kdy odjíždíš na dovolenou?",
+      "Kdo tě inspiruje?",
+      "Kde pracuje tvoje maminka?",
+      "Proč chodíš do školy?",
+      "V kolik hodin jíš oběd?",
+      "Kolik hodin denně spíš?",
+      "Který jazyk se učíš?",
+      "Jaký je tvůj oblíbený předmět?",
+      "Co tě baví nejvíce?",
+      "Odkud pochází tvůj pes?",
+      "Čím jezdíš do práce?",
+      "Odkdy se zajímáš o hudbu?",
+      "Dokdy bude trvat prázdniny?",
+      "Jak často chodíš na výlety?",
+      "Bez koho bys nemohl žít?",
+      "Ke komu chodíš na kroužky?",
+      "O kom jsi slyšel dnes?",
+      "S kým se učíš doma?",
+      "Bez čeho se nedá vařit?",
+      "K čemu používáš mobil?",
+      "O čem je ten film?",
+      "S čím ti mohu pomoci?",
+      "Pro co se zajímáš?",
+      "Čí je to kolo?",
+      "Jak se učíš nové věci?",
+      "Kam jdeš po škole?",
+      "Máš rád zvířata?",
+      "Jak se připravuješ na test?",
+      "Mluvíš německy?",
+      "Kdy přijedeš domů?",
+      "Kdo je tvůj učitel?",
+      "Kde nakupuješ oblečení?",
+      "Proč se směješ?",
+      "V kolik hodin začíná film?",
+      "Kolik hodin jsi dnes spal?",
+      "Který sport tě baví nejvíce?",
+      "Jaký je tvůj oblíbený recept?",
+      "Co si dáš k večeři?",
+      "Odkud jsi získal tuto informaci?",
+      "Čím se bavíš ve volném čase?",
+      "Odkdy chodíš do školy?",
+      "Dokdy zůstaneš vzhůru?",
+      "Jak často telefonuješ s kamarády?",
+      "Bez koho bys nešel na oslavu?",
+      "Ke komu se chystáš zítra?",
+      "O kom sníš?",
+      "S kým hraješ fotbal?",
+      "Bez čeho nejde udělat domácí úkol?",
+      "K čemu ti slouží počítač?",
+      "O čem přemýšlíš?",
+      "S čím si nejlépe rozumíš?",
+      "Pro co jsi ochotný pracovat?",
+      "Čí je to auto?"
     ];
 
     function generateQuestion() {
@@ -209,10 +193,5 @@
       document.getElementById("output").innerHTML = `<p>${question}</p>`;
     }
   </script>
-
-
-
-
-
 </body>
 </html>
