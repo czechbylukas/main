@@ -30,7 +30,7 @@
     const table = document.getElementById('vocabTable');
     vocab_usefulphrases.forEach(w => {
       const row = document.createElement('tr');
-      row.innerHTML = `<td>${w.cz}</td><td>${w.pron}</td><td>${w.en}</td>`;
+      row.innerHTML = `<td>${w.czech}</td><td>${w.pronunciation}</td><td>${w.english}</td>`;
       table.appendChild(row);
     });
   </script>
