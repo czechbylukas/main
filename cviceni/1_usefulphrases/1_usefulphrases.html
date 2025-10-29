@@ -2,137 +2,121 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
-  <title>Practice Useful Phrases – CzechByLukas</title>
+  <title>Useful phrases – CzechByLukas</title>
+
+  <!-- ✅ All styles hardcoded directly here -->
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      text-align: center;
+      background-color: #eaf8ea; /* light green background */
+      color: #222;
+      margin: 0;
       padding: 20px;
     }
 
-    a.home-btn {
-      display: inline-block;
-      margin-bottom: 20px;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-
-    .vocab-container {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 20px;
-    }
-
-    .card {
-      background-color: #fff;
-      padding: 40px;
-      width: 300px;
-      min-height: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5em;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      cursor: pointer;
-      user-select: none;
-      transition: transform 0.2s;
-    }
-
-    .card:active {
-      transform: scale(0.98);
+    h1, h2 {
+      color: #005500;
+      text-align: center;
     }
 
     button {
-      padding: 10px 20px;
-      font-size: 1em;
-      border: none;
-      border-radius: 8px;
       background-color: #4CAF50;
       color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
       cursor: pointer;
-    }
-
-    button:disabled {
-      background-color: #aaa;
-      cursor: not-allowed;
-    }
-
-    .progress-bar {
-      width: 80%;
+      transition: background-color 0.3s;
+      display: block;
       margin: 20px auto;
-      height: 20px;
-      background-color: #ddd;
-      border-radius: 10px;
-      overflow: hidden;
     }
 
-    .progress {
-      height: 100%;
-      width: 0%;
-      background-color: #4CAF50;
-      transition: width 0.3s;
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    #output {
+      font-size: 1.2em;
+      text-align: center;
+      margin-top: 20px;
+      min-height: 2em;
     }
   </style>
 </head>
+
 <body>
+  <div class="container">
+    <main>
+      <h1>Generátor užítečných frází</h1>
+      <p style="text-align:center;">Klikni na tlačítko a zobrazí se náhodná otázka:</p>
+      <button onclick="generateQuestion()">Zobraz otázku</button>
+      <div id="output"></div>
+    </main>
 
-  <a href="../../index.html" class="home-btn">🏠 Hlavní stránka</a>
 
-  <h1>Practice Useful Phrases</h1>
+ 
 
-  <div class="vocab-container">
-    <div id="englishCard" class="card"></div>
-    <div id="czechCard" class="card">Click to show Czech</div>
+    <!-- Home button -->
+    <a href="https://czechbylukas.github.io/main/index.html">
+      <button style="float: left; background-color: #4CAF50; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer;">
+        🏠 Hlavní stránka
+      </button>
+    </a>
+  
+
+
+
   </div>
 
-  <div class="progress-bar">
-    <div id="progress" class="progress"></div>
-  </div>
-
-  <button id="nextBtn">Next</button>
-
-  <!-- Load vocab data -->
-  <script src="../../data/1_usefulphrases.js"></script>
+  <!-- ✅ Pure JS, no external fetch or dependencies -->
   <script>
-    let currentIndex = 0;
-    const total = vocab.length;
+    const questions = [
+     "Dobrý den", en: "How do you do (Good day)", pron: "dobree den"
+	"Dobré ráno", en: "Good morning", pron: "dobreh rahno"
+  	"Dobrý večer", en: "Good evening", pron: "dobree vecher"
+  	"Dobrou noc", en: "Good night", pron: "dobrow nots"
+	"Na shledanou", en: "Goodbye", pron: "nascledanow"
+	"Prosím", en: "Please", pron: "proseem"
+ 	 "Děkuji", en: "Thank you", pron: "dyekuyi"
+	 "S dovolením", en: "Excuse me", pron: "s dovolenyeem"
+	"Lituji", en: "I’m sorry (I regret)", pron: "lituyi"
+	"Promiňte", en: "Excuse me, pardon", pron: "promintey"
+	"Ano", en: "Yes", pron: "ano"
+	"Ne", en: "No", pron: "neh"
+	"Mluvíte anglicky?", en: "Do you speak English?", pron: "mluveete anglitsky?"
+	 "Nerozumím", en: "I don't understand", pron: "nerozumeem"
+	 "Prosím napište to", en: "Please, write it down", pron: "proseem napishte to"
+	 "Kde je restaurace", en: "Where is a restaurant", pron: "kde ye restauratse"
+	 "banka", en: "bank", pron: "banca"
+	"Toaleta, Záchod", en: "Bathroom, toilet", pron: "toaleta, zahkod"
+	 "Muži, Páni", en: "Men", pron: "mushi, pahnyi"
+ 	 "Ženy, Dámy", en: "Women", pron: "zheny, dahmy"
+	"Kolik to stojí", en: "How much does it cost?", pron: "kolik to stoyee"
+	 "Pane vrchní!", en: "Waiter!", pron: "pane vrkhnyee"
+	"Jedno pivo, prosím", en: "One beer, please", pron: "yedno pivo proseem"
+	 "Účet, prosím", en: "The check, please!", pron: "platyit proseem"
+	 "zde, tady (tu)", en: "here", pron: "tady"
+	 "Co si dáte?", en: "What would you like?", pron: "co si daate"
+	"sto korun", en: "hundred crowns", pron: "sto corun"
+	 "Ještě něco?", en: "Anything else?", pron: "yeshtee nietso"
 
-    const englishCard = document.getElementById("englishCard");
-    const czechCard = document.getElementById("czechCard");
-    const nextBtn = document.getElementById("nextBtn");
-    const progress = document.getElementById("progress");
+    ];
 
-    function showCard(index) {
-      const item = vocab[index];
-      englishCard.textContent = item.english;        // show real English phrase
-      czechCard.textContent = "Click to show Czech"; // hide Czech initially
-      czechCard.dataset.czech = item.czech;          // store correct Czech translation
-      updateProgress();
+    function generateQuestion() {
+      const randomIndex = Math.floor(Math.random() * questions.length);
+      const question = questions[randomIndex];
+      document.getElementById("output").innerHTML = `<p>${question}</p>`;
     }
-
-    czechCard.addEventListener("click", () => {
-      czechCard.textContent = czechCard.dataset.czech; // reveal Czech translation
-    });
-
-    nextBtn.addEventListener("click", () => {
-      currentIndex++;
-      if(currentIndex >= total) {
-        alert("You have finished all phrases!");
-        currentIndex = 0;
-      }
-      showCard(currentIndex);
-    });
-
-    function updateProgress() {
-      progress.style.width = ((currentIndex + 1) / total * 100) + "%";
-    }
-
-    // Initialize first card
-    showCard(currentIndex);
   </script>
 </body>
 </html>
