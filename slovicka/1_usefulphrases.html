@@ -28,7 +28,7 @@
   <script src="../data/1_usefulphrases.js"></script>
   <script>
     const table = document.getElementById('vocabTable');
-    vocab_usefulphrases.forEach(w => {
+    vocab.forEach(w => {
       const row = document.createElement('tr');
       row.innerHTML = `<td>${w.czech}</td><td>${w.pronunciation}</td><td>${w.english}</td>`;
       table.appendChild(row);

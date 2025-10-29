@@ -28,5 +28,5 @@ const vocab = [
   { czech: "Co si dáte?", english: "What would you like?", pronunciation: "co si daate" },
   { czech: "sto korun", english: "hundred crowns", pronunciation: "sto corun" },
   { czech: "Ještě něco?", english: "Anything else?", pronunciation: "yeshtee nietso" },
-  { czech: "tam", english: "there", pronunciation: "" }
+  { czech: "tam", english: "there", pronunciation: "tam" }
 ];
