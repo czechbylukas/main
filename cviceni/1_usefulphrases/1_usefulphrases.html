@@ -85,7 +85,7 @@
   <h1>Practice Useful Phrases</h1>
 
   <div class="vocab-container">
-    <div id="englishCard" class="card">English</div>
+    <div id="englishCard" class="card"></div>
     <div id="czechCard" class="card">Click to show Czech</div>
   </div>
 
@@ -108,14 +108,14 @@
 
     function showCard(index) {
       const item = vocab[index];
-      englishCard.textContent = item.english;
-      czechCard.textContent = "Click to show Czech";
-      czechCard.dataset.czech = item.czech;
+      englishCard.textContent = item.english;        // show real English phrase
+      czechCard.textContent = "Click to show Czech"; // hide Czech initially
+      czechCard.dataset.czech = item.czech;          // store correct Czech translation
       updateProgress();
     }
 
     czechCard.addEventListener("click", () => {
-      czechCard.textContent = czechCard.dataset.czech;
+      czechCard.textContent = czechCard.dataset.czech; // reveal Czech translation
     });
 
     nextBtn.addEventListener("click", () => {
