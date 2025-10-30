@@ -34,10 +34,16 @@
     <p>Every bit of support helps me continue improving the site and adding new materials. Děkuji ❤️</p>
   </main>
 
-<footer class="support-note">
-  ❤️ I build this site myself to help people learn Czech.  
-  If you’d like to support my work, <a href="support.html">click here</a>.
-</footer>
+
+<script>
+  fetch("css/footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.body.insertAdjacentHTML("beforeend", data);
+    })
+    .catch(error => console.error("Footer failed to load:", error));
+</script>
+
 
 </body>
 </html>
