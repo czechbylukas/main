@@ -80,3 +80,25 @@ main {
   transform: scale(1.05); /* slight zoom on hover */
 }
 
+
+
+
+/* --- Footer positioning --- */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* pushes footer down */
+}
+
+footer {
+  margin-top: auto;
+  background-color: #e0ffe0;
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid #ccc;
+}
+
