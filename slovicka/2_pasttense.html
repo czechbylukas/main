@@ -22,7 +22,7 @@
 <body>
   <h1>Past Tense</h1>
   <table id="vocabTable">
-    <tr><th>Česky</th><th>Výslovnost</th><th>Anglicky</th></tr>
+    <tr><th>Česky</th><th>Anglicky</th></tr>
   </table>
 
   <div class="links">
@@ -39,7 +39,7 @@
     const table = document.getElementById('vocabTable');
     vocab.forEach(w => {
       const row = document.createElement('tr');
-      row.innerHTML = `<td>${w.czech}</td><td>${w.pronunciation}</td><td>${w.english}</td>`;
+      row.innerHTML = `<td>${w.czech}</td><td>${w.english}</td>`;
       table.appendChild(row);
     });
   </script>
