@@ -83,21 +83,26 @@ main {
 
 
 
+
+/* layout: hlavní obsah roste a tlačí footer dolů */
 html, body {
   height: 100%;
   margin: 0;
+}
+
+body {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
-body > *:not(footer) {
-  flex-grow: 1; /* pushes footer down even if there's little content */
+.page-content {
+  flex: 1 0 auto;   /* roste a zabere dostupný prostor */
+  padding-bottom: 1rem; /* drobný odstup nad footerem */
 }
 
+/* zajistí, že footer nebude fixed/absolute (přepíše případné pravidlo) */
 footer {
-  background-color: #e0ffe0;
-  text-align: center;
-  padding: 1rem;
-  border-top: 1px solid #ccc;
-  margin-top: auto;
+  position: static !important;
+  z-index: 1;
 }
