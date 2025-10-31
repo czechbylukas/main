@@ -54,3 +54,29 @@ main {
 .support-note a:hover {
   text-decoration: underline;
 }
+
+
+
+
+
+.qr-container {
+  margin-left: 2cm;       /* shift to the right */
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.qr-container img {
+  width: 20%;              /* make it 1/5 of its original width */
+  height: auto;
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+  padding: 4px;
+  background-color: #fff;
+  cursor: pointer;         /* show pointer on hover */
+  transition: transform 0.2s;
+}
+
+.qr-container img:hover {
+  transform: scale(1.05); /* slight zoom on hover */
+}
+
