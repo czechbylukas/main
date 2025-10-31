@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9067674021614925"
+     crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8">
+  <title>Lesson 1 Test – CzechByLukas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f7f0;
+      text-align: center;
+      padding: 20px;
+    }
+    iframe {
+      width: 90%;
+      height: 1500px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      background: white;
+    }
+    h1 {
+      color: #2b593e;
+    }
+    .home-button {
+      display: inline-block;
+      margin-bottom: 20px;
+      background-color: #2b593e;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .home-button:hover {
+      background-color: #377c53;
+    }
+  </style>
+</head>
+<body>
+  <a class="home-button" href="index.html">🏠 Hlavní stránka</a>
+  <h1>Test – Lesson 1: Useful Phrases</h1>
+  <p>Máte 10 minut na vyplnění testu. Po odeslání uvidíte správné odpovědi.</p>
+
+  <!-- 👇 Paste your Google Form here -->
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfra5G2LjBzrseHYAZvA7J7f7LxG8NwJgsIvq-fIKXtEZ_gdQ/viewform?usp=header"></iframe>
+
+<script>
+  fetch("https://czechbylukas.github.io/css/footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.body.insertAdjacentHTML("beforeend", data);
+    })
+    .catch(error => console.error("Footer failed to load:", error));
+</script>
+
+
+
+</body>
+</html>
