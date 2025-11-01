@@ -24,8 +24,6 @@
 
 </head>
 <body>
-  <div class="page-content">
-    <main>
       <h1>Useful Phrases</h1>
       <table id="vocabTable">
         <tr><th>Česky</th><th>Výslovnost</th><th>Anglicky</th></tr>
@@ -35,8 +33,6 @@
         <a href="../cviceni/1_usefulphrases/1_usefulphrases.html">Practice</a>
         <a href="../testy/1_usefulphrases.html">Test</a>
         <a href="../index.html">🏠 Hlavní stránka</a>
-      </div>
-    </main>
   </div>
 
   <script src="../data/1_usefulphrases.js"></script>
@@ -53,7 +49,7 @@
     fetch("https://czechbylukas.github.io/css/footer.html")
       .then(response => response.text())
       .then(data => {
-        document.body.appendChild(footerWrapper);
+      document.body.insertAdjacentHTML("beforeend", data);
       })
       .catch(error => console.error("Footer failed to load:", error));
   </script>
