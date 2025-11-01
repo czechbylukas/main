@@ -244,41 +244,49 @@ footer.support-note a:hover {
 
 
 
-/* ===== Useful Phrases Page Styles ===== */
-body {
+
+/* ===== Useful Phrases (and other Vocabulary Pages) Styles ===== */
+.vocab-page {
   font-family: Arial, sans-serif;
   background: #f2f9f2;
   margin: 40px;
+  color: #333;
 }
 
-h1 {
+/* Headings */
+.vocab-page h1 {
   text-align: center;
+  color: #2e5c2e;
 }
 
-table {
+/* Vocabulary table */
+.vocab-page table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-th, td {
+.vocab-page th,
+.vocab-page td {
   padding: 10px;
   border-bottom: 1px solid #ccc;
   text-align: left;
 }
 
-th {
+.vocab-page th {
   background: #d9f0d9;
+  font-weight: bold;
 }
 
-.links {
+/* Links section (if used) */
+.vocab-page .links {
   text-align: center;
   margin-top: 30px;
   margin-bottom: 100px;
 }
 
-/* Default button look */
-a {
+/* Default link style inside vocab pages */
+.vocab-page a {
   margin: 10px;
   padding: 10px 20px;
   background: #4caf50;
@@ -286,35 +294,65 @@ a {
   text-decoration: none;
   border-radius: 8px;
   display: inline-block;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
-a:hover {
+.vocab-page a:hover {
   background: #3e8e41;
+  transform: translateY(-2px);
 }
 
-/* ===== Custom button groups ===== */
-.big-buttons {
-  text-align: center;
+/* --- Big & Small Buttons --- */
+.vocab-page .big-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
   margin-top: 40px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
-.big-buttons a {
+.vocab-page .big-buttons a {
   font-size: 1.2rem;
-  padding: 14px 28px;
+  padding: 16px 36px;
+  background: linear-gradient(180deg, #4caf50 0%, #3e8e41 100%);
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-.small-buttons {
-  text-align: center;
-  margin-top: 20px;
+.vocab-page .big-buttons a:hover {
+  background: linear-gradient(180deg, #3e8e41 0%, #2f6f31 100%);
+  transform: translateY(-3px);
 }
 
-.small-buttons a {
-  background: #0077cc;
-  font-size: 0.9rem;
-  padding: 8px 16px;
+/* Small buttons below */
+.vocab-page .small-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 24px;
 }
 
-.small-buttons a:hover {
-  background: #005fa3;
+.vocab-page .small-buttons a {
+  font-size: 0.95rem;
+  padding: 8px 18px;
+  background: #ffffff;
+  color: #2f5230;
+  border: 2px solid #4caf50;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.vocab-page .small-buttons a:hover {
+  background: #f2fff2;
+  color: #000;
+}
+
+/* Hide legacy .links if present */
+.vocab-page .links {
+  display: none !important;
 }
