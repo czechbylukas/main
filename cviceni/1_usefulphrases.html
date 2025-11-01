@@ -8,9 +8,9 @@
      crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-9067674021614925">
 
-  <!-- Load shared CSS -->
+  <!-- Shared CSS -->
   <link rel="stylesheet" href="../css/style.css">
-  <!-- Load practice-specific CSS -->
+  <!-- Practice-specific CSS -->
   <link rel="stylesheet" href="../css/practice.css">
 </head>
 <body class="vocab-page">
@@ -29,11 +29,13 @@
     <div id="czechCard" class="card">Click to show Czech</div>
   </div>
 
-  <!-- Progress bar -->
-  <div class="progress-bar">
-    <div id="progress" class="progress"></div>
+  <!-- Progress bar + numeric progress -->
+  <div class="progress-wrapper">
+    <div class="progress-bar">
+      <div id="progress" class="progress"></div>
+    </div>
+    <div id="progressText" class="progress-text"></div>
   </div>
-  <div id="progressText" class="progress-text"></div>
 
   <!-- Vocabulary & Test buttons -->
   <div class="big-buttons">
@@ -49,15 +51,15 @@
 
   <!-- Load vocab data -->
   <script src="../data/1_usefulphrases.js"></script>
-  <!-- Load practice app logic -->
+  <!-- Load practice logic -->
   <script src="../js/practice.js"></script>
 
   <!-- Footer -->
   <script>
     fetch("../css/footer.html")
-      .then(response => response.text())
+      .then(res => res.text())
       .then(data => document.body.insertAdjacentHTML("beforeend", data))
-      .catch(error => console.error("Footer failed to load:", error));
+      .catch(err => console.error("Footer failed to load:", err));
   </script>
 
 </body>
