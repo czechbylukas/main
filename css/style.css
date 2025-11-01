@@ -123,14 +123,22 @@ footer.support-note {
 }
 
 footer.support-note a {
-  color: #4CAF50;
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 16px;
+  background-color: #e0ffe0;
+  color: #333;
   text-decoration: none;
   font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.3s;
 }
 
 footer.support-note a:hover {
-  text-decoration: underline;
+  background-color: #4CAF50;
+  color: white;
 }
+
 
 
 
@@ -245,7 +253,7 @@ footer.support-note a:hover {
 
 
 
-/* ===== Useful Phrases (and other Vocabulary Pages) Styles ===== */
+/* ===== Idex Page Styles ===== */
 .vocab-page {
   font-family: Arial, sans-serif;
   background: #f2f9f2;
