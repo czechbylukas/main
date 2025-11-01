@@ -50,3 +50,27 @@ czechCard.addEventListener("click", () => {
   showCard(currentIndex);
 
 });
+
+
+
+
+
+// Keyboard support: left/right arrows
+document.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowRight") {   // Right arrow → next
+    if (currentIndex < total - 1) {
+      currentIndex++;
+      showCard(currentIndex);
+    } else {
+      nextBtn.disabled = true;
+      alert("You have finished all phrases!");
+    }
+  } else if (event.key === "ArrowLeft") { // Left arrow → previous
+    if (currentIndex > 0) {
+      currentIndex--;
+      showCard(currentIndex);
+    } else {
+      prevBtn.disabled = true;
+    }
+  }
+});
