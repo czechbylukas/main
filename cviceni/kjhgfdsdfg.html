@@ -8,23 +8,33 @@
 
   <meta charset="UTF-8">
   <title>Practice Useful Phrases – CzechByLukas</title>
-
-  <!-- Load shared CSS -->
-  <link rel="stylesheet" href="../css/style.css">
-
   <style>
-    /* Ensure practice cards use the same hover/rounded style */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      text-align: center;
+      padding: 20px;
+    }
+
+    a.home-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
     .vocab-container {
       display: flex;
       justify-content: center;
       gap: 20px;
-      margin: 20px 0;
+      margin-bottom: 20px;
     }
 
     .card {
       background-color: #fff;
-      padding: 30px;
-      width: 280px;
+      padding: 40px;
+      width: 300px;
       min-height: 150px;
       display: flex;
       align-items: center;
@@ -34,30 +44,26 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       cursor: pointer;
       user-select: none;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s;
     }
 
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    .card:active {
+      transform: scale(0.98);
     }
 
-    /* Big button style like vocabulary page */
-    .big-buttons button {
-      font-size: 1.2rem;
-      padding: 16px 36px;
-      background: linear-gradient(180deg, #4caf50 0%, #3e8e41 100%);
-      color: #fff;
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
       border: none;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      border-radius: 8px;
+      background-color: #4CAF50;
+      color: white;
       cursor: pointer;
-      transition: transform 0.2s, background 0.2s;
     }
 
-    .big-buttons button:hover {
-      background: linear-gradient(180deg, #3e8e41 0%, #2f6f31 100%);
-      transform: translateY(-3px);
+    button:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
     }
 
     .progress-bar {
@@ -75,43 +81,13 @@
       background-color: #4CAF50;
       transition: width 0.3s;
     }
-
-    .small-buttons {
-      display: flex !important;
-      justify-content: center !important;
-      align-items: center !important;
-      gap: 18px !important;
-      margin-top: 24px !important;
-    }
-
-    .small-buttons a {
-      font-size: 0.95rem;
-      padding: 8px 18px;
-      background: #ffffff !important;
-      color: #2f5230 !important;
-      border: 2px solid #4CAF50 !important;
-      border-radius: 10px !important;
-      text-decoration: none !important;
-    }
-
-    .small-buttons a:hover {
-      background: #f2fff2 !important;
-      color: #000;
-    }
-
-    body.vocab-page h1 {
-      text-align: center;
-      color: #2e5c2e;
-    }
   </style>
 </head>
-<body class="vocab-page">
+<body>
+
+  <a href="../index.html" class="home-btn">🏠 Main Page</a>
 
   <h1>Practice Useful Phrases</h1>
-
-  <div class="big-buttons">
-    <button id="nextBtn">Next Phrase 🧠</button>
-  </div>
 
   <div class="vocab-container">
     <div id="englishCard" class="card"></div>
@@ -122,14 +98,10 @@
     <div id="progress" class="progress"></div>
   </div>
 
-  <div class="small-buttons">
-    <a href="../index.html">🏠 Home</a>
-    <a href="../slovicka/index.html">📘 Vocabulary List</a>
-  </div>
+  <button id="nextBtn">Next</button>
 
   <!-- Load vocab data -->
-  <script src="../data/1_usefulphrases.js"></script>
-
+<script src="../data/1_usefulphrases.js"></script>
   <script>
     let currentIndex = 0;
     const total = vocab.length;
@@ -141,14 +113,14 @@
 
     function showCard(index) {
       const item = vocab[index];
-      englishCard.textContent = item.english;        // show English
+      englishCard.textContent = item.english;        // show real English phrase
       czechCard.textContent = "Click to show Czech"; // hide Czech initially
-      czechCard.dataset.czech = item.czech;          // store Czech translation
+      czechCard.dataset.czech = item.czech;          // store correct Czech translation
       updateProgress();
     }
 
     czechCard.addEventListener("click", () => {
-      czechCard.textContent = czechCard.dataset.czech;
+      czechCard.textContent = czechCard.dataset.czech; // reveal Czech translation
     });
 
     nextBtn.addEventListener("click", () => {
@@ -168,14 +140,15 @@
     showCard(currentIndex);
   </script>
 
-  <script>
-    fetch("../css/footer.html")
-      .then(response => response.text())
-      .then(data => {
-        document.body.insertAdjacentHTML("beforeend", data);
-      })
-      .catch(error => console.error("Footer failed to load:", error));
-  </script>
+<script>
+  fetch("../css/footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.body.insertAdjacentHTML("beforeend", data);
+    })
+    .catch(error => console.error("Footer failed to load:", error));
+</script>
+
 
 </body>
 </html>
