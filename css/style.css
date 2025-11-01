@@ -176,3 +176,63 @@ footer.support-note a:hover {
   background: #c8f7c8;
   color: #000;
 }
+
+
+
+
+
+
+
+
+
+/* ---------- Buttons: centered, spaced, visually distinct ---------- */
+/* Big buttons row: centered, large and spaced */
+.big-buttons {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 60px !important;          /* distance between Practice and Test */
+  margin-top: 40px !important;
+  flex-wrap: wrap;
+}
+
+/* Big button style */
+.big-buttons a {
+  display: inline-block;
+  padding: 16px 36px;
+  font-size: 1.15rem;
+  background: linear-gradient(180deg,#4caf50 0%, #3e8e41 100%) !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* small buttons row: centered, visually lighter */
+.small-buttons {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 18px !important;          /* distance between Home and Vocabulary */
+  margin-top: 24px !important;
+}
+
+/* small button style: visually different */
+.small-buttons a {
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 0.95rem;
+  background: #ffffff !important;
+  color: #2f5230 !important;
+  border: 2px solid #4CAF50 !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+
+/* Hover states */
+.big-buttons a:hover { transform: translateY(-3px); }
+.small-buttons a:hover { background: #f2fff2 !important; }
+
+/* If any old .links rules still apply, hide them */
+.links { display: none !important; }
