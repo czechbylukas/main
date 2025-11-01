@@ -8,7 +8,6 @@
 
 
 
-
   <meta charset="UTF-8">
   <title>Useful Phrases | CzechByLukas</title>
   <style>
@@ -33,7 +32,7 @@
       </table>
 
       <div class="links">
-        <a href="../cviceni/1_usefulphrases/1_usefulphrases.html">Procvičování</a>
+        <a href="../cviceni/1_usefulphrases/1_usefulphrases.html">Practice</a>
         <a href="../testy/1_usefulphrases.html">Test</a>
         <a href="../index.html">🏠 Hlavní stránka</a>
       </div>
@@ -54,9 +53,6 @@
     fetch("https://czechbylukas.github.io/css/footer.html")
       .then(response => response.text())
       .then(data => {
-        const footerWrapper = document.createElement("div");
-        footerWrapper.style.marginTop = "80px";  // space above footer
-        footerWrapper.innerHTML = data;
         document.body.appendChild(footerWrapper);
       })
       .catch(error => console.error("Footer failed to load:", error));
