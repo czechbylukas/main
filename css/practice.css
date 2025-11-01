@@ -33,16 +33,16 @@ body.vocab-page h1 {
   white-space: pre-wrap;
   word-break: break-word;
   line-height: 1.3em;
-
-/* Hidden Czech text (Click to show) */
-.card.hidden-czech {
-  color: #999;   /* light grey */
-
 }
 
 .card:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Hidden Czech text (Click to show) */
+.card.hidden-czech {
+  color: #bbb;   /* lighter grey (you asked for light grey) */
 }
 
 /* ----- Progress Bar ----- */
@@ -67,7 +67,7 @@ body.vocab-page h1 {
   height: 100%;
   width: 0%;
   background-color: #4CAF50;
-  transition: width 0.3s;
+  transition: width 0.3s ease;
 }
 
 .progress-text {
@@ -105,6 +105,11 @@ body.vocab-page h1 {
   transform: translateY(-3px);
 }
 
+.big-buttons button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
 /* ----- Small Buttons ----- */
 .small-buttons {
   display: flex;
@@ -129,10 +134,3 @@ body.vocab-page h1 {
   background: #f2fff2;
   color: #000;
 }
-
-
-/* Make Czech card text grey initially */
-#czechCard {
-  color: #999;
-}
-
