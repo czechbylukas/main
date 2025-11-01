@@ -128,6 +128,6 @@ body.vocab-page h1 {
 
 /* Make Czech card text grey initially */
 #czechCard {
-  color: grey;
+  color: #999;
 }
 

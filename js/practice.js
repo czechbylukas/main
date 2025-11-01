@@ -26,10 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
     nextBtn.disabled = currentIndex === total - 1;
   }
 
-  czechCard.addEventListener("click", () => {
-    czechCard.textContent = czechCard.dataset.czech;
+czechCard.addEventListener("click", () => {
+  czechCard.textContent = czechCard.dataset.czech;
   czechCard.style.color = "black"; // <-- turns text black when revealed
-  });
+});
+
 
   nextBtn.addEventListener("click", () => {
     if (currentIndex < total - 1) {
