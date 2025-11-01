@@ -10,32 +10,31 @@
 
   <meta charset="UTF-8">
   <title>Past Tense | CzechByLukas</title>
-  <style>
-    body { font-family: Arial, sans-serif; background: #f2f9f2; margin: 40px; }
-    h1 { text-align: center; }
-    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    th, td { padding: 10px; border-bottom: 1px solid #ccc; text-align: left; }
-    th { background: #d9f0d9; }
-    .links { text-align: center; margin-top: 30px;  margin-bottom: 100px;}
-    a { margin: 10px; padding: 10px 20px; background: #4caf50; color: white; text-decoration: none; border-radius: 8px; }
-    a:hover { background: #3e8e41; }
-  </style>
+
+
+  <!-- ✅ Load shared CSS -->
+<link rel="stylesheet" href="../css/style.css">
+
 
 
 </head>
-<body>
-  <h1>Past Tense</h1>
+<body class="vocab-page">
+
+  <h1>Past Tense - Vocabulary</h1>
   <table id="vocabTable">
-    <tr><th>Česky</th><th>Anglicky</th></tr>
+    <tr><th>Czech</th><th>English</th></tr>
   </table>
 
-  <div class="links">
-    <a href="../cviceni/1_usefulphrases/1_usefulphrases.html">Procvičování</a>
-    <a href="../testy/2_pasttense.html">Test</a>
-    <a href="../index.html">🏠 Hlavní stránka</a>
+<div class="big-buttons">
+  <a href="../cviceni/1_pasttense.html">🧠 Practice</a>
+  <a href="../testy/1_pasttense.html">📝 Test</a>
+</div>
 
+<div class="small-buttons">
+  <a href="../index.html">🏠 Home</a>
+  <a href="../slovicka/index.html">📘 Vocabulary List</a>
+</div>
 
-  </div>
 
   <script src="../data/2_pasttense.js"></script>
   <script>
@@ -56,7 +55,6 @@
     })
     .catch(error => console.error("Footer failed to load:", error));
 </script>
-
 
 </body>
 </html>
