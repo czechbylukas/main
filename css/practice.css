@@ -42,7 +42,7 @@ body.vocab-page h1 {
 
 /* Hidden Czech text (Click to show) */
 .card.hidden-czech {
-  color: #ddd;   /* lighter grey (999 is grey and bbb lighter up to eee the lightest) */
+  color: #dddddd;   /* lighter grey (999 is grey and bbb lighter up to eee the lightest) */
 }
 
 /* ----- Progress Bar ----- */
