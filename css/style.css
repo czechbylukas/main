@@ -118,7 +118,7 @@ footer.support-note {
   background-color: #f9fff9;
   padding: 20px;
   border-top: 1px solid #ddd;
-  margin-top: 600px; /* adds breathing space from buttons */
+  margin-top: 60px; /* adds breathing space from buttons */
   box-sizing: border-box;
 }
 
@@ -130,4 +130,49 @@ footer.support-note a {
 
 footer.support-note a:hover {
   text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+.big-buttons, .small-buttons {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.big-buttons a {
+  font-size: 1.2rem;
+  margin: 20px;
+  padding: 15px 30px;
+  background: #4CAF50;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.big-buttons a:hover {
+  background: #3e8e41;
+}
+
+/* Small buttons visually different */
+.small-buttons a {
+  font-size: 0.95rem;
+  margin: 10px 20px;
+  padding: 8px 18px;
+  background: #e0ffe0;
+  color: #333;
+  border: 1px solid #4CAF50;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.small-buttons a:hover {
+  background: #c8f7c8;
+  color: #000;
 }
