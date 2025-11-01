@@ -7,7 +7,15 @@ const englishCard = document.getElementById("englishCard");
 const czechCard = document.getElementById("czechCard");
 const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
-const progress = document.getElementById("progress");
+const progressBar = document.getElementById("progress");
+
+// Optional: create a numeric progress display
+let progressText = document.createElement("div");
+progressText.style.textAlign = "center";
+progressText.style.marginTop = "8px";
+progressText.style.fontWeight = "bold";
+progressText.style.fontSize = "1rem";
+progressBar.parentNode.insertBefore(progressText, progressBar.nextSibling);
 
 function showCard(index) {
   const item = vocab[index];
@@ -22,19 +30,31 @@ czechCard.addEventListener("click", () => {
 });
 
 nextBtn.addEventListener("click", () => {
-  currentIndex++;
-  if (currentIndex >= total) currentIndex = 0;
-  showCard(currentIndex);
+  if (currentIndex < total - 1) {
+    currentIndex++;
+    showCard(currentIndex);
+  } else {
+    nextBtn.disabled = true; // disable when reaching the end
+    alert("You have finished all phrases!");
+  }
 });
 
 prevBtn.addEventListener("click", () => {
-  currentIndex--;
-  if (currentIndex < 0) currentIndex = total - 1;
-  showCard(currentIndex);
+  if (currentIndex > 0) {
+    currentIndex--;
+    showCard(currentIndex);
+  } else {
+    prevBtn.disabled = true; // disable at the first card
+  }
 });
 
 function updateProgress() {
-  progress.style.width = ((currentIndex + 1) / total * 100) + "%";
+  progressBar.style.width = ((currentIndex + 1) / total * 100) + "%";
+  progressText.textContent = `${currentIndex + 1} / ${total}`;
+  
+  // Enable/disable buttons dynamically
+  prevBtn.disabled = currentIndex === 0;
+  nextBtn.disabled = currentIndex === total - 1;
 }
 
 // Initialize first card
