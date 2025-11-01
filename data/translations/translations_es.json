@@ -1,0 +1,26 @@
+{
+  "menu": {
+    "home": "Inicio",
+    "vocabulary": "Vocabulario",
+    "support": "Soporte"
+  },
+  "buttons": {
+    "next": "Siguiente",
+    "prev": "Anterior",
+    "submit": "Enviar",
+    "search": "Buscar"
+  },
+  "headings": {
+    "welcome": "Bienvenido a CzechByLukas",
+    "learn": "Aprende checo fácilmente",
+    "vocabList": "Lista de vocabulario"
+  },
+  "messages": {
+    "loading": "Cargando...",
+    "error": "Algo salió mal.",
+    "empty": "No se encontraron elementos."
+  },
+  "placeholders": {
+    "search": "Escriba aquí para buscar..."
+  }
+}

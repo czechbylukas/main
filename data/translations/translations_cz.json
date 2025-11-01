@@ -1,0 +1,26 @@
+{
+  "menu": {
+    "home": "Domů",
+    "vocabulary": "Slovník",
+    "support": "Podpora"
+  },
+  "buttons": {
+    "next": "Další",
+    "prev": "Předchozí",
+    "submit": "Odeslat",
+    "search": "Hledat"
+  },
+  "headings": {
+    "welcome": "Vítejte na CzechByLukas",
+    "learn": "Učte se češtinu snadno",
+    "vocabList": "Seznam slovíček"
+  },
+  "messages": {
+    "loading": "Načítám...",
+    "error": "Došlo k chybě.",
+    "empty": "Žádné položky nenalezeny."
+  },
+  "placeholders": {
+    "search": "Zadejte text pro hledání..."
+  }
+}

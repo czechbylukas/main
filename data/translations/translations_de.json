@@ -1,0 +1,26 @@
+{
+  "menu": {
+    "home": "Startseite",
+    "vocabulary": "Wortschatz",
+    "support": "Support"
+  },
+  "buttons": {
+    "next": "Weiter",
+    "prev": "Zurück",
+    "submit": "Senden",
+    "search": "Suchen"
+  },
+  "headings": {
+    "welcome": "Willkommen bei CzechByLukas",
+    "learn": "Lerne Tschechisch einfach",
+    "vocabList": "Wortschatzliste"
+  },
+  "messages": {
+    "loading": "Lädt...",
+    "error": "Etwas ist schiefgelaufen.",
+    "empty": "Keine Elemente gefunden."
+  },
+  "placeholders": {
+    "search": "Hier tippen, um zu suchen..."
+  }
+}
