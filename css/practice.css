@@ -21,16 +21,16 @@ body.vocab-page h1 {
   width: 280px;
   min-height: 150px;
   display: flex;
-  align-items: center;       /* vertical centering */
-  justify-content: center;   /* horizontal centering */
-  text-align: center;        /* wrap text nicely */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   font-size: 1.5em;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   cursor: pointer;
   user-select: none;
   transition: transform 0.2s, box-shadow 0.2s;
-  white-space: pre-wrap;     /* wrap long lines */
+  white-space: pre-wrap;
   word-break: break-word;
   line-height: 1.3em;
 }
@@ -43,7 +43,7 @@ body.vocab-page h1 {
 /* ----- Progress Bar ----- */
 .progress-bar {
   width: 80%;
-  margin: 20px auto;
+  margin: 20px auto 5px auto;
   height: 20px;
   background-color: #ddd;
   border-radius: 10px;
@@ -55,6 +55,13 @@ body.vocab-page h1 {
   width: 0%;
   background-color: #4CAF50;
   transition: width 0.3s;
+}
+
+.progress-text {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 1rem;
 }
 
 /* ----- Big Buttons ----- */
@@ -85,6 +92,11 @@ body.vocab-page h1 {
 .big-buttons button:hover {
   background: linear-gradient(180deg, #3e8e41 0%, #2f6f31 100%);
   transform: translateY(-3px);
+}
+
+.big-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* ----- Small Buttons ----- */

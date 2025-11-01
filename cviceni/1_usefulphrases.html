@@ -17,7 +17,7 @@
 
   <h1>Practice Useful Phrases</h1>
 
-  <!-- Previous & Next buttons with arrows -->
+  <!-- Previous & Next buttons -->
   <div class="big-buttons">
     <button id="prevBtn">← Previous</button>
     <button id="nextBtn">Next →</button>
@@ -29,13 +29,11 @@
     <div id="czechCard" class="card">Click to show Czech</div>
   </div>
 
-
-<!-- Progress bar -->
-<div class="progress-bar">
-  <div id="progress" class="progress"></div>
-</div>
-<!-- Numeric progress will be inserted below by JS -->
-
+  <!-- Progress bar -->
+  <div class="progress-bar">
+    <div id="progress" class="progress"></div>
+  </div>
+  <div id="progressText" class="progress-text"></div>
 
   <!-- Vocabulary & Test buttons -->
   <div class="big-buttons">
@@ -58,9 +56,7 @@
   <script>
     fetch("../css/footer.html")
       .then(response => response.text())
-      .then(data => {
-        document.body.insertAdjacentHTML("beforeend", data);
-      })
+      .then(data => document.body.insertAdjacentHTML("beforeend", data))
       .catch(error => console.error("Footer failed to load:", error));
   </script>
 
