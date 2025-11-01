@@ -1,70 +1,32 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-  <meta charset="UTF-8">
-  <title>Practice: Useful Phrases – CzechByLukas</title>
-
-  <!-- ✅ Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9067674021614925"
-          crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-9067674021614925">
-
-  <!-- ✅ Shared & Practice-Specific CSS -->
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/practice.css">
-</head>
-
-<body class="vocab-page">
-
-  <!-- ✅ Page Title -->
-  <h1>Practice Useful Phrases</h1>
-
-  <!-- ✅ Navigation Buttons (Previous / Next) -->
-  <div class="big-buttons">
-    <button id="prevBtn">← Previous</button>
-    <button id="nextBtn">Next →</button>
-  </div>
-
-  <!-- ✅ Flashcards -->
-  <div class="vocab-container">
-    <div id="englishCard" class="card"></div>
-    <!-- no hardcoded text here; JS inserts "Click to show Czech" -->
-    <div id="czechCard" class="card"></div>
-  </div>
-
-  <!-- ✅ Progress Bar + Numeric Counter -->
-  <div class="progress-wrapper">
-    <div class="progress-bar">
-      <div id="progress" class="progress"></div>
-    </div>
-    <div id="progressText" class="progress-text"></div>
-  </div>
-
-  <!-- ✅ Vocabulary & Test Buttons -->
-  <div class="big-buttons">
-    <a href="../vocabulary/1_usefulphrases.html">📘 Vocabulary</a>
-    <a href="../tests/1_usefulphrases.html">📝 Test</a>
-  </div>
-
-  <!-- ✅ Small Buttons: Home & Exercise List -->
-  <div class="small-buttons">
-    <a href="../index.html">🏠 Home</a>
-    <a href="../exercise/index.html">🧠 Exercise List</a>
-  </div>
-
-  <!-- ✅ Load Vocabulary Data First -->
-  <script src="../data/1_usefulphrases.js"></script>
-
-  <!-- ✅ Then Load Practice Logic -->
-  <script src="../js/practice.js"></script>
-
-  <!-- ✅ Footer (Fetched Dynamically) -->
-  <script>
-    fetch("../css/footer.html")
-      .then(res => res.text())
-      .then(data => document.body.insertAdjacentHTML("beforeend", data))
-      .catch(err => console.error("Footer failed to load:", err));
-  </script>
-
-</body>
-</html>
+// data/1_usefulphrases.js
+const vocab = [
+  { czech: "Dobrý den", english: "How do you do (Good day)", pronunciation: "dobree den" },
+  { czech: "Dobré ráno", english: "Good morning", pronunciation: "dobreh rahno" },
+  { czech: "Dobrý večer", english: "Good evening", pronunciation: "dobree vecher" },
+  { czech: "Dobrou noc", english: "Good night", pronunciation: "dobrow nots" },
+  { czech: "Na shledanou", english: "Goodbye", pronunciation: "nascledanow" },
+  { czech: "Prosím", english: "Please", pronunciation: "proseem" },
+  { czech: "Děkuji", english: "Thank you", pronunciation: "dyekuyi" },
+  { czech: "S dovolením", english: "Excuse me", pronunciation: "s dovolenyeem" },
+  { czech: "Lituji", english: "I’m sorry (I regret)", pronunciation: "lituyi" },
+  { czech: "Promiňte", english: "Excuse me, pardon", pronunciation: "promintey" },
+  { czech: "Ano", english: "Yes", pronunciation: "ano" },
+  { czech: "Ne", english: "No", pronunciation: "neh" },
+  { czech: "Mluvíte anglicky?", english: "Do you speak English?", pronunciation: "mluveete anglitsky?" },
+  { czech: "Nerozumím", english: "I don't understand", pronunciation: "nerozumeem" },
+  { czech: "Prosím napište to", english: "Please, write it down", pronunciation: "proseem napishte to" },
+  { czech: "Kde je restaurace", english: "Where is a restaurant", pronunciation: "kde ye restauratse" },
+  { czech: "banka", english: "bank", pronunciation: "banca" },
+  { czech: "Toaleta, Záchod", english: "Bathroom, toilet", pronunciation: "toaleta, zahkod" },
+  { czech: "Muži, Páni", english: "Men", pronunciation: "mushi, pahnyi" },
+  { czech: "Ženy, Dámy", english: "Women", pronunciation: "zheny, dahmy" },
+  { czech: "Kolik to stojí", english: "How much does it cost?", pronunciation: "kolik to stoyee" },
+  { czech: "Pane vrchní!", english: "Waiter!", pronunciation: "pane vrkhnyee" },
+  { czech: "Jedno pivo, prosím", english: "One beer, please", pronunciation: "yedno pivo proseem" },
+  { czech: "Účet, prosím", english: "The check, please!", pronunciation: "platyit proseem" },
+  { czech: "zde, tady (tu)", english: "here", pronunciation: "tady" },
+  { czech: "Co si dáte?", english: "What would you like?", pronunciation: "co si daate" },
+  { czech: "sto korun", english: "hundred crowns", pronunciation: "sto corun" },
+  { czech: "Ještě něco?", english: "Anything else?", pronunciation: "yeshtee nietso" },
+  { czech: "tam", english: "there", pronunciation: "tam" }
+];
