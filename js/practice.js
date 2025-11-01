@@ -10,12 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const progressBar = document.getElementById("progress");
   const progressText = document.getElementById("progressText");
 
-  function showCard(index) {
-    const item = vocab[index];
-    englishCard.textContent = item.english;
-    czechCard.textContent = "Click to show Czech";
-    czechCard.dataset.czech = item.czech;
-    updateProgress();
+// Set Czech card to hidden
+  czechCard.textContent = "Click to show Czech";
+  czechCard.dataset.czech = item.czech;
+
+  // Apply the grey color
+  czechCard.classList.add("hidden-czech");
+
+  updateProgress();
   }
 
   function updateProgress() {
@@ -28,8 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 czechCard.addEventListener("click", () => {
   czechCard.textContent = czechCard.dataset.czech;
-  czechCard.style.color = "black"; // <-- turns text black when revealed
-});
+
+  // Remove grey color when revealed
+  czechCard.classList.remove("hidden-czech");});
 
 
   nextBtn.addEventListener("click", () => {

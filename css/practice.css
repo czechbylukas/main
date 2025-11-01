@@ -33,6 +33,11 @@ body.vocab-page h1 {
   white-space: pre-wrap;
   word-break: break-word;
   line-height: 1.3em;
+
+/* Hidden Czech text (Click to show) */
+.card.hidden-czech {
+  color: #999;   /* light grey */
+
 }
 
 .card:hover {
