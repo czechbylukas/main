@@ -21,22 +21,24 @@
     a { margin: 10px; padding: 10px 20px; background: #4caf50; color: white; text-decoration: none; border-radius: 8px; }
     a:hover { background: #3e8e41; }
   </style>
+
+
 </head>
 <body>
-  <main>
-  <h1>Useful Phrases</h1>
-  <table id="vocabTable">
-    <tr><th>Česky</th><th>Výslovnost</th><th>Anglicky</th></tr>
-  </table>
+  <div class="page-content">
+    <main>
+      <h1>Useful Phrases</h1>
+      <table id="vocabTable">
+        <tr><th>Česky</th><th>Výslovnost</th><th>Anglicky</th></tr>
+      </table>
 
-  <div class="links">
-    <a href="../cviceni/1_usefulphrases/1_usefulphrases.html">Procvičování</a>
-    <a href="../testy/1_usefulphrases.html">Test</a>
-    <a href="../index.html">🏠 Hlavní stránka</a>
-
-
+      <div class="links">
+        <a href="../cviceni/1_usefulphrases/1_usefulphrases.html">Procvičování</a>
+        <a href="../testy/1_usefulphrases.html">Test</a>
+        <a href="../index.html">🏠 Hlavní stránka</a>
+      </div>
+    </main>
   </div>
-  </main>
 
   <script src="../data/1_usefulphrases.js"></script>
   <script>
@@ -48,16 +50,11 @@
     });
   </script>
 
-
-<script>
-  fetch("https://czechbylukas.github.io/css/footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.body.insertAdjacentHTML("beforeend", data);
-    })
-    .catch(error => console.error("Footer failed to load:", error));
-</script>
-
-
+  <script>
+    fetch("https://czechbylukas.github.io/css/footer.html")
+      .then(response => response.text())
+      .then(data => document.body.insertAdjacentHTML("beforeend", data))
+      .catch(error => console.error("Footer failed to load:", error));
+  </script>
 </body>
 </html>
