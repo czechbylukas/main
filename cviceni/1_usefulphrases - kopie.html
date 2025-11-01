@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../css/style.css">
 
   <style>
-    /* Practice cards style */
+    /* Ensure practice cards use the same hover/rounded style */
     .vocab-container {
       display: flex;
       justify-content: center;
@@ -42,7 +42,24 @@
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
 
-    /* Progress bar */
+    /* Big button style like vocabulary page */
+    .big-buttons button {
+      font-size: 1.2rem;
+      padding: 16px 36px;
+      background: linear-gradient(180deg, #4caf50 0%, #3e8e41 100%);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .big-buttons button:hover {
+      background: linear-gradient(180deg, #3e8e41 0%, #2f6f31 100%);
+      transform: translateY(-3px);
+    }
+
     .progress-bar {
       width: 80%;
       margin: 20px auto;
@@ -59,63 +76,32 @@
       transition: width 0.3s;
     }
 
-    /* Big buttons row */
-    .big-buttons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 40px;
-      margin: 20px 0;
-      flex-wrap: wrap;
-    }
-
-    .big-buttons a, .big-buttons button {
-      font-size: 1.15rem;
-      padding: 16px 36px;
-      background: linear-gradient(180deg, #4caf50 0%, #3e8e41 100%);
-      color: #fff;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.2s, background 0.2s;
-    }
-
-    .big-buttons a:hover, .big-buttons button:hover {
-      background: linear-gradient(180deg, #3e8e41 0%, #2f6f31 100%);
-      transform: translateY(-3px);
-    }
-
-    /* Small buttons row */
     .small-buttons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 18px;
-      margin-top: 24px;
-      margin-bottom: 40px;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      gap: 18px !important;
+      margin-top: 24px !important;
     }
 
     .small-buttons a {
       font-size: 0.95rem;
       padding: 8px 18px;
-      background: #ffffff;
-      color: #2f5230;
-      border: 2px solid #4CAF50;
-      border-radius: 10px;
-      text-decoration: none;
+      background: #ffffff !important;
+      color: #2f5230 !important;
+      border: 2px solid #4CAF50 !important;
+      border-radius: 10px !important;
+      text-decoration: none !important;
     }
 
     .small-buttons a:hover {
-      background: #f2fff2;
+      background: #f2fff2 !important;
       color: #000;
     }
 
     body.vocab-page h1 {
       text-align: center;
       color: #2e5c2e;
-      margin-bottom: 20px;
     }
   </style>
 </head>
@@ -123,32 +109,22 @@
 
   <h1>Practice Useful Phrases</h1>
 
-  <!-- Next Phrase button -->
   <div class="big-buttons">
     <button id="nextBtn">Next Phrase 🧠</button>
   </div>
 
-  <!-- Practice cards -->
   <div class="vocab-container">
     <div id="englishCard" class="card"></div>
     <div id="czechCard" class="card">Click to show Czech</div>
   </div>
 
-  <!-- Progress bar -->
   <div class="progress-bar">
     <div id="progress" class="progress"></div>
   </div>
 
-  <!-- Vocabulary & Test buttons -->
-  <div class="big-buttons">
-    <a href="../slovicka/1_usefulphrases.html">📘 Vocabulary</a>
-    <a href="../testy/1_usefulphrases.html">📝 Test</a>
-  </div>
-
-  <!-- Small buttons: Home and Exercise List -->
   <div class="small-buttons">
     <a href="../index.html">🏠 Home</a>
-    <a href="../cviceni/index.html">🧠 Exercise List</a>
+    <a href="../slovicka/1_usefulphrases.html">📘 Vocabulary</a>
   </div>
 
   <!-- Load vocab data -->
@@ -165,9 +141,9 @@
 
     function showCard(index) {
       const item = vocab[index];
-      englishCard.textContent = item.english;
-      czechCard.textContent = "Click to show Czech";
-      czechCard.dataset.czech = item.czech;
+      englishCard.textContent = item.english;        // show English
+      czechCard.textContent = "Click to show Czech"; // hide Czech initially
+      czechCard.dataset.czech = item.czech;          // store Czech translation
       updateProgress();
     }
 
@@ -192,7 +168,6 @@
     showCard(currentIndex);
   </script>
 
-  <!-- Footer -->
   <script>
     fetch("../css/footer.html")
       .then(response => response.text())
