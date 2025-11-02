@@ -3,7 +3,7 @@
     "home": "🏠 Inicio",
     "vocabulary": "📘 Vocabulario",
     "practicing": "❓ Practicar",
-    "testing": "💬 Tests",
+    "testing": "💬 Pruebas",
     "support": "🛠 Apoyo"
   },
 
@@ -23,8 +23,8 @@
   "link-ex-past-tense": "Pasado",
   "link-ex-question-generator": "Generador de preguntas (A0)",
 
-  "heading-tests": "Tests",
-  "heading-testList": "Lista de tests",
+  "heading-tests": "Pruebas",
+  "heading-testList": "Lista de pruebas",
   "link-test-useful-phrases": "Frases útiles",
   "link-test-past-tense": "Pasado",
 
@@ -35,7 +35,7 @@
     "search": "Buscar",
     "home": "🏠 Inicio",
     "exerciseList": "🧠 Lista de ejercicios",
-    "testList": "📝 Todos los tests",
+    "testList": "📝 Todas las pruebas",
     "practice": "🧠 Practicar",
     "test": "📝 Test",
     "vocabulary": "📘 Vocabulario"
