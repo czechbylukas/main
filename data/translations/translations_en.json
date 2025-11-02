@@ -1,10 +1,10 @@
 {
   "menu": {
-    "home": "Home",
-    "vocabulary": "Vocabulary",
-    "practicing": "Practicing",
-    "testing": "Testing",
-    "support": "Support"
+    "home": "🏠 Main Page",
+    "vocabulary": "📘 Vocabulary",
+    "practicing": "❓ Practicing",
+    "testing": "💬 Testing",
+    "support": "🛠 Support"
   },
   "headings": {
     "welcome": "Welcome to CzechByLukas",

@@ -1,10 +1,10 @@
-{
+{s
   "menu": {
-    "home": "Domů",
-    "vocabulary": "Slovník",
-    "practicing": "Procvičování",
-    "testing": "Testování",
-    "support": "Podpora"
+    "home": "🏠 Domů",
+    "vocabulary": "📘 Slovník",
+    "practicing": "❓ Procvičování",
+    "testing": "💬 Testování",
+    "support": "🛠 Podpora"
   },
   "headings": {
     "welcome": "Vítejte na CzechByLukas",
