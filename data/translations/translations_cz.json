@@ -56,4 +56,12 @@
 
   "footer-text": "❤️ Tuto stránku jsem vytvořil, abych lidem pomohl s učením češtiny. Pokud mě chceš podpořit,",
   "footer-link": "klikni zde"
+},
+
+
+"tableHeadings": {
+  "czech": "Čeština",
+  "pronunciation": "Výslovnost",
+  "english": "Angličtina"
 }
+

@@ -56,4 +56,12 @@
 
   "footer-text": "❤️ I built this website myself to help people learn Czech. If you’d like to support my work,",
   "footer-link": "click here"
+},
+
+
+"tableHeadings": {
+  "czech": "Czech",
+  "pronunciation": "Pronunciation",
+  "english": "English"
 }
+
