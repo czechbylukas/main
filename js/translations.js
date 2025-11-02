@@ -41,7 +41,8 @@ function applyTranslations() {
     "link-test-useful-phrases",
     "link-test-past-tense",
     "heading-vocabTitle",
-    "heading-practice"
+    "heading-practice",
+    "heading-tests"
   ];
 
 idsToTranslate.forEach(id => {
