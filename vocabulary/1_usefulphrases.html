@@ -15,9 +15,8 @@
 </head>
 
 <body class="vocab-page">
-
 <header>
-  <h1 id="heading-vocabTitle">Useful Phrases - Vocabulary</h1>
+  <h1 id="heading-vocab">Useful Phrases – Vocabulary</h1>
   <div id="language-selector-container"></div>
 </header>
 
@@ -45,61 +44,57 @@
 </main>
 
 <footer class="support-note">
-  <span id="footer-text">❤️ I build this site myself to help people learn Czech. If you’d like to support my work, <a id="footer-link" href="../support.html">click here</a>.</span>
+  <span id="footer-text">
+    ❤️ I build this site myself to help people learn Czech.
+    If you’d like to support my work, <a id="footer-link" href="../support.html">click here</a>.
+  </span>
 </footer>
 
 <!-- Vocabulary data -->
 <script src="../data/1_usefulphrases.js"></script>
 
-<!-- Translations -->
+<!-- Shared translations -->
 <script src="../js/translations.js"></script>
 
-<!-- Render vocab table -->
+<!-- Shared language selector -->
+<script src="../js/language-selector.js"></script>
+
+<!-- Vocabulary table renderer -->
 <script>
   function renderVocab() {
     const lang = localStorage.getItem("selectedLanguage") || "en";
     const tbody = document.getElementById("vocabBody");
     tbody.innerHTML = "";
 
+    // render table rows
     vocab.forEach(item => {
       const row = document.createElement("tr");
-      let colText;
 
-      if(lang === "cz") {
-        colText = item.english;
-      } else if(lang === "de") {
-        colText = item.german;
-      } else if(lang === "es") {
-        colText = item.spanish;
-      } else {
-        colText = item.english;
+      let translation;
+      switch (lang) {
+        case "cz": translation = item.english; break;
+        case "de": translation = item.german; break;
+        case "es": translation = item.spanish; break;
+        default:   translation = item.english; break;
       }
 
-      row.innerHTML = `<td>${item.czech}</td><td>${item.pronunciation}</td><td>${colText}</td>`;
+      // If Czech version — show Czech first, English last
+      if (lang === "cz") {
+        row.innerHTML = `<td>${item.czech}</td><td>${item.pronunciation}</td><td>${translation}</td>`;
+      } else {
+        row.innerHTML = `<td>${item.czech}</td><td>${item.pronunciation}</td><td>${translation}</td>`;
+      }
+
       tbody.appendChild(row);
     });
 
-    // Update translated texts if translations are loaded
-    if(translations[lang]) {
-      document.getElementById("page-title").textContent = translations[lang].pageTitle || "Useful Phrases | CzechByLukas";
-      document.getElementById("heading-vocabTitle").textContent = translations[lang].headings.usefulPhrases;
-      document.getElementById("table-czech").textContent = translations[lang].headings.czech;
-      document.getElementById("table-pronunciation").textContent = translations[lang].headings.pronunciation;
-      document.getElementById("table-english").textContent = translations[lang].headings.english;
-      document.getElementById("btn-practice").textContent = translations[lang].buttons.practice;
-      document.getElementById("btn-test").textContent = translations[lang].buttons.test;
-      document.getElementById("btn-home").textContent = translations[lang].buttons.home;
-      document.getElementById("btn-vocabList").textContent = translations[lang].buttons.vocabulary;
-      document.getElementById("footer-text").innerHTML = translations[lang].footer.text + ' <a href="../support.html">' + translations[lang].footer.link + '</a>';
-    }
+    // Table headings and buttons are handled by translations.js
+    applyTranslations();
   }
 
-  // Initial render
-  renderVocab();
+  document.addEventListener("DOMContentLoaded", () => {
+    renderVocab();
+  });
 </script>
-
-<!-- Language selector -->
-<script src="../js/language-selector.js"></script>
-
 </body>
 </html>
