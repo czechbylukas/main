@@ -15,20 +15,32 @@ async function loadTranslations(lang) {
 function applyTranslations() {
   if (!translations) return;
 
-  // Headings
+  // --- Headings ---
   const hWelcome = document.getElementById("heading-welcome");
-  if (hWelcome && translations.headings && translations.headings.welcome) hWelcome.textContent = translations.headings.welcome;
-
-  const hVocab = document.getElementById("heading-vocab");
-  if (hVocab && translations.headings && translations.headings.vocab) hVocab.textContent = translations.headings.vocab;
+  if (hWelcome && translations["heading-welcome"]) hWelcome.textContent = translations["heading-welcome"];
 
   const hMainText = document.getElementById("heading-mainText");
-  if (hMainText && translations.headings && translations.headings.mainPageText) hMainText.textContent = translations.headings.mainPageText;
+  if (hMainText && translations["heading-mainPageText"]) hMainText.textContent = translations["heading-mainPageText"];
+
+  const hTopics = document.getElementById("heading-topics");
+  if (hTopics && translations["heading-topics"]) hTopics.textContent = translations["heading-topics"];
+
+  const hVocab = document.getElementById("heading-vocab");
+  if (hVocab && translations["heading-vocab"]) hVocab.textContent = translations["heading-vocab"];
 
   const hVocabList = document.getElementById("heading-vocabList");
-  if (hVocabList && translations.headings && translations.headings.vocabList) hVocabList.textContent = translations.headings.vocabList;
+  if (hVocabList && translations["heading-vocabList"]) hVocabList.textContent = translations["heading-vocabList"];
 
-  // Menu
+  const hUseful = document.getElementById("link-ex-useful-phrases");
+  if (hUseful && translations["link-ex-useful-phrases"]) hUseful.textContent = translations["link-ex-useful-phrases"];
+
+  const hPast = document.getElementById("link-ex-past-tense");
+  if (hPast && translations["link-ex-past-tense"]) hPast.textContent = translations["link-ex-past-tense"];
+
+  const hQuestion = document.getElementById("link-ex-question-generator");
+  if (hQuestion && translations["link-ex-question-generator"]) hQuestion.textContent = translations["link-ex-question-generator"];
+
+  // --- Menu ---
   const mHome = document.getElementById("menu-home");
   if (mHome && translations.menu && translations.menu.home) mHome.textContent = translations.menu.home;
 
@@ -41,24 +53,16 @@ function applyTranslations() {
   const mTest = document.getElementById("menu-testing");
   if (mTest && translations.menu && translations.menu.testing) mTest.textContent = translations.menu.testing;
 
-  // Links on vocab page
-  const lUseful = document.getElementById("link-usefulPhrases");
-  if (lUseful && translations.links && translations.links.usefulPhrases) lUseful.textContent = translations.links.usefulPhrases;
-
-  const lPast = document.getElementById("link-pastTense");
-  if (lPast && translations.links && translations.links.pastTense) lPast.textContent = translations.links.pastTense;
-
-  // Footer
+  // --- Footer ---
   const footerText = document.getElementById("footer-text");
   const footerLink = document.getElementById("footer-link");
-  if (footerText && footerLink && translations.footer) {
-    // set text before link
-    footerText.childNodes[0].nodeValue = translations.footer.text + " ";
-    footerLink.textContent = translations.footer.link;
+  if (footerText && footerLink) {
+    if (translations["footer-text"]) footerText.childNodes[0].nodeValue = translations["footer-text"] + " ";
+    if (translations["footer-link"]) footerLink.textContent = translations["footer-link"];
   }
 }
 
-// load default on DOM ready
+// Load default language on DOM ready
 document.addEventListener("DOMContentLoaded", () => {
   loadTranslations(currentLang);
 });
