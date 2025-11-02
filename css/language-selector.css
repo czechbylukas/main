@@ -1,3 +1,4 @@
+/* Container for the language selector */
 .language-selector {
     position: absolute;
     top: 10px;
@@ -5,6 +6,7 @@
     user-select: none;
 }
 
+/* Current flag button */
 .language-selector button {
     background: none;
     border: none;
@@ -12,6 +14,7 @@
     cursor: pointer;
 }
 
+/* Flag images */
 .language-selector .flag-icon {
     width: 24px;
     height: 16px;
@@ -30,21 +33,23 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    display: flex;
+    display: none;       /* HIDDEN by default */
     flex-direction: column;
     z-index: 1000;
 }
 
-/* Hidden by default */
-.language-selector ul.hidden {
-    display: none;
+/* Show dropdown */
+.language-selector ul.show {
+    display: flex;
 }
 
+/* Dropdown list items */
 .language-selector ul li {
     padding: 5px 10px;
     transition: background 0.2s;
 }
 
+/* Hover effect for items */
 .language-selector ul li:hover {
     background: #f0f0f0;
 }
