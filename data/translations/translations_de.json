@@ -6,21 +6,26 @@
     "testing": "💬 Tests",
     "support": "🛠 Unterstützung"
   },
+
   "headings": {
     "welcome": "Willkommen bei CzechByLukas",
     "mainPageText": "Dies ist die Hauptseite. Ich werde weitere Kapitel und Inhalte hinzufügen.",
     "topics": "Themen und Anwendungen",
     "vocabList": "Vokabelliste",
-    "exerciseInstructions": "Wähle die richtige Übersetzung",
-    "exerciseList": "Übungsübersicht",
-    "testList": "Testübersicht",
     "practice": "Üben",
     "tests": "Tests",
     "usefulPhrases": "Nützliche Phrasen",
     "pastTense": "Vergangenheit",
     "questionGenerator": "Fragegenerator (A0)"
-    "heading-topics": "Themen und Anwendungen",
   },
+
+  "heading-topics": "Themen und Anwendungen",
+  "heading-vocab": "Vokabeln",
+  "heading-vocabList": "Vokabelliste",
+  "heading-useful-phrases": "Nützliche Phrasen",
+  "heading-past-tense": "Vergangenheit",
+  "heading-question-generator": "Fragegenerator (A0)",
+
   "buttons": {
     "next": "Weiter",
     "prev": "Zurück",
@@ -29,10 +34,11 @@
     "home": "🏠 Start",
     "exerciseList": "🧠 Übungsübersicht",
     "testList": "📝 Alle Tests",
-    "vocabulary": "📘 Vokabeln",
     "practice": "🧠 Üben",
-    "test": "📝 Test"
+    "test": "📝 Test",
+    "vocabulary": "📘 Vokabeln"
   },
+
   "messages": {
     "loading": "Laden...",
     "error": "Etwas ist schiefgelaufen.",
@@ -41,46 +47,14 @@
     "timeRemaining": "⏱ Verbleibende Zeit:",
     "timesUp": "⏱ Zeit abgelaufen! Bitte reiche deine Antworten jetzt ein."
   },
+
   "placeholders": {
     "search": "Hier zum Suchen eingeben..."
   },
+
   "footer": {
     "text": "❤️ Ich habe diese Seite selbst erstellt, um Menschen beim Lernen von Tschechisch zu helfen. Wenn du meine Arbeit unterstützen möchtest,",
     "link": "klicke hier"
   },
-  "exercise": {
-    "title": "Übung: Nützliche Phrasen",
-    "progress": "Fortschritt",
-    "progressOf": "von",
-    "previous": "← Zurück",
-    "next": "Weiter →",
-    "vocabulary": "📘 Vokabeln",
-    "test": "📝 Test",
-    "home": "🏠 Start",
-    "exerciseList": "🧠 Übungsübersicht",
-    "clickToShow": "Klicken zum Anzeigen auf Tschechisch"
-  },
-  "test": {
-    "title": "Test – Nützliche Phrasen",
-    "instructions": "Du hast 10 Minuten, um den Test zu absolvieren. Nach dem Absenden werde ich deine Antworten sehen und korrigieren.",
-    "timer": "⏱ Verbleibende Zeit:",
-    "timesUp": "⏱ Zeit abgelaufen! Bitte reiche deine Antworten jetzt ein.",
-    "vocabulary": "📘 Vokabeln",
-    "practice": "🧠 Üben",
-    "home": "🏠 Start",
-    "allTests": "📝 Alle Tests"
-  },
-  "exerciseIndex": {
-    "title": "Üben",
-    "listHeading": "Übungsübersicht",
-    "usefulPhrases": "Nützliche Phrasen",
-    "pastTense": "Vergangenheit",
-    "questionGenerator": "Fragegenerator (A0)"
-  },
-  "testIndex": {
-    "title": "Tests",
-    "listHeading": "Testübersicht",
-    "usefulPhrases": "Nützliche Phrasen",
-    "pastTense": "Vergangenheit"
-  }
-}
+
+  "exercise

@@ -6,22 +6,26 @@
     "testing": "💬 Pruebas",
     "support": "🛠 Apoyo"
   },
+
   "headings": {
     "welcome": "Bienvenido a CzechByLukas",
-    "mainPageText": "Esta es la página principal. Agregaré más capítulos y contenido.",
+    "mainPageText": "Esta es la página principal. Iré añadiendo más capítulos y contenido.",
     "topics": "Temas y aplicaciones",
     "vocabList": "Lista de vocabulario",
-    "exerciseInstructions": "Elige la traducción correcta",
-    "exerciseList": "Lista de ejercicios",
-    "testList": "Lista de pruebas",
     "practice": "Práctica",
     "tests": "Pruebas",
     "usefulPhrases": "Frases útiles",
     "pastTense": "Pasado",
     "questionGenerator": "Generador de preguntas (A0)"
-    "heading-topics": "Temas y aplicaciones"
-
   },
+
+  "heading-topics": "Temas y aplicaciones",
+  "heading-vocab": "Vocabulario",
+  "heading-vocabList": "Lista de vocabulario",
+  "heading-useful-phrases": "Frases útiles",
+  "heading-past-tense": "Pasado",
+  "heading-question-generator": "Generador de preguntas (A0)",
+
   "buttons": {
     "next": "Siguiente",
     "prev": "Anterior",
@@ -30,47 +34,45 @@
     "home": "🏠 Inicio",
     "exerciseList": "🧠 Lista de ejercicios",
     "testList": "📝 Todas las pruebas",
-    "vocabulary": "📘 Vocabulario",
     "practice": "🧠 Práctica",
-    "test": "📝 Prueba"
+    "test": "📝 Prueba",
+    "vocabulary": "📘 Vocabulario"
   },
+
   "messages": {
     "loading": "Cargando...",
     "error": "Algo salió mal.",
-    "empty": "No se encontraron elementos.",
+    "empty": "No se encontraron resultados.",
     "clickToShow": "Haz clic para mostrar en checo",
     "timeRemaining": "⏱ Tiempo restante:",
-    "timesUp": "⏱ Se acabó el tiempo! Por favor envía tus respuestas."
+    "timesUp": "⏱ ¡Se acabó el tiempo! Envía tus respuestas ahora."
   },
+
   "placeholders": {
     "search": "Escribe aquí para buscar..."
   },
+
   "footer": {
-    "text": "❤️ Construí este sitio para ayudar a la gente a aprender checo. Si deseas apoyar mi trabajo,",
+    "text": "❤️ Creé esta página yo mismo para ayudar a la gente a aprender checo. Si quieres apoyar mi trabajo,",
     "link": "haz clic aquí"
   },
+
   "exercise": {
-    "title": "Práctica: Frases útiles",
+    "title": "Ejercicio: Frases útiles",
     "progress": "Progreso",
     "progressOf": "de",
     "previous": "← Anterior",
     "next": "Siguiente →",
-    "vocabulary": "📘 Vocabulario",
-    "test": "📝 Prueba",
-    "home": "🏠 Inicio",
-    "exerciseList": "🧠 Lista de ejercicios",
     "clickToShow": "Haz clic para mostrar en checo"
   },
+
   "test": {
     "title": "Prueba – Frases útiles",
-    "instructions": "Tienes 10 minutos para completar la prueba. Después de enviar, veré y corregiré tus respuestas.",
+    "instructions": "Tienes 10 minutos para completar la prueba. Después de enviarla, veré y corregiré tus respuestas.",
     "timer": "⏱ Tiempo restante:",
-    "timesUp": "⏱ Se acabó el tiempo! Por favor envía tus respuestas.",
-    "vocabulary": "📘 Vocabulario",
-    "practice": "🧠 Práctica",
-    "home": "🏠 Inicio",
-    "allTests": "📝 Todas las pruebas"
+    "timesUp": "⏱ ¡Se acabó el tiempo! Envía tus respuestas ahora."
   },
+
   "exerciseIndex": {
     "title": "Práctica",
     "listHeading": "Lista de ejercicios",
@@ -78,9 +80,15 @@
     "pastTense": "Pasado",
     "questionGenerator": "Generador de preguntas (A0)"
   },
+
   "testIndex": {
     "title": "Pruebas",
     "listHeading": "Lista de pruebas",
+    "usefulPhrases": "Frases útiles",
+    "pastTense": "Pasado"
+  },
+
+  "links": {
     "usefulPhrases": "Frases útiles",
     "pastTense": "Pasado"
   }
