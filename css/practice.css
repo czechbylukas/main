@@ -136,7 +136,7 @@ body.vocab-page h1 {
 }
 
 .card.click-to-show {
-  color: #888;       /* grey text */
+  color: #dddddd;       /* grey text */
   font-style: italic; 
   cursor: pointer;
 }
