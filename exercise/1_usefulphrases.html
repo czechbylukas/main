@@ -2,37 +2,39 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
-  <title>Practice: Useful Phrases – CzechByLukas</title>
+  <title id="page-title">Practice: Useful Phrases – CzechByLukas</title>
 
-  <!-- ✅ Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9067674021614925"
-          crossorigin="anonymous"></script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9067674021614925" crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-9067674021614925">
 
-  <!-- ✅ Shared & Practice-Specific CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/practice.css">
+  <link rel="stylesheet" href="../css/language-selector.css">
 </head>
 
 <body class="vocab-page">
 
-  <!-- ✅ Page Title -->
-  <h1>Practice Useful Phrases</h1>
+<header>
+  <h1 id="heading-practice">Practice Useful Phrases</h1>
+  <div id="language-selector-container"></div>
+</header>
 
-  <!-- ✅ Navigation Buttons (Previous / Next) -->
-  <div class="big-buttons">
-    <button id="prevBtn">← Previous</button>
-    <button id="nextBtn">Next →</button>
-  </div>
-
-  <!-- ✅ Flashcards -->
+<main>
+  <!-- Flashcards -->
   <div class="vocab-container">
     <div id="englishCard" class="card"></div>
-    <!-- no hardcoded text here; JS inserts "Click to show Czech" -->
     <div id="czechCard" class="card"></div>
   </div>
 
-  <!-- ✅ Progress Bar + Numeric Counter -->
+  <!-- Navigation buttons -->
+  <div class="big-buttons">
+    <button id="prevBtn"></button>
+    <button id="nextBtn"></button>
+  </div>
+
+  <!-- Progress bar -->
   <div class="progress-wrapper">
     <div class="progress-bar">
       <div id="progress" class="progress"></div>
@@ -40,31 +42,56 @@
     <div id="progressText" class="progress-text"></div>
   </div>
 
-  <!-- ✅ Vocabulary & Test Buttons -->
+  <!-- Vocabulary & Test buttons -->
   <div class="big-buttons">
-    <a href="../vocabulary/1_usefulphrases.html">📘 Vocabulary</a>
-    <a href="../tests/1_usefulphrases.html">📝 Test</a>
+    <a id="btn-vocab" href="../vocabulary/1_usefulphrases.html"></a>
+    <a id="btn-test" href="../tests/1_usefulphrases.html"></a>
   </div>
 
-  <!-- ✅ Small Buttons: Home & Exercise List -->
+  <!-- Small buttons: Home & Exercise List -->
   <div class="small-buttons">
-    <a href="../index.html">🏠 Home</a>
-    <a href="../exercise/index.html">🧠 Exercise List</a>
+    <a id="btn-home" href="../index.html"></a>
+    <a id="btn-exerciseList" href="../exercise/index.html"></a>
   </div>
+</main>
 
-  <!-- ✅ Load Vocabulary Data First -->
-  <script src="../data/1_usefulphrases.js"></script>
+<footer class="support-note" id="footer-container"></footer>
 
-  <!-- ✅ Then Load Practice Logic -->
-  <script src="../js/practice.js"></script>
+<!-- Vocabulary data -->
+<script src="../data/1_usefulphrases.js"></script>
 
-  <!-- ✅ Footer (Fetched Dynamically) -->
-  <script>
-    fetch("../css/footer.html")
-      .then(res => res.text())
-      .then(data => document.body.insertAdjacentHTML("beforeend", data))
-      .catch(err => console.error("Footer failed to load:", err));
-  </script>
+<!-- Translations -->
+<script src="../js/translations.js"></script>
+
+<!-- Language selector -->
+<script src="../js/language-selector.js"></script>
+
+<!-- Practice logic with translations -->
+<script src="../js/practice.js"></script>
+
+<script>
+  function applyPracticeTranslations() {
+    const lang = localStorage.getItem("selectedLanguage") || "en";
+    const t = translations[lang];
+
+    document.getElementById("heading-practice").textContent = t["heading-practice"];
+    document.getElementById("prevBtn").textContent = t["button-prev"];
+    document.getElementById("nextBtn").textContent = t["button-next"];
+    document.getElementById("btn-vocab").textContent = t["button-vocab"];
+    document.getElementById("btn-test").textContent = t["button-test"];
+    document.getElementById("btn-home").textContent = t["button-home"];
+    document.getElementById("btn-exerciseList").textContent = t["button-exerciseList"];
+    
+    // Footer
+    document.getElementById("footer-container").innerHTML = `
+      <span>${t["footer-text"]} <a href="../support.html">${t["footer-link"]}</a></span>
+    `;
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    applyPracticeTranslations();
+  });
+</script>
 
 </body>
 </html>
