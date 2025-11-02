@@ -2,7 +2,7 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
-  <title>Useful Phrases | CzechByLukas</title>
+  <title id="page-title">Useful Phrases | CzechByLukas</title>
 
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
@@ -48,17 +48,17 @@
 
   <!-- Vocabulary data -->
   <script src="../data/1_usefulphrases.js"></script>
+
   <!-- Translations -->
   <script src="../js/translations.js"></script>
 
   <script>
     function renderVocab() {
-      // Get selected language from localStorage (default to English)
       const lang = localStorage.getItem("language") || "en";
       const tbody = document.getElementById("vocabBody");
-      tbody.innerHTML = ""; // clear table
+      tbody.innerHTML = "";
 
-      // Fill table dynamically based on selected language
+      // Fill vocabulary table
       vocab.forEach(item => {
         const row = document.createElement("tr");
         let colText;
@@ -72,16 +72,19 @@
         tbody.appendChild(row);
       });
 
-      // Update table headers and buttons text
-      document.getElementById("heading-vocabTitle").textContent = translations[lang].headings.usefulPhrases;
-      document.getElementById("table-czech").textContent = translations[lang].headings.czech;
-      document.getElementById("table-pronunciation").textContent = translations[lang].headings.pronunciation;
-      document.getElementById("table-english").textContent = translations[lang].headings.english;
-      document.getElementById("btn-practice").textContent = translations[lang].buttons.practice;
-      document.getElementById("btn-test").textContent = translations[lang].buttons.test;
-      document.getElementById("btn-home").textContent = translations[lang].buttons.home;
-      document.getElementById("btn-vocabList").textContent = translations[lang].buttons.vocabulary;
-      document.getElementById("footer-text").innerHTML = translations[lang].footer.text + ' <a href="../support.html">' + translations[lang].footer.link + '</a>';
+      // Update page elements with translations
+      if (translations[lang]) {
+        document.getElementById("page-title").textContent = translations[lang].pageTitle || "Useful Phrases | CzechByLukas";
+        document.getElementById("heading-vocabTitle").textContent = translations[lang].headings.usefulPhrases;
+        document.getElementById("table-czech").textContent = translations[lang].headings.czech;
+        document.getElementById("table-pronunciation").textContent = translations[lang].headings.pronunciation;
+        document.getElementById("table-english").textContent = translations[lang].headings.english;
+        document.getElementById("btn-practice").textContent = translations[lang].buttons.practice;
+        document.getElementById("btn-test").textContent = translations[lang].buttons.test;
+        document.getElementById("btn-home").textContent = translations[lang].buttons.home;
+        document.getElementById("btn-vocabList").textContent = translations[lang].buttons.vocabulary;
+        document.getElementById("footer-text").innerHTML = translations[lang].footer.text + ' <a href="../support.html">' + translations[lang].footer.link + '</a>';
+      }
     }
 
     // Initial render
