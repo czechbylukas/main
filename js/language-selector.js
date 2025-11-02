@@ -9,10 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("language-selector-container");
   if (!container) return;
 
-  // Load saved language or default to English
   let currentLang = localStorage.getItem("selectedLanguage") || "en";
 
-  // Current flag button
   const btn = document.createElement("button");
   btn.id = "current-lang-btn";
   btn.type = "button";
@@ -21,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
   btn.style.cursor = "pointer";
   container.appendChild(btn);
 
-  // Dropdown list
   const dropdown = document.createElement("ul");
   dropdown.id = "lang-dropdown";
   container.appendChild(dropdown);
@@ -41,43 +38,40 @@ document.addEventListener("DOMContentLoaded", () => {
         dropdown.appendChild(li);
       }
     });
-    dropdown.style.display = "none"; // hidden by default
+    dropdown.style.display = "none";
   }
 
-  // Apply translations and update HTML lang
-function applyLanguage(lang) {
-  currentLang = lang;
-  localStorage.setItem("selectedLanguage", lang); // remember selection
-  document.documentElement.setAttribute("lang", lang); // accessibility & SEO
-  updateCurrentFlag();
-  buildDropdown();
+  async function applyLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem("selectedLanguage", lang);
+    document.documentElement.setAttribute("lang", lang);
+    updateCurrentFlag();
+    buildDropdown();
 
-  // Update translations in text (existing function)
-  if (typeof loadTranslations === "function") loadTranslations(lang);
+    // Wait for translations to load
+    if (typeof loadTranslations === "function") {
+      await loadTranslations(lang);
+    }
 
-  // NEW — update the vocabulary table
-  if (typeof renderVocab === "function") renderVocab();
-}
-
+    // Now render the table
+    if (typeof renderVocab === "function") renderVocab();
+  }
 
   // Initialize
   applyLanguage(currentLang);
 
-  // Toggle dropdown
-  btn.addEventListener("click", (e) => {
+  btn.addEventListener("click", e => {
     e.stopPropagation();
     dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
   });
 
-  // Select language from dropdown
-  dropdown.addEventListener("click", (e) => {
+  dropdown.addEventListener("click", e => {
     const li = e.target.closest("li");
     if (!li) return;
     applyLanguage(li.dataset.lang);
   });
 
-  // Close dropdown clicking outside
-  document.addEventListener("click", (e) => {
+  document.addEventListener("click", e => {
     if (!container.contains(e.target)) dropdown.style.display = "none";
   });
 });
