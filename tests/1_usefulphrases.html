@@ -9,14 +9,13 @@
           client="ca-pub-9067674021614925" crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-9067674021614925">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/language-selector.css">
 </head>
 <body class="vocab-page">
 
   <header>
-    <h1>Test – Useful Phrases</h1>
+    <h1 id="test-title"></h1>
 
     <!-- Language selector -->
     <div id="language-selector-container" style="margin-bottom: 15px;">
@@ -25,7 +24,7 @@
       <button class="lang-btn" data-lang="de">Deutsch</button>
     </div>
 
-    <p>You have 10 minutes to complete the test. After submitting, I will see and correct your answers.</p>
+    <p id="test-instructions"></p>
   </header>
 
   <!-- Timer -->
@@ -33,16 +32,36 @@
     ⏱ Time remaining: 10:00
   </div>
 
+  <!-- Google Form iframe -->
+  <iframe id="testIframe" 
+          style="width: 90%; min-height: 100vh; max-height: 10000px; border: none; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.2); background: white;"></iframe>
+
+  <!-- Big buttons -->
+  <div class="big-buttons">
+    <a id="btn-vocab" href="../vocabulary/1_usefulphrases.html">📘 Vocabulary</a>
+    <a id="btn-practice" href="../exercise/1_usefulphrases.html">🧠 Practice</a>
+  </div>
+
+  <!-- Small buttons -->
+  <div class="small-buttons">
+    <a id="btn-home" href="../index.html">🏠 Home</a>
+    <a id="btn-all-tests" href="../tests/index.html">📝 All Tests</a>
+  </div>
+
+  <!-- Load test links and translations -->
+  <script src="../data/translations/tests_links.js"></script>
+  <script src="../js/translations.js"></script>
   <script>
-    let timeLeft = 10 * 60; // 10 minutes
+    const lesson = "lesson1";
     const timerEl = document.getElementById('timer');
 
+    // Timer logic
+    let timeLeft = 10 * 60; // 10 minutes
     const countdown = setInterval(() => {
       const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
       const seconds = (timeLeft % 60).toString().padStart(2, '0');
       timerEl.textContent = `⏱ Time remaining: ${minutes}:${seconds}`;
       timeLeft--;
-
       if (timeLeft < 0) {
         clearInterval(countdown);
         timerEl.textContent = '⏱ Time’s up! Please submit your answers now.';
@@ -50,54 +69,39 @@
         alert('⏱ Time’s up! Please submit your answers now.');
       }
     }, 1000);
-  </script>
 
-  <!-- Dynamic Google Form iframe -->
-  <iframe id="testIframe" 
-          style="width: 90%; min-height: 100vh; max-height: 10000px; border: none; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.2); background: white;"></iframe>
-
-  <!-- Load test links -->
-  <script src="../data/translations/tests_links.js"></script>
-  <script>
-    const lesson = "lesson1";
-
-    function updateIframe(lang) {
+    // Update iframe and all texts
+    function updatePage(lang) {
+      // Update iframe
       const link = testLinks[lesson][lang] || testLinks[lesson]["en"];
       document.getElementById("testIframe").src = link;
+
+      // Update text
+      document.getElementById("test-title").textContent = translations[lang].test.title;
+      document.getElementById("test-instructions").textContent = translations[lang].test.instructions;
+      document.getElementById("btn-vocab").textContent = translations[lang].buttons.vocabulary;
+      document.getElementById("btn-practice").textContent = translations[lang].buttons.practice;
+      document.getElementById("btn-home").textContent = translations[lang].buttons.home;
+      document.getElementById("btn-all-tests").textContent = translations[lang].buttons.testList;
     }
 
     // Initial load
-    updateIframe("en");
+    updatePage("en");
 
     // Language selector buttons
     const buttons = document.querySelectorAll(".lang-btn");
     buttons.forEach(btn => {
       btn.addEventListener("click", () => {
-        const newLang = btn.dataset.lang;
-        updateIframe(newLang);
+        updatePage(btn.dataset.lang);
       });
     });
   </script>
-
-  <!-- Big buttons -->
-  <div class="big-buttons">
-    <a href="../vocabulary/1_usefulphrases.html">📘 Vocabulary</a>
-    <a href="../exercise/1_usefulphrases.html">🧠 Practice</a>
-  </div>
-
-  <!-- Small buttons -->
-  <div class="small-buttons">
-    <a href="../index.html">🏠 Home</a>
-    <a href="../tests/index.html">📝 All Tests</a>
-  </div>
 
   <!-- Footer -->
   <script>
     fetch("../css/footer.html")
       .then(response => response.text())
-      .then(data => {
-        document.body.insertAdjacentHTML("beforeend", data);
-      })
+      .then(data => document.body.insertAdjacentHTML("beforeend", data))
       .catch(error => console.error("Footer failed to load:", error));
   </script>
 
