@@ -1,4 +1,3 @@
-// Ensure the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("language-selector-container");
     if (!container) return;
@@ -21,21 +20,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const langDropdown = document.getElementById("lang-dropdown");
 
     // Toggle dropdown
-    currentLangBtn.addEventListener("click", () => {
+    currentLangBtn.addEventListener("click", (e) => {
+        e.stopPropagation(); // prevent document click closing immediately
         langDropdown.classList.toggle("hidden");
     });
 
-    // Change language
+    // Change language when flag clicked
     langDropdown.querySelectorAll("li").forEach(item => {
         item.addEventListener("click", () => {
             const lang = item.getAttribute("data-lang");
 
-            // Load translations
             if (typeof loadTranslations === "function") {
                 loadTranslations(lang);
             }
 
-            // Update current flag
             const img = item.querySelector("img").cloneNode();
             currentLangBtn.innerHTML = '';
             currentLangBtn.appendChild(img);
@@ -45,9 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Close dropdown if clicked outside
-    document.addEventListener("click", (e) => {
-        if (!currentLangBtn.contains(e.target) && !langDropdown.contains(e.target)) {
-            langDropdown.classList.add("hidden");
-        }
+    document.addEventListener("click", () => {
+        langDropdown.classList.add("hidden");
     });
 });
