@@ -66,6 +66,9 @@ function applyTranslations() {
     "btn-test": "test",
     "btn-home": "home",
     "btn-vocabList": "vocabulary"
+    "btn-prev": "prev",
+    "btn-next": "next",
+    "btn-exerciseList": "exerciseList"
   };
 
   if (translations.buttons) {

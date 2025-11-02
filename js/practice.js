@@ -25,7 +25,7 @@ function renderCard(index) {
   czechCard.textContent = item.czech + (item.pronunciation ? ` (${item.pronunciation})` : "");
   
   // First card shows selected language translation
-  englishCard.textContent = getTranslation(item);
+  englishCard.textContent = translations.messages?.clickToShow || "Click to show Czech";
 
   // Update progress
   progressText.textContent = `${index + 1} / ${vocab.length}`;
