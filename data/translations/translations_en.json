@@ -10,24 +10,35 @@
     "welcome": "Welcome to CzechByLukas",
     "mainPageText": "This is the main page. I will be adding more chapters and content.",
     "topics": "Topics and applications",
-    "vocab": "Vocabulary",
-    "vocabList": "List of Vocabularies",
-    "exerciseInstructions": "Choose the correct translation"
-  },
-  "links": {
+    "vocabList": "Vocabulary List",
+    "exerciseInstructions": "Choose the correct translation",
+    "exerciseList": "List of Exercises",
+    "testList": "List of Tests",
+    "practice": "Practice",
+    "tests": "Tests",
     "usefulPhrases": "Useful Phrases",
-    "pastTense": "Past Tense"
+    "pastTense": "Past Tense",
+    "questionGenerator": "Question Generator (A0)"
   },
   "buttons": {
     "next": "Next",
     "prev": "Previous",
     "submit": "Submit",
-    "search": "Search"
+    "search": "Search",
+    "home": "🏠 Home",
+    "exerciseList": "🧠 Exercise List",
+    "testList": "📝 All Tests",
+    "vocabulary": "📘 Vocabulary",
+    "practice": "🧠 Practice",
+    "test": "📝 Test"
   },
   "messages": {
     "loading": "Loading...",
     "error": "Something went wrong.",
-    "empty": "No items found."
+    "empty": "No items found.",
+    "clickToShow": "Click to show Czech",
+    "timeRemaining": "⏱ Time remaining:",
+    "timesUp": "⏱ Time’s up! Please submit your answers now."
   },
   "placeholders": {
     "search": "Type here to search..."
@@ -35,5 +46,40 @@
   "footer": {
     "text": "❤️ I build this site myself to help people learn Czech. If you’d like to support my work,",
     "link": "click here"
+  },
+  "exercise": {
+    "title": "Practice Useful Phrases",
+    "progress": "Progress",
+    "progressOf": "of",
+    "previous": "← Previous",
+    "next": "Next →",
+    "vocabulary": "📘 Vocabulary",
+    "test": "📝 Test",
+    "home": "🏠 Home",
+    "exerciseList": "🧠 Exercise List",
+    "clickToShow": "Click to show Czech"
+  },
+  "test": {
+    "title": "Test – Useful Phrases",
+    "instructions": "You have 10 minutes to complete the test. After submitting, I will see and correct your answers.",
+    "timer": "⏱ Time remaining:",
+    "timesUp": "⏱ Time’s up! Please submit your answers now.",
+    "vocabulary": "📘 Vocabulary",
+    "practice": "🧠 Practice",
+    "home": "🏠 Home",
+    "allTests": "📝 All Tests"
+  },
+  "exerciseIndex": {
+    "title": "Practice",
+    "listHeading": "List of Exercises",
+    "usefulPhrases": "Useful Phrases",
+    "pastTense": "Past Tense",
+    "questionGenerator": "Question Generator (A0)"
+  },
+  "testIndex": {
+    "title": "Tests",
+    "listHeading": "List of Tests",
+    "usefulPhrases": "Useful Phrases",
+    "pastTense": "Past Tense"
   }
 }
