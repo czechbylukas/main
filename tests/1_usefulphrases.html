@@ -2,15 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title id="page-title">Lesson 1 Test – CzechByLukas</title>
-
-  <!-- CSS -->
+  <title>Useful Phrases – Test</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="vocab-page">
 
   <header>
-    <h1 id="heading-test-title"></h1>
+    <h1 id="heading-test-title">Useful Phrases – Test</h1>
     <p id="heading-test-instructions"></p>
     
     <!-- Language selector container -->
@@ -39,39 +37,33 @@
     <a id="btn-all-tests" href="../tests/index.html"></a>
   </div>
 
-  <!-- Load test links and translations -->
   <script src="../data/translations/tests_links.js"></script>
   <script src="../js/translations.js"></script>
   <script src="../js/language-selector.js"></script>
   <script>
-    // Determine current language
     let lang = localStorage.getItem("selectedLanguage") || "en";
 
-    // Timer logic
     const timerEl = document.getElementById('timer');
-    let timeLeft = 10 * 60; // 10 minutes
-    const countdown = setInterval(() => {
+    let timeLeft = 10 * 60;
+    setInterval(() => {
       const minutes = Math.floor(timeLeft / 60).toString().padStart(2,'0');
       const seconds = (timeLeft % 60).toString().padStart(2,'0');
       timerEl.textContent = `⏱ ${translations.messages?.timeRemaining || "Time remaining:"} ${minutes}:${seconds}`;
       timeLeft--;
-      if(timeLeft < 0) {
-        clearInterval(countdown);
+      if(timeLeft < 0){
         timerEl.textContent = translations.messages?.timesUp || "Time’s up! Please submit your answers now.";
         timerEl.style.color = '#c0392b';
         alert(timerEl.textContent);
       }
     }, 1000);
 
-    // Update page content based on selected language
-    async function updatePage(lang) {
+    async function updatePage(lang){
       if(typeof loadTranslations === "function") await loadTranslations(lang);
 
-      // Update iframe Google Form
       const lesson = "lesson1";
       document.getElementById("testIframe").src = testLinks[lesson][lang] || testLinks[lesson]["en"];
 
-      // Update text elements using translations object directly
+      // Header
       document.getElementById("heading-test-title").textContent = translations.test?.title || "Useful Phrases – Test";
       document.getElementById("heading-test-instructions").textContent = translations.test?.instructions || "";
 
@@ -80,12 +72,12 @@
       document.getElementById("btn-practice").textContent = translations.buttons?.practice || "🧠 Practice";
       document.getElementById("btn-home").textContent = translations.buttons?.home || "🏠 Home";
       document.getElementById("btn-all-tests").textContent = translations.buttons?.testList || "📝 All Tests";
+
+      // Page title
+      document.querySelector("title").textContent = translations.pageTitle || "Useful Phrases – Test";
     }
 
-    // Initial load
-    document.addEventListener("DOMContentLoaded", () => {
-      updatePage(lang);
-    });
+    document.addEventListener("DOMContentLoaded", () => { updatePage(lang); });
   </script>
 
 </body>
