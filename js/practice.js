@@ -52,7 +52,6 @@ czechCard.addEventListener("click", () => {
 
 // -----------------------------
 // Navigation buttons
-// -----------------------------
 document.getElementById("prevBtn").addEventListener("click", () => {
   if(currentIndex > 0) currentIndex--;
   renderCard(currentIndex);
@@ -63,13 +62,22 @@ document.getElementById("nextBtn").addEventListener("click", () => {
   renderCard(currentIndex);
 });
 
-// -----------------------------
-// Language change handling
-// -----------------------------
-document.addEventListener("DOMContentLoaded", () => {
-  // Load saved language from translations.js
-  lang = localStorage.getItem("selectedLanguage") || "en";
+// ← → arrow key navigation
+document.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft") {
+    if (currentIndex > 0) {
+      currentIndex--;
+      renderCard(currentIndex);
+    }
+  } else if (event.key === "ArrowRight") {
+    if (currentIndex < vocab.length - 1) {
+      currentIndex++;
+      renderCard(currentIndex);
+    }
+  }
+});
 
-  // Render first card
+// Initial render
+document.addEventListener("DOMContentLoaded", () => {
   renderCard(currentIndex);
 });
