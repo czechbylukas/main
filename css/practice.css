@@ -134,3 +134,9 @@ body.vocab-page h1 {
   background: #f2fff2;
   color: #000;
 }
+
+.card.click-to-show {
+  color: #888;       /* grey text */
+  font-style: italic; 
+  cursor: pointer;
+}
