@@ -95,5 +95,6 @@ function applyTranslations() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadTranslations(currentLang);
+  const savedLang = localStorage.getItem("selectedLanguage") || "en";
+  loadTranslations(savedLang);
 });
