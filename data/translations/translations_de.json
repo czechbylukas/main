@@ -3,7 +3,7 @@
     "home": "🏠 Startseite",
     "vocabulary": "📘 Vokabeln",
     "practicing": "❓ Üben",
-    "testing": "💬 Tests",
+    "testing": "💬 Testen",
     "support": "🛠 Unterstützung"
   },
 
@@ -23,7 +23,7 @@
   "link-ex-past-tense": "Vergangenheit",
   "link-ex-question-generator": "Fragegenerator (A0)",
 
-  "heading-tests": "Tests",
+  "heading-tests": "Teste",
   "heading-testList": "Testübersicht",
   "link-test-useful-phrases": "Nützliche Phrasen",
   "link-test-past-tense": "Vergangenheit",
@@ -35,7 +35,7 @@
     "search": "Suchen",
     "home": "🏠 Start",
     "exerciseList": "🧠 Übungsübersicht",
-    "testList": "📝 Alle Tests",
+    "testList": "📝 Alle Teste",
     "practice": "🧠 Üben",
     "test": "📝 Test",
     "vocabulary": "📘 Vokabeln"
