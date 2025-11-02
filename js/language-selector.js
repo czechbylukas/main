@@ -2,52 +2,52 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("language-selector-container");
     if (!container) return;
 
-    // Inject language selector HTML
+    // Inject the selector HTML
     container.innerHTML = `
-        <div class="language-selector">
-            <button id="current-lang">
-                <img src="flags/en.png" alt="English" class="flag-icon">
-            </button>
-            <ul id="lang-dropdown">
-                <li data-lang="en"><img src="flags/en.png" alt="English" class="flag-icon"></li>
-                <li data-lang="cz"><img src="flags/cz.png" alt="Česky" class="flag-icon"></li>
-                <li data-lang="es"><img src="flags/es.png" alt="Español" class="flag-icon"></li>
-                <li data-lang="de"><img src="flags/de.png" alt="Deutsch" class="flag-icon"></li>
-            </ul>
-        </div>
+    <div class="language-selector">
+        <button id="current-lang">
+            <img src="flags/en.png" alt="English" class="flag-icon">
+        </button>
+        <ul id="lang-dropdown" class="hidden">
+            <li data-lang="en"><img src="flags/en.png" alt="English" class="flag-icon"></li>
+            <li data-lang="cz"><img src="flags/cz.png" alt="Česky" class="flag-icon"></li>
+            <li data-lang="es"><img src="flags/es.png" alt="Español" class="flag-icon"></li>
+            <li data-lang="de"><img src="flags/de.png" alt="Deutsch" class="flag-icon"></li>
+        </ul>
+    </div>
     `;
 
     const currentLangBtn = document.getElementById("current-lang");
     const langDropdown = document.getElementById("lang-dropdown");
 
-    // Toggle dropdown visibility
+    // Toggle dropdown visibility when clicking current flag
     currentLangBtn.addEventListener("click", (e) => {
-        e.stopPropagation(); // Prevent immediate close
-        langDropdown.classList.toggle("show");
+        e.stopPropagation(); // prevent immediate close
+        langDropdown.classList.toggle("hidden");
     });
 
-    // Select a language
+    // Change language when a flag is clicked
     langDropdown.querySelectorAll("li").forEach(item => {
         item.addEventListener("click", () => {
             const lang = item.getAttribute("data-lang");
 
-            // Load translations if function exists
+            // Load translations if available
             if (typeof loadTranslations === "function") {
                 loadTranslations(lang);
             }
 
-            // Update current flag
+            // Update the current flag
             const img = item.querySelector("img").cloneNode();
             currentLangBtn.innerHTML = '';
             currentLangBtn.appendChild(img);
 
-            // Hide dropdown
-            langDropdown.classList.remove("show");
+            // Hide dropdown after selection
+            langDropdown.classList.add("hidden");
         });
     });
 
-    // Close dropdown when clicking outside
+    // Close dropdown if clicked outside
     document.addEventListener("click", () => {
-        langDropdown.classList.remove("show");
+        langDropdown.classList.add("hidden");
     });
 });
