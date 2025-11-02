@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-
-
     <meta charset="UTF-8">
     <title>Welcome in CzechByLukas</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="home">
     <header>
-        <h1>Welcome in CzechByLukas</h1>
+        <h1 id="heading-welcome">Welcome in CzechByLukas</h1>
+
+        <!-- Language selector -->
+        <select id="languageSelector">
+            <option value="en">English</option>
+            <option value="cz">Česky</option>
+            <option value="es">Español</option>
+            <option value="de">Deutsch</option>
+        </select>
     </header>
 
     <main>
-        <p>This is the main page. I will be adding more chapters and content.</p>
+        <p id="heading-mainText">This is the main page. I will be adding more chapters and content.</p>
 
-        <h2>Topics and applications</h2>
+        <h2 id="heading-topics">Topics and applications</h2>
+
         <nav>
-            <a href="index.html">🏠 Main Page</a>
-            <a href="vocabulary/index.html">📘 Vocabulary</a>
-            <a href="exercise/index.html">❓ Practicing</a>
-            <a href="tests/index.html">💬 Testing</a>
+            <a id="menu-home" href="index.html">🏠 Main Page</a>
+            <a id="menu-vocabulary" href="vocabulary/index.html">📘 Vocabulary</a>
+            <a id="menu-practicing" href="exercise/index.html">❓ Practicing</a>
+            <a id="menu-testing" href="tests/index.html">💬 Testing</a>
         </nav>
     </main>
 
-<script>
-  fetch("../css/footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.body.insertAdjacentHTML("beforeend", data);
-    })
-    .catch(error => console.error("Footer failed to load:", error));
-</script>
+    <script>
+      fetch("../css/footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.body.insertAdjacentHTML("beforeend", data);
+        })
+        .catch(error => console.error("Footer failed to load:", error));
+    </script>
 
-
+    <!-- LINK TO TRANSLATIONS JS FILE -->
+    <script src="js/translations.js"></script> <!-- Just before </body> -->
 </body>
 </html>
