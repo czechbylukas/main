@@ -25,7 +25,7 @@ function applyTranslations() {
   // List of all possible IDs in all pages
   const idsToTranslate = [
     "heading-welcome",
-    "heading-mainText",
+    "heading-mainPageText",
     "heading-topics",
     "heading-vocab",
     "heading-vocabList",
