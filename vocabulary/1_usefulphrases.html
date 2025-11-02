@@ -11,6 +11,30 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Flag icon styling */
+    .flag-icon {
+      width: 24px;
+      height: 16px;
+      margin: 0 4px;
+    }
+    #lang-dropdown {
+      list-style: none;
+      padding: 4px;
+      margin: 0;
+      background: white;
+      border: 1px solid #ccc;
+      position: absolute;
+      z-index: 100;
+    }
+    #lang-dropdown li {
+      cursor: pointer;
+      padding: 2px 4px;
+    }
+    #lang-dropdown li:hover {
+      background: #eee;
+    }
+  </style>
 </head>
 
 <body class="vocab-page">
@@ -18,16 +42,8 @@
   <header>
     <h1 id="heading-vocabTitle">Useful Phrases - Vocabulary</h1>
 
-    <!-- Language selector -->
-    <div class="language-selector">
-      <label for="select-language">🌐 Language:</label>
-      <select id="select-language">
-        <option value="en">English</option>
-        <option value="cz">Čeština</option>
-        <option value="de">Deutsch</option>
-        <option value="es">Español</option>
-      </select>
-    </div>
+    <!-- Language selector container for flag buttons -->
+    <div id="language-selector-container"></div>
   </header>
 
   <main>
@@ -61,21 +77,20 @@
   <script src="../data/1_usefulphrases.js"></script>
   <!-- Translations -->
   <script src="../js/translations.js"></script>
+  <!-- Language selector JS (your script with flags) -->
+  <script src="../js/language-selector.js"></script>
 
   <script>
     function renderVocab() {
-      const lang = localStorage.getItem("language") || "en";
+      const lang = localStorage.getItem("selectedLanguage") || "en";
       const tbody = document.getElementById("vocabBody");
       tbody.innerHTML = "";
 
-      // Fill table dynamically
       vocab.forEach(item => {
         const row = document.createElement("tr");
         let colText;
-
         if(lang === "cz") {
-          // Czech page: show Czech first, English last
-          colText = item.english;
+          colText = item.english; // Czech page: first column Czech, last column English
         } else if(lang === "de") {
           colText = item.german;
         } else if(lang === "es") {
@@ -83,12 +98,10 @@
         } else {
           colText = item.english;
         }
-
         row.innerHTML = `<td>${item.czech}</td><td>${item.pronunciation}</td><td>${colText}</td>`;
         tbody.appendChild(row);
       });
 
-      // Update translated texts
       if (translations[lang]) {
         document.getElementById("page-title").textContent = translations[lang].pageTitle || "Useful Phrases | CzechByLukas";
         document.getElementById("heading-vocabTitle").textContent = translations[lang].headings.usefulPhrases;
@@ -103,17 +116,7 @@
       }
     }
 
-    // Handle language selector change
-    const languageSelect = document.getElementById("select-language");
-    languageSelect.value = localStorage.getItem("language") || "en";
-    languageSelect.addEventListener("change", () => {
-      const selectedLang = languageSelect.value;
-      localStorage.setItem("language", selectedLang);
-      renderVocab();
-    });
-
-    // Initial render
-    renderVocab();
+    document.addEventListener("DOMContentLoaded", renderVocab);
   </script>
 
 </body>
