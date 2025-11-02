@@ -45,14 +45,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Apply translations and update HTML lang
-  function applyLanguage(lang) {
-    currentLang = lang;
-    localStorage.setItem("selectedLanguage", lang); // remember selection
-    document.documentElement.setAttribute("lang", lang); // accessibility & SEO
-    updateCurrentFlag();
-    buildDropdown();
-    if (typeof loadTranslations === "function") loadTranslations(lang); // call your existing translation loader
-  }
+function applyLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem("selectedLanguage", lang); // remember selection
+  document.documentElement.setAttribute("lang", lang); // accessibility & SEO
+  updateCurrentFlag();
+  buildDropdown();
+
+  // Update translations in text (existing function)
+  if (typeof loadTranslations === "function") loadTranslations(lang);
+
+  // NEW — update the vocabulary table
+  if (typeof renderVocab === "function") renderVocab();
+}
+
 
   // Initialize
   applyLanguage(currentLang);
