@@ -18,9 +18,10 @@
     object-fit: cover;
 }
 
+/* Dropdown menu */
 .language-selector ul {
     position: absolute;
-    top: 28px;
+    top: 28px; /* below current flag */
     right: 0;
     list-style: none;
     margin: 0;
@@ -34,6 +35,7 @@
     z-index: 1000;
 }
 
+/* Hidden by default */
 .language-selector ul.hidden {
     display: none;
 }
