@@ -1,55 +1,64 @@
 let translations = {};
-let currentLang = "en"; // default language
+let currentLang = "en"; // default
 
-// Load a translation JSON file
 async function loadTranslations(lang) {
-    try {
-        const res = await fetch(`../data/translations/translations_${lang}.json`);
-        translations = await res.json();
-        currentLang = lang;
-        applyTranslations();
-    } catch (err) {
-        console.error(`Failed to load translations for ${lang}:`, err);
-    }
+  try {
+    const res = await fetch(`/data/translations/translations_${lang}.json`);
+    translations = await res.json();
+    currentLang = lang;
+    applyTranslations();
+  } catch (err) {
+    console.error(`Failed to load translations for ${lang}:`, err);
+  }
 }
 
-// Apply translations to page elements
 function applyTranslations() {
-    if (!translations) return;
+  if (!translations) return;
 
-    // Headings
-    document.getElementById("heading-welcome").textContent = translations.headings.welcome;
-    document.getElementById("heading-mainText").textContent = translations.headings.mainPageText;
-    document.getElementById("heading-topics").textContent = translations.headings.topics;
+  // Headings
+  const hWelcome = document.getElementById("heading-welcome");
+  if (hWelcome && translations.headings && translations.headings.welcome) hWelcome.textContent = translations.headings.welcome;
 
-    // Menu
-    document.getElementById("menu-home").textContent = translations.menu.home;
-    document.getElementById("menu-vocabulary").textContent = translations.menu.vocabulary;
-    document.getElementById("menu-practicing").textContent = translations.menu.practicing;
-    document.getElementById("menu-testing").textContent = translations.menu.testing;
+  const hVocab = document.getElementById("heading-vocab");
+  if (hVocab && translations.headings && translations.headings.vocab) hVocab.textContent = translations.headings.vocab;
 
-    // Footer
-    const footerText = document.getElementById("footer-text");
-    const footerLink = document.getElementById("footer-link");
-    if (footerText && footerLink) {
-        footerText.childNodes[0].nodeValue = translations.footer.text + " ";
-        footerLink.textContent = translations.footer.link;
-    }
+  const hMainText = document.getElementById("heading-mainText");
+  if (hMainText && translations.headings && translations.headings.mainPageText) hMainText.textContent = translations.headings.mainPageText;
 
-    // Buttons (if present)
-    const btnNext = document.getElementById("btn-next");
-    if (btnNext) btnNext.textContent = translations.buttons.next;
-    const btnPrev = document.getElementById("btn-prev");
-    if (btnPrev) btnPrev.textContent = translations.buttons.prev;
-    const btnSubmit = document.getElementById("btn-submit");
-    if (btnSubmit) btnSubmit.textContent = translations.buttons.submit;
+  const hVocabList = document.getElementById("heading-vocabList");
+  if (hVocabList && translations.headings && translations.headings.vocabList) hVocabList.textContent = translations.headings.vocabList;
 
-    // Placeholders
-    const searchInput = document.getElementById("search-input");
-    if (searchInput) searchInput.placeholder = translations.placeholders.search;
+  // Menu
+  const mHome = document.getElementById("menu-home");
+  if (mHome && translations.menu && translations.menu.home) mHome.textContent = translations.menu.home;
+
+  const mVocab = document.getElementById("menu-vocabulary");
+  if (mVocab && translations.menu && translations.menu.vocabulary) mVocab.textContent = translations.menu.vocabulary;
+
+  const mPract = document.getElementById("menu-practicing");
+  if (mPract && translations.menu && translations.menu.practicing) mPract.textContent = translations.menu.practicing;
+
+  const mTest = document.getElementById("menu-testing");
+  if (mTest && translations.menu && translations.menu.testing) mTest.textContent = translations.menu.testing;
+
+  // Links on vocab page
+  const lUseful = document.getElementById("link-usefulPhrases");
+  if (lUseful && translations.links && translations.links.usefulPhrases) lUseful.textContent = translations.links.usefulPhrases;
+
+  const lPast = document.getElementById("link-pastTense");
+  if (lPast && translations.links && translations.links.pastTense) lPast.textContent = translations.links.pastTense;
+
+  // Footer
+  const footerText = document.getElementById("footer-text");
+  const footerLink = document.getElementById("footer-link");
+  if (footerText && footerLink && translations.footer) {
+    // set text before link
+    footerText.childNodes[0].nodeValue = translations.footer.text + " ";
+    footerLink.textContent = translations.footer.link;
+  }
 }
 
-// Initialize default language
+// load default on DOM ready
 document.addEventListener("DOMContentLoaded", () => {
-    loadTranslations(currentLang);
+  loadTranslations(currentLang);
 });
