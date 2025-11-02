@@ -1,6 +1,6 @@
 {
   "menu": {
-    "home": "🏠 Inicio",
+    "home": "🏠 Página principal",
     "vocabulary": "📘 Vocabulario",
     "practicing": "❓ Práctica",
     "testing": "💬 Pruebas",
@@ -25,6 +25,10 @@
     "empty": "No se encontraron elementos."
   },
   "placeholders": {
-    "search": "Escriba aquí para buscar..."
+    "search": "Escribe aquí para buscar..."
+  },
+  "footer": {
+    "text": "❤️ Construí este sitio yo mismo para ayudar a la gente a aprender checo. Si quieres apoyar mi trabajo,",
+    "link": "haz clic aquí"
   }
 }

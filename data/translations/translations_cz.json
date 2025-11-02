@@ -1,14 +1,14 @@
 {
   "menu": {
-    "home": "🏠 Domů",
-    "vocabulary": "📘 Slovník",
+    "home": "🏠 Hlavní stránka",
+    "vocabulary": "📘 Slovní zásoba",
     "practicing": "❓ Procvičování",
     "testing": "💬 Testování",
     "support": "🛠 Podpora"
   },
   "headings": {
     "welcome": "Vítejte na CzechByLukas",
-    "mainPageText": "Toto je hlavní stránka. Postupně přidám více kapitol a obsahu.",
+    "mainPageText": "Toto je hlavní stránka. Budu přidávat další kapitoly a obsah.",
     "topics": "Témata a aplikace",
     "vocabList": "Seznam slovíček",
     "exerciseInstructions": "Vyberte správný překlad"
@@ -20,11 +20,15 @@
     "search": "Hledat"
   },
   "messages": {
-    "loading": "Načítám...",
-    "error": "Došlo k chybě.",
+    "loading": "Načítání...",
+    "error": "Něco se pokazilo.",
     "empty": "Žádné položky nenalezeny."
   },
   "placeholders": {
-    "search": "Zadejte text pro hledání..."
+    "search": "Zadejte text k vyhledání..."
+  },
+  "footer": {
+    "text": "❤️ Tento web jsem vytvořil sám, abych pomohl lidem učit se česky. Pokud chcete podpořit mou práci,",
+    "link": "klikněte zde"
   }
 }

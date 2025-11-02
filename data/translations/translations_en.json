@@ -26,5 +26,9 @@
   },
   "placeholders": {
     "search": "Type here to search..."
+  },
+  "footer": {
+    "text": "❤️ I build this site myself to help people learn Czech. If you’d like to support my work,",
+    "link": "click here"
   }
 }
