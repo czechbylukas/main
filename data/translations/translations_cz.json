@@ -38,4 +38,22 @@
     "testList": "📝 Všechny testy",
     "practice": "🧠 Procvičování",
     "test": "📝 Test",
-    "vocabulary": "📘 S
+    "vocabulary": "📘 Slovní zásoba"
+  },
+
+  "messages": {
+    "loading": "Načítání...",
+    "error": "Nastala chyba.",
+    "empty": "Žádné položky nenalezeny.",
+    "clickToShow": "Klikni pro zobrazení v češtině",
+    "timeRemaining": "⏱ Zbývající čas:",
+    "timesUp": "⏱ Čas vypršel! Odevzdej prosím své odpovědi."
+  },
+
+  "placeholders": {
+    "search": "Zadej hledaný výraz..."
+  },
+
+  "footer-text": "❤️ Tuto stránku jsem vytvořil, abych lidem pomohl s učením češtiny. Pokud mě chceš podpořit,",
+  "footer-link": "klikni zde"
+}
