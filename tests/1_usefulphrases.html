@@ -1,30 +1,22 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Lesson 1 Test – CzechByLukas</title>
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9067674021614925"
-     crossorigin="anonymous"></script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+     client="ca-pub-9067674021614925" crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-9067674021614925">
 
   <!-- ✅ Load shared CSS -->
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/language-selector.css">
 </head>
+
 <body class="vocab-page">
 
   <header>
     <h1>Test – Useful Phrases</h1>
-
-    <!-- Language selector -->
-    <div id="language-selector-container" style="margin-bottom: 15px;">
-      <button class="lang-btn" data-lang="en">English</button>
-      <button class="lang-btn" data-lang="cs">Czech</button>
-      <button class="lang-btn" data-lang="es">Español</button>
-      <button class="lang-btn" data-lang="de">Deutsch</button>
-    </div>
-
     <p>You have 10 minutes to complete the test. After submitting, I will see and correct your answers.</p>
   </header>
 
@@ -53,33 +45,18 @@
     }, 1000);
   </script>
 
-  <!-- Dynamic Google Form iframe -->
+  <!-- Google Form iframe -->
   <iframe id="testIframe" 
           style="width: 90%; min-height: 100vh; max-height: 10000px; border: none; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.2); background: white;"></iframe>
 
-  <!-- Load test links -->
+  <!-- Load test links and set iframe -->
   <script src="../data/translations/tests_links.js"></script>
   <script>
-    // Function to set iframe based on lesson and language
     const lesson = "lesson1";
+    const defaultLang = "en"; // Only English by default
 
-    function updateIframe(lang) {
-      document.getElementById("testIframe").src = testLinks[lesson][lang];
-    }
-
-    // Initial load based on HTML lang attribute
-    const initialLang = document.documentElement.lang || "en";
-    updateIframe(initialLang);
-
-    // Language selector buttons
-    const buttons = document.querySelectorAll(".lang-btn");
-    buttons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        const newLang = btn.dataset.lang;
-        document.documentElement.lang = newLang;
-        updateIframe(newLang);
-      });
-    });
+    // Set iframe src
+    document.getElementById("testIframe").src = testLinks[lesson][defaultLang];
   </script>
 
   <!-- Big buttons -->
