@@ -42,7 +42,8 @@ function applyTranslations() {
     "link-test-past-tense",
     "heading-vocabTitle",
     "heading-practice",
-    "heading-tests"
+   "heading-test-title",
+   "heading-test-instructions"
   ];
 
 idsToTranslate.forEach(id => {
