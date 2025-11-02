@@ -1,44 +1,59 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-  <meta charset="UTF-8">
-  <title>Tests</title>
+{
+  "menu": {
+    "home": "🏠 Startseite",
+    "vocabulary": "📘 Vokabeln",
+    "practicing": "❓ Üben",
+    "testing": "💬 Tests",
+    "support": "🛠 Unterstützung"
+  },
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/language-selector.css">
-</head>
-<body>
-  <header>
-    <!-- IDs must match translation keys -->
-    <h1 id="heading-tests">Tests</h1>
-    <div id="language-selector-container"></div>
-  </header>
+  "heading-welcome": "Willkommen bei CzechByLukas",
+  "heading-mainPageText": "Dies ist die Hauptseite. Ich werde weitere Kapitel und Inhalte hinzufügen.",
+  "heading-topics": "Themen und Anwendungen",
 
-  <nav>
-    <a id="menu-home" href="/index.html">🏠 Main Page</a>
-    <a id="menu-vocabulary" href="/vocabulary/index.html">📘 Vocabulary</a>
-    <a id="menu-practicing" href="/exercise/index.html">❓ Practicing</a>
-    <a id="menu-testing" href="/tests/index.html">💬 Testing</a>
-  </nav>
+  "heading-vocab": "Vokabeln",
+  "heading-vocabList": "Vokabelliste",
+  "heading-useful-phrases": "Nützliche Phrasen",
+  "heading-past-tense": "Vergangenheit",
+  "heading-question-generator": "Fragegenerator (A0)",
 
-  <main>
-    <h2 id="heading-testList">List of Tests</h2>
-    <ul>
-      <li><a id="link-test-useful-phrases" href="/tests/1_usefulphrases.html">Useful Phrases</a></li>
-      <li><a id="link-test-past-tense" href="/tests/2_pasttense.html">Past Tense</a></li>
-    </ul>
-  </main>
+  "heading-exercise": "Üben",
+  "heading-exList": "Übungsübersicht",
+  "link-ex-useful-phrases": "Nützliche Phrasen",
+  "link-ex-past-tense": "Vergangenheit",
+  "link-ex-question-generator": "Fragegenerator (A0)",
 
-  <footer class="support-note">
-    <span id="footer-text">
-      ❤️ I build this site myself to help people learn Czech. 
-      If you’d like to support my work, <a id="footer-link" href="/support.html">click here</a>.
-    </span>
-  </footer>
+  "heading-tests": "Tests",
+  "heading-testList": "Testübersicht",
+  "link-test-useful-phrases": "Nützliche Phrasen",
+  "link-test-past-tense": "Vergangenheit",
 
-  <!-- Scripts -->
-  <script src="/js/translations.js"></script>
-  <script src="/js/language-selector.js"></script>
-</body>
-</html>
+  "buttons": {
+    "next": "Weiter",
+    "prev": "Zurück",
+    "submit": "Absenden",
+    "search": "Suchen",
+    "home": "🏠 Start",
+    "exerciseList": "🧠 Übungsübersicht",
+    "testList": "📝 Alle Tests",
+    "practice": "🧠 Üben",
+    "test": "📝 Test",
+    "vocabulary": "📘 Vokabeln"
+  },
+
+  "messages": {
+    "loading": "Laden...",
+    "error": "Etwas ist schiefgelaufen.",
+    "empty": "Keine Einträge gefunden.",
+    "clickToShow": "Klicken zum Anzeigen auf Tschechisch",
+    "timeRemaining": "⏱ Verbleibende Zeit:",
+    "timesUp": "⏱ Zeit abgelaufen! Bitte reiche deine Antworten jetzt ein."
+  },
+
+  "placeholders": {
+    "search": "Hier zum Suchen eingeben..."
+  },
+
+  "footer-text": "❤️ Ich habe diese Seite selbst erstellt, um Menschen beim Lernen von Tschechisch zu helfen. Wenn du meine Arbeit unterstützen möchtest,",
+  "footer-link": "klicke hier"
+}
