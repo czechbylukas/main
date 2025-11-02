@@ -15,6 +15,7 @@
 </head>
 
 <body class="vocab-page">
+
   <header>
     <h1 id="heading-vocabTitle">Useful Phrases - Vocabulary</h1>
     <div id="language-selector-container"></div>
@@ -48,7 +49,7 @@
   </footer>
 
   <!-- Vocabulary data -->
-  <script src="../data/1_usefulphrases_multilang.js"></script>
+  <script src="../data/1_usefulphrases.js"></script>
   <!-- Translations -->
   <script src="../js/translations.js"></script>
   <!-- Language selector -->
@@ -56,16 +57,26 @@
 
   <script>
     function renderVocab() {
+      // Get selected language, default to English
       const lang = localStorage.getItem("language") || "en";
       const tbody = document.getElementById("vocabBody");
       tbody.innerHTML = ""; // clear table
-      vocab[lang].forEach(w => {
+
+      // Fill table dynamically based on language
+      vocab.forEach(item => {
         const row = document.createElement("tr");
-        row.innerHTML = `<td>${w.czech}</td><td>${w.pronunciation}</td><td>${w.english}</td>`;
+        let colText;
+        switch(lang) {
+          case "cz": colText = item.czech; break;
+          case "de": colText = item.german; break;
+          case "es": colText = item.spanish; break;
+          default: colText = item.english;
+        }
+        row.innerHTML = `<td>${item.czech}</td><td>${item.pronunciation}</td><td>${colText}</td>`;
         tbody.appendChild(row);
       });
 
-      // Update header and buttons text
+      // Update headers and buttons text from translations
       document.getElementById("heading-vocabTitle").textContent = translations[lang].headings.usefulPhrases;
       document.getElementById("table-czech").textContent = translations[lang].headings.czech;
       document.getElementById("table-pronunciation").textContent = translations[lang].headings.pronunciation;
@@ -77,9 +88,10 @@
       document.getElementById("footer-text").innerHTML = translations[lang].footer.text + ' <a href="../support.html">' + translations[lang].footer.link + '</a>';
     }
 
+    // Initial render
     renderVocab();
 
-    // Rerender when language changes
+    // Re-render table when language changes
     document.addEventListener("languageChanged", renderVocab);
   </script>
 
