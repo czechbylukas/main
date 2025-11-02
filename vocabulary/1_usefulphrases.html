@@ -17,6 +17,17 @@
 
   <header>
     <h1 id="heading-vocabTitle">Useful Phrases - Vocabulary</h1>
+
+    <!-- Language selector -->
+    <div class="language-selector">
+      <label for="select-language">🌐 Language:</label>
+      <select id="select-language">
+        <option value="en">English</option>
+        <option value="cz">Čeština</option>
+        <option value="de">Deutsch</option>
+        <option value="es">Español</option>
+      </select>
+    </div>
   </header>
 
   <main>
@@ -48,17 +59,17 @@
 
   <!-- Vocabulary data -->
   <script src="../data/1_usefulphrases.js"></script>
-
   <!-- Translations -->
   <script src="../js/translations.js"></script>
 
   <script>
+    // Render vocabulary and translate page elements
     function renderVocab() {
       const lang = localStorage.getItem("language") || "en";
       const tbody = document.getElementById("vocabBody");
       tbody.innerHTML = "";
 
-      // Fill vocabulary table
+      // Fill table dynamically
       vocab.forEach(item => {
         const row = document.createElement("tr");
         let colText;
@@ -72,7 +83,7 @@
         tbody.appendChild(row);
       });
 
-      // Update page elements with translations
+      // Update translated texts
       if (translations[lang]) {
         document.getElementById("page-title").textContent = translations[lang].pageTitle || "Useful Phrases | CzechByLukas";
         document.getElementById("heading-vocabTitle").textContent = translations[lang].headings.usefulPhrases;
@@ -86,6 +97,15 @@
         document.getElementById("footer-text").innerHTML = translations[lang].footer.text + ' <a href="../support.html">' + translations[lang].footer.link + '</a>';
       }
     }
+
+    // Handle language selector change
+    const languageSelect = document.getElementById("select-language");
+    languageSelect.value = localStorage.getItem("language") || "en";
+    languageSelect.addEventListener("change", () => {
+      const selectedLang = languageSelect.value;
+      localStorage.setItem("language", selectedLang);
+      renderVocab();
+    });
 
     // Initial render
     renderVocab();
