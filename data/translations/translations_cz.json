@@ -2,18 +2,22 @@
   "menu": {
     "home": "Domů",
     "vocabulary": "Slovník",
+    "practicing": "Procvičování",
+    "testing": "Testování",
     "support": "Podpora"
+  },
+  "headings": {
+    "welcome": "Vítejte na CzechByLukas",
+    "mainPageText": "Toto je hlavní stránka. Postupně přidám více kapitol a obsahu.",
+    "topics": "Témata a aplikace",
+    "vocabList": "Seznam slovíček",
+    "exerciseInstructions": "Vyberte správný překlad"
   },
   "buttons": {
     "next": "Další",
     "prev": "Předchozí",
     "submit": "Odeslat",
     "search": "Hledat"
-  },
-  "headings": {
-    "welcome": "Vítejte na CzechByLukas",
-    "learn": "Učte se češtinu snadno",
-    "vocabList": "Seznam slovíček"
   },
   "messages": {
     "loading": "Načítám...",

@@ -2,18 +2,22 @@
   "menu": {
     "home": "Home",
     "vocabulary": "Vocabulary",
+    "practicing": "Practicing",
+    "testing": "Testing",
     "support": "Support"
+  },
+  "headings": {
+    "welcome": "Welcome to CzechByLukas",
+    "mainPageText": "This is the main page. I will be adding more chapters and content.",
+    "topics": "Topics and applications",
+    "vocabList": "Vocabulary List",
+    "exerciseInstructions": "Choose the correct translation"
   },
   "buttons": {
     "next": "Next",
     "prev": "Previous",
     "submit": "Submit",
     "search": "Search"
-  },
-  "headings": {
-    "welcome": "Welcome to CzechByLukas",
-    "learn": "Learn Czech Easily",
-    "vocabList": "Vocabulary List"
   },
   "messages": {
     "loading": "Loading...",

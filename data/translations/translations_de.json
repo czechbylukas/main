@@ -2,18 +2,22 @@
   "menu": {
     "home": "Startseite",
     "vocabulary": "Wortschatz",
+    "practicing": "Übungen",
+    "testing": "Tests",
     "support": "Support"
+  },
+  "headings": {
+    "welcome": "Willkommen bei CzechByLukas",
+    "mainPageText": "Dies ist die Hauptseite. Ich werde nach und nach mehr Kapitel und Inhalte hinzufügen.",
+    "topics": "Themen und Anwendungen",
+    "vocabList": "Wortschatzliste",
+    "exerciseInstructions": "Wähle die richtige Übersetzung"
   },
   "buttons": {
     "next": "Weiter",
     "prev": "Zurück",
     "submit": "Senden",
     "search": "Suchen"
-  },
-  "headings": {
-    "welcome": "Willkommen bei CzechByLukas",
-    "learn": "Lerne Tschechisch einfach",
-    "vocabList": "Wortschatzliste"
   },
   "messages": {
     "loading": "Lädt...",
