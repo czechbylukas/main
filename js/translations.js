@@ -22,7 +22,7 @@ function applyTranslations() {
     pageTitle.textContent = translations["page-title"];
   }
 
-  // ---------- HEADINGS ----------
+  // List of all possible IDs in all pages
   const idsToTranslate = [
     "heading-welcome",
     "heading-mainPageText",
@@ -45,56 +45,22 @@ function applyTranslations() {
     if (el && translations[id]) el.textContent = translations[id];
   });
 
-  // ---------- MENU ----------
-  const menuItems = ["home", "vocabulary", "practicing", "testing", "support"];
+  // Menu
+  const menuItems = ["home", "vocabulary", "practicing", "testing"];
   menuItems.forEach(item => {
     const el = document.getElementById(`menu-${item}`);
-    if (el && translations.menu && translations.menu[item]) {
-      el.textContent = translations.menu[item];
-    }
+    if (el && translations.menu && translations.menu[item]) el.textContent = translations.menu[item];
   });
 
-  // ---------- VOCAB PAGE BUTTONS ----------
-  const btnMap = {
-    "btn-practice": "practice",
-    "btn-test": "test",
-    "btn-home": "home",
-    "btn-vocabList": "vocabulary"
-  };
-
-  if (translations.buttons) {
-    for (const [id, key] of Object.entries(btnMap)) {
-      const el = document.getElementById(id);
-      if (el && translations.buttons[key]) el.textContent = translations.buttons[key];
-    }
-  }
-
-  // ---------- TABLE HEADERS (if defined) ----------
-  const tableCzech = document.getElementById("table-czech");
-  const tablePronunciation = document.getElementById("table-pronunciation");
-  const tableEnglish = document.getElementById("table-english");
-
-  if (translations.tableHeadings) {
-    if (tableCzech && translations.tableHeadings.czech)
-      tableCzech.textContent = translations.tableHeadings.czech;
-    if (tablePronunciation && translations.tableHeadings.pronunciation)
-      tablePronunciation.textContent = translations.tableHeadings.pronunciation;
-    if (tableEnglish && translations.tableHeadings.english)
-      tableEnglish.textContent = translations.tableHeadings.english;
-  }
-
-  // ---------- FOOTER ----------
+  // Footer
   const footerText = document.getElementById("footer-text");
   const footerLink = document.getElementById("footer-link");
   if (footerText && footerLink) {
-    if (translations["footer-text"])
-      footerText.childNodes[0].nodeValue = translations["footer-text"] + " ";
-    if (translations["footer-link"])
-      footerLink.textContent = translations["footer-link"];
+    if (translations["footer-text"]) footerText.childNodes[0].nodeValue = translations["footer-text"] + " ";
+    if (translations["footer-link"]) footerLink.textContent = translations["footer-link"];
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const savedLang = localStorage.getItem("selectedLanguage") || "en";
-  loadTranslations(savedLang);
+  loadTranslations(currentLang);
 });
