@@ -11,14 +11,12 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/language-selector.css">
 </head>
 
 <body class="vocab-page">
 
   <header>
     <h1 id="heading-vocabTitle">Useful Phrases - Vocabulary</h1>
-    <div id="language-selector-container"></div>
   </header>
 
   <main>
@@ -52,17 +50,15 @@
   <script src="../data/1_usefulphrases.js"></script>
   <!-- Translations -->
   <script src="../js/translations.js"></script>
-  <!-- Language selector -->
-  <script src="../js/language-selector.js"></script>
 
   <script>
     function renderVocab() {
-      // Get selected language, default to English
+      // Get selected language from localStorage (default to English)
       const lang = localStorage.getItem("language") || "en";
       const tbody = document.getElementById("vocabBody");
       tbody.innerHTML = ""; // clear table
 
-      // Fill table dynamically based on language
+      // Fill table dynamically based on selected language
       vocab.forEach(item => {
         const row = document.createElement("tr");
         let colText;
@@ -76,7 +72,7 @@
         tbody.appendChild(row);
       });
 
-      // Update headers and buttons text from translations
+      // Update table headers and buttons text
       document.getElementById("heading-vocabTitle").textContent = translations[lang].headings.usefulPhrases;
       document.getElementById("table-czech").textContent = translations[lang].headings.czech;
       document.getElementById("table-pronunciation").textContent = translations[lang].headings.pronunciation;
@@ -90,9 +86,6 @@
 
     // Initial render
     renderVocab();
-
-    // Re-render table when language changes
-    document.addEventListener("languageChanged", renderVocab);
   </script>
 
 </body>
