@@ -7,24 +7,26 @@
     "support": "🛠 Podpora"
   },
 
-  "headings": {
-    "welcome": "Vítejte v CzechByLukas",
-    "mainPageText": "Toto je hlavní stránka. Budu přidávat další kapitoly a obsah.",
-    "topics": "Témata a aplikace",
-    "vocabList": "Seznam slovíček",
-    "practice": "Procvičování",
-    "tests": "Testy",
-    "usefulPhrases": "Užitečné fráze",
-    "pastTense": "Minulý čas",
-    "questionGenerator": "Generátor otázek (A0)"
-  },
-
+  "heading-welcome": "Vítejte v CzechByLukas",
+  "heading-mainPageText": "Toto je hlavní stránka. Budu přidávat další kapitoly a obsah.",
   "heading-topics": "Témata a aplikace",
+
   "heading-vocab": "Slovní zásoba",
   "heading-vocabList": "Seznam slovíček",
   "heading-useful-phrases": "Užitečné fráze",
   "heading-past-tense": "Minulý čas",
   "heading-question-generator": "Generátor otázek (A0)",
+
+  "heading-exercise": "Procvičování",
+  "heading-exList": "Přehled cvičení",
+  "link-ex-useful-phrases": "Užitečné fráze",
+  "link-ex-past-tense": "Minulý čas",
+  "link-ex-question-generator": "Generátor otázek (A0)",
+
+  "heading-tests": "Testy",
+  "heading-testList": "Přehled testů",
+  "link-test-useful-phrases": "Užitečné fráze",
+  "link-test-past-tense": "Minulý čas",
 
   "buttons": {
     "next": "Další",
@@ -36,38 +38,4 @@
     "testList": "📝 Všechny testy",
     "practice": "🧠 Procvičování",
     "test": "📝 Test",
-    "vocabulary": "📘 Slovní zásoba"
-  },
-
-  "messages": {
-    "loading": "Načítání...",
-    "error": "Nastala chyba.",
-    "empty": "Žádné položky nenalezeny.",
-    "clickToShow": "Klikni pro zobrazení v češtině",
-    "timeRemaining": "⏱ Zbývající čas:",
-    "timesUp": "⏱ Čas vypršel! Odevzdej prosím své odpovědi."
-  },
-
-  "placeholders": {
-    "search": "Zadej hledaný výraz..."
-  },
-
-  "footer": {
-    "text": "❤️ Tuto stránku jsem vytvořil, abych lidem pomohl s učením češtiny. Pokud mě chceš podpořit,",
-    "link": "klikni zde"
-  },
-
-  "exercise": {
-    "title": "Cvičení: Užitečné fráze",
-    "progress": "Postup",
-    "progressOf": "z",
-    "previous": "← Zpět",
-    "next": "Další →",
-    "clickToShow": "Klikni pro zobrazení v češtině"
-  },
-
-  "test": {
-    "title": "Test – Užitečné fráze",
-    "instructions": "Na test máš 10 minut. Po odeslání uvidím a opravím tvé odpovědi.",
-    "timer": "⏱ Zbývající čas:",
-    "timesU
+    "vocabulary": "📘 S

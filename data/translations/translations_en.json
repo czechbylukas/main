@@ -7,21 +7,53 @@
     "support": "🛠 Support"
   },
 
-  "headings": {
-    "welcome": "Welcome to CzechByLukas",
-    "mainPageText": "This is the main page. I’ll be adding more chapters and content.",
-    "topics": "Topics and Applications",
-    "vocabList": "Vocabulary List",
-    "practice": "Practice",
-    "tests": "Tests",
-    "usefulPhrases": "Useful Phrases",
-    "pastTense": "Past Tense",
-    "questionGenerator": "Question Generator (A0)"
-  },
-
+  "heading-welcome": "Welcome to CzechByLukas",
+  "heading-mainPageText": "This is the main page. I’ll be adding more chapters and content.",
   "heading-topics": "Topics and Applications",
+
   "heading-vocab": "Vocabulary",
   "heading-vocabList": "Vocabulary List",
   "heading-useful-phrases": "Useful Phrases",
   "heading-past-tense": "Past Tense",
-  "head
+  "heading-question-generator": "Question Generator (A0)",
+
+  "heading-exercise": "Practice",
+  "heading-exList": "Exercise List",
+  "link-ex-useful-phrases": "Useful Phrases",
+  "link-ex-past-tense": "Past Tense",
+  "link-ex-question-generator": "Question Generator (A0)",
+
+  "heading-tests": "Tests",
+  "heading-testList": "Test List",
+  "link-test-useful-phrases": "Useful Phrases",
+  "link-test-past-tense": "Past Tense",
+
+  "buttons": {
+    "next": "Next",
+    "prev": "Previous",
+    "submit": "Submit",
+    "search": "Search",
+    "home": "🏠 Home",
+    "exerciseList": "🧠 Exercise List",
+    "testList": "📝 All Tests",
+    "practice": "🧠 Practice",
+    "test": "📝 Test",
+    "vocabulary": "📘 Vocabulary"
+  },
+
+  "messages": {
+    "loading": "Loading...",
+    "error": "Something went wrong.",
+    "empty": "No entries found.",
+    "clickToShow": "Click to show in Czech",
+    "timeRemaining": "⏱ Time remaining:",
+    "timesUp": "⏱ Time’s up! Please submit your answers now."
+  },
+
+  "placeholders": {
+    "search": "Type here to search..."
+  },
+
+  "footer-text": "❤️ I built this website myself to help people learn Czech. If you’d like to support my work,",
+  "footer-link": "click here"
+}

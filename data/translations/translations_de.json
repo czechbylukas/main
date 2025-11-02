@@ -7,24 +7,26 @@
     "support": "🛠 Unterstützung"
   },
 
-  "headings": {
-    "welcome": "Willkommen bei CzechByLukas",
-    "mainPageText": "Dies ist die Hauptseite. Ich werde weitere Kapitel und Inhalte hinzufügen.",
-    "topics": "Themen und Anwendungen",
-    "vocabList": "Vokabelliste",
-    "practice": "Üben",
-    "tests": "Tests",
-    "usefulPhrases": "Nützliche Phrasen",
-    "pastTense": "Vergangenheit",
-    "questionGenerator": "Fragegenerator (A0)"
-  },
-
+  "heading-welcome": "Willkommen bei CzechByLukas",
+  "heading-mainPageText": "Dies ist die Hauptseite. Ich werde weitere Kapitel und Inhalte hinzufügen.",
   "heading-topics": "Themen und Anwendungen",
+
   "heading-vocab": "Vokabeln",
   "heading-vocabList": "Vokabelliste",
   "heading-useful-phrases": "Nützliche Phrasen",
   "heading-past-tense": "Vergangenheit",
   "heading-question-generator": "Fragegenerator (A0)",
+
+  "heading-exercise": "Üben",
+  "heading-exList": "Übungsübersicht",
+  "link-ex-useful-phrases": "Nützliche Phrasen",
+  "link-ex-past-tense": "Vergangenheit",
+  "link-ex-question-generator": "Fragegenerator (A0)",
+
+  "heading-tests": "Tests",
+  "heading-testList": "Testübersicht",
+  "link-test-useful-phrases": "Nützliche Phrasen",
+  "link-test-past-tense": "Vergangenheit",
 
   "buttons": {
     "next": "Weiter",
@@ -52,9 +54,6 @@
     "search": "Hier zum Suchen eingeben..."
   },
 
-  "footer": {
-    "text": "❤️ Ich habe diese Seite selbst erstellt, um Menschen beim Lernen von Tschechisch zu helfen. Wenn du meine Arbeit unterstützen möchtest,",
-    "link": "klicke hier"
-  },
-
-  "exercise
+  "footer-text": "❤️ Ich habe diese Seite selbst erstellt, um Menschen beim Lernen von Tschechisch zu helfen. Wenn du meine Arbeit unterstützen möchtest,",
+  "footer-link": "klicke hier"
+}

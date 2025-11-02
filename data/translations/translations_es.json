@@ -1,30 +1,32 @@
 {
   "menu": {
-    "home": "🏠 Página principal",
+    "home": "🏠 Inicio",
     "vocabulary": "📘 Vocabulario",
-    "practicing": "❓ Práctica",
-    "testing": "💬 Pruebas",
+    "practicing": "❓ Practicar",
+    "testing": "💬 Tests",
     "support": "🛠 Apoyo"
   },
 
-  "headings": {
-    "welcome": "Bienvenido a CzechByLukas",
-    "mainPageText": "Esta es la página principal. Iré añadiendo más capítulos y contenido.",
-    "topics": "Temas y aplicaciones",
-    "vocabList": "Lista de vocabulario",
-    "practice": "Práctica",
-    "tests": "Pruebas",
-    "usefulPhrases": "Frases útiles",
-    "pastTense": "Pasado",
-    "questionGenerator": "Generador de preguntas (A0)"
-  },
-
+  "heading-welcome": "Bienvenido a CzechByLukas",
+  "heading-mainPageText": "Esta es la página principal. Agregaré más capítulos y contenido.",
   "heading-topics": "Temas y aplicaciones",
+
   "heading-vocab": "Vocabulario",
   "heading-vocabList": "Lista de vocabulario",
   "heading-useful-phrases": "Frases útiles",
   "heading-past-tense": "Pasado",
   "heading-question-generator": "Generador de preguntas (A0)",
+
+  "heading-exercise": "Practicar",
+  "heading-exList": "Lista de ejercicios",
+  "link-ex-useful-phrases": "Frases útiles",
+  "link-ex-past-tense": "Pasado",
+  "link-ex-question-generator": "Generador de preguntas (A0)",
+
+  "heading-tests": "Tests",
+  "heading-testList": "Lista de tests",
+  "link-test-useful-phrases": "Frases útiles",
+  "link-test-past-tense": "Pasado",
 
   "buttons": {
     "next": "Siguiente",
@@ -33,63 +35,25 @@
     "search": "Buscar",
     "home": "🏠 Inicio",
     "exerciseList": "🧠 Lista de ejercicios",
-    "testList": "📝 Todas las pruebas",
-    "practice": "🧠 Práctica",
-    "test": "📝 Prueba",
+    "testList": "📝 Todos los tests",
+    "practice": "🧠 Practicar",
+    "test": "📝 Test",
     "vocabulary": "📘 Vocabulario"
   },
 
   "messages": {
     "loading": "Cargando...",
     "error": "Algo salió mal.",
-    "empty": "No se encontraron resultados.",
+    "empty": "No se encontraron entradas.",
     "clickToShow": "Haz clic para mostrar en checo",
     "timeRemaining": "⏱ Tiempo restante:",
-    "timesUp": "⏱ ¡Se acabó el tiempo! Envía tus respuestas ahora."
+    "timesUp": "⏱ ¡Se acabó el tiempo! Por favor, envía tus respuestas ahora."
   },
 
   "placeholders": {
     "search": "Escribe aquí para buscar..."
   },
 
-  "footer": {
-    "text": "❤️ Creé esta página yo mismo para ayudar a la gente a aprender checo. Si quieres apoyar mi trabajo,",
-    "link": "haz clic aquí"
-  },
-
-  "exercise": {
-    "title": "Ejercicio: Frases útiles",
-    "progress": "Progreso",
-    "progressOf": "de",
-    "previous": "← Anterior",
-    "next": "Siguiente →",
-    "clickToShow": "Haz clic para mostrar en checo"
-  },
-
-  "test": {
-    "title": "Prueba – Frases útiles",
-    "instructions": "Tienes 10 minutos para completar la prueba. Después de enviarla, veré y corregiré tus respuestas.",
-    "timer": "⏱ Tiempo restante:",
-    "timesUp": "⏱ ¡Se acabó el tiempo! Envía tus respuestas ahora."
-  },
-
-  "exerciseIndex": {
-    "title": "Práctica",
-    "listHeading": "Lista de ejercicios",
-    "usefulPhrases": "Frases útiles",
-    "pastTense": "Pasado",
-    "questionGenerator": "Generador de preguntas (A0)"
-  },
-
-  "testIndex": {
-    "title": "Pruebas",
-    "listHeading": "Lista de pruebas",
-    "usefulPhrases": "Frases útiles",
-    "pastTense": "Pasado"
-  },
-
-  "links": {
-    "usefulPhrases": "Frases útiles",
-    "pastTense": "Pasado"
-  }
+  "footer-text": "❤️ Creé esta página yo mismo para ayudar a las personas a aprender checo. Si quieres apoyar mi trabajo,",
+  "footer-link": "haz clic aquí"
 }
