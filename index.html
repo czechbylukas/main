@@ -6,41 +6,50 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="home">
-    <header>
-        <h1 id="heading-welcome">Welcome in CzechByLukas</h1>
 
-        <!-- Language selector -->
-        <select id="languageSelector">
-            <option value="en">English</option>
-            <option value="cz">Česky</option>
-            <option value="es">Español</option>
-            <option value="de">Deutsch</option>
-        </select>
-    </header>
+<header>
+    <h1 id="heading-welcome">Welcome in CzechByLukas</h1>
 
-    <main>
-        <p id="heading-mainText">This is the main page. I will be adding more chapters and content.</p>
+    <!-- Language selector with flags -->
+    <div class="language-selector">
+        <button id="current-lang">
+            <img src="flags/en.png" alt="English" class="flag-icon">
+        </button>
+        <ul id="lang-dropdown" class="hidden">
+            <li data-lang="en"><img src="flags/en.png" alt="English" class="flag-icon"></li>
+            <li data-lang="cz"><img src="flags/cz.png" alt="Česky" class="flag-icon"></li>
+            <li data-lang="es"><img src="flags/es.png" alt="Español" class="flag-icon"></li>
+            <li data-lang="de"><img src="flags/de.png" alt="Deutsch" class="flag-icon"></li>
+        </ul>
+    </div>
+</header>
 
-        <h2 id="heading-topics">Topics and applications</h2>
+<main>
+    <p id="heading-mainText">This is the main page. I will be adding more chapters and content.</p>
 
-        <nav>
-            <a id="menu-home" href="index.html">🏠 Main Page</a>
-            <a id="menu-vocabulary" href="vocabulary/index.html">📘 Vocabulary</a>
-            <a id="menu-practicing" href="exercise/index.html">❓ Practicing</a>
-            <a id="menu-testing" href="tests/index.html">💬 Testing</a>
-        </nav>
-    </main>
+    <h2 id="heading-topics">Topics and applications</h2>
 
-    <script>
-      fetch("../css/footer.html")
-        .then(response => response.text())
-        .then(data => {
-          document.body.insertAdjacentHTML("beforeend", data);
-        })
-        .catch(error => console.error("Footer failed to load:", error));
-    </script>
+    <nav>
+        <a id="menu-home" href="index.html">🏠 Main Page</a>
+        <a id="menu-vocabulary" href="vocabulary/index.html">📘 Vocabulary</a>
+        <a id="menu-practicing" href="exercise/index.html">❓ Practicing</a>
+        <a id="menu-testing" href="tests/index.html">💬 Testing</a>
+    </nav>
+</main>
 
-    <!-- LINK TO TRANSLATIONS JS FILE -->
-    <script src="js/translations.js"></script> <!-- Just before </body> -->
+<!-- Footer -->
+<script>
+  fetch("../css/footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.body.insertAdjacentHTML("beforeend", data);
+    })
+    .catch(error => console.error("Footer failed to load:", error));
+</script>
+
+<!-- Scripts -->
+<script src="js/translations.js"></script>       <!-- Translations logic -->
+<script src="js/language-selector.js"></script>  <!-- Flag language selector -->
+
 </body>
 </html>
