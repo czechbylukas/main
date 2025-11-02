@@ -1,3 +1,20 @@
+// Insert the language selector into the page
+const container = document.getElementById("language-selector-container");
+
+container.innerHTML = `
+<div class="language-selector">
+    <button id="current-lang">
+        <img src="flags/en.png" alt="English" class="flag-icon">
+    </button>
+    <ul id="lang-dropdown" class="hidden">
+        <li data-lang="en"><img src="flags/en.png" alt="English" class="flag-icon"></li>
+        <li data-lang="cz"><img src="flags/cz.png" alt="Česky" class="flag-icon"></li>
+        <li data-lang="es"><img src="flags/es.png" alt="Español" class="flag-icon"></li>
+        <li data-lang="de"><img src="flags/de.png" alt="Deutsch" class="flag-icon"></li>
+    </ul>
+</div>
+`;
+
 const currentLangBtn = document.getElementById("current-lang");
 const langDropdown = document.getElementById("lang-dropdown");
 

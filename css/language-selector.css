@@ -1,0 +1,48 @@
+.language-selector {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    user-select: none;
+}
+
+.language-selector button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.language-selector .flag-icon {
+    width: 24px;
+    height: 16px;
+    object-fit: cover;
+}
+
+.language-selector ul {
+    position: absolute;
+    top: 28px;
+    right: 0;
+    list-style: none;
+    margin: 0;
+    padding: 5px 0;
+    background: #fffcc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.language-selector ul.hidden {
+    display: none;
+}
+
+.language-selector ul li {
+    padding: 5px 10px;
+    transition: background 0.2s;
+}
+
+.language-selector ul li:hover {
+    background: #f0f0f0;
+}
