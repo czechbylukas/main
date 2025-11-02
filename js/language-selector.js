@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const languages = [
     { code: "en", flag: "/flags/en.png" },
-    { code: "cs", flag: "/flags/cs.png" },
+    { code: "cz", flag: "/flags/cz.png" },
     { code: "es", flag: "/flags/es.png" },
     { code: "de", flag: "/flags/de.png" }
   ];
