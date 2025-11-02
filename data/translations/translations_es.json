@@ -3,15 +3,20 @@
     "home": "🏠 Página principal",
     "vocabulary": "📘 Vocabulario",
     "practicing": "❓ Práctica",
-    "testing": "💬 Pruebas",
+    "testing": "💬 Prueba",
     "support": "🛠 Soporte"
   },
   "headings": {
     "welcome": "Bienvenido a CzechByLukas",
-    "mainPageText": "Esta es la página principal. Agregaré más capítulos y contenido.",
+    "mainPageText": "Esta es la página principal. Iré añadiendo más capítulos y contenido.",
     "topics": "Temas y aplicaciones",
-    "vocabList": "Lista de vocabulario",
+    "vocab": "Vocabulario",
+    "vocabList": "Lista de vocabularios",
     "exerciseInstructions": "Elige la traducción correcta"
+  },
+  "links": {
+    "usefulPhrases": "Frases útiles",
+    "pastTense": "Pasado"
   },
   "buttons": {
     "next": "Siguiente",
@@ -28,7 +33,7 @@
     "search": "Escribe aquí para buscar..."
   },
   "footer": {
-    "text": "❤️ Construí este sitio yo mismo para ayudar a la gente a aprender checo. Si quieres apoyar mi trabajo,",
+    "text": "❤️ He creado este sitio yo mismo para ayudar a la gente a aprender checo. Si quieres apoyar mi trabajo,",
     "link": "haz clic aquí"
   }
 }

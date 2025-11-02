@@ -10,8 +10,13 @@
     "welcome": "Welcome to CzechByLukas",
     "mainPageText": "This is the main page. I will be adding more chapters and content.",
     "topics": "Topics and applications",
-    "vocabList": "Vocabulary List",
+    "vocab": "Vocabulary",
+    "vocabList": "List of Vocabularies",
     "exerciseInstructions": "Choose the correct translation"
+  },
+  "links": {
+    "usefulPhrases": "Useful Phrases",
+    "pastTense": "Past Tense"
   },
   "buttons": {
     "next": "Next",

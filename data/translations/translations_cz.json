@@ -8,10 +8,15 @@
   },
   "headings": {
     "welcome": "Vítejte na CzechByLukas",
-    "mainPageText": "Toto je hlavní stránka. Budu přidávat další kapitoly a obsah.",
+    "mainPageText": "Toto je hlavní stránka. Postupně budu přidávat další kapitoly a obsah.",
     "topics": "Témata a aplikace",
+    "vocab": "Slovní zásoba",
     "vocabList": "Seznam slovíček",
     "exerciseInstructions": "Vyberte správný překlad"
+  },
+  "links": {
+    "usefulPhrases": "Užitečné fráze",
+    "pastTense": "Minulý čas"
   },
   "buttons": {
     "next": "Další",
@@ -25,10 +30,10 @@
     "empty": "Žádné položky nenalezeny."
   },
   "placeholders": {
-    "search": "Zadejte text k vyhledání..."
+    "search": "Zadejte text pro hledání..."
   },
   "footer": {
-    "text": "❤️ Tento web jsem vytvořil sám, abych pomohl lidem učit se česky. Pokud chcete podpořit mou práci,",
+    "text": "❤️ Tento web jsem vytvořil sám, abych pomohl lidem učit se česky. Pokud mě chcete podpořit,",
     "link": "klikněte zde"
   }
 }

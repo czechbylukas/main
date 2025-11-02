@@ -1,26 +1,31 @@
 {
   "menu": {
     "home": "🏠 Startseite",
-    "vocabulary": "📘 Wortschatz",
-    "practicing": "❓ Üben",
-    "testing": "💬 Tests",
+    "vocabulary": "📘 Vokabeln",
+    "practicing": "❓ Übung",
+    "testing": "💬 Test",
     "support": "🛠 Unterstützung"
   },
   "headings": {
     "welcome": "Willkommen bei CzechByLukas",
     "mainPageText": "Dies ist die Hauptseite. Ich werde weitere Kapitel und Inhalte hinzufügen.",
     "topics": "Themen und Anwendungen",
+    "vocab": "Vokabeln",
     "vocabList": "Wortschatzliste",
     "exerciseInstructions": "Wählen Sie die richtige Übersetzung"
+  },
+  "links": {
+    "usefulPhrases": "Nützliche Ausdrücke",
+    "pastTense": "Vergangenheit"
   },
   "buttons": {
     "next": "Weiter",
     "prev": "Zurück",
     "submit": "Senden",
-    "search": "Suchen"
+    "search": "Suche"
   },
   "messages": {
-    "loading": "Laden...",
+    "loading": "Wird geladen...",
     "error": "Etwas ist schief gelaufen.",
     "empty": "Keine Einträge gefunden."
   },
@@ -29,6 +34,6 @@
   },
   "footer": {
     "text": "❤️ Ich habe diese Website selbst erstellt, um Menschen beim Tschechischlernen zu helfen. Wenn Sie meine Arbeit unterstützen möchten,",
-    "link": "hier klicken"
+    "link": "klicken Sie hier"
   }
 }
