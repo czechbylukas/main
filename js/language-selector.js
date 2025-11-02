@@ -1,15 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   const languages = [
     { code: "en", flag: "/flags/en.png" },
-    { code: "cz", flag: "/flags/cz.png" },
+    { code: "cs", flag: "/flags/cs.png" },
     { code: "es", flag: "/flags/es.png" },
     { code: "de", flag: "/flags/de.png" }
   ];
 
   const container = document.getElementById("language-selector-container");
-  let currentLang = "en";
-
   if (!container) return;
+
+  // Load saved language or default to English
+  let currentLang = localStorage.getItem("selectedLanguage") || "en";
 
   // Current flag button
   const btn = document.createElement("button");
@@ -40,11 +41,21 @@ document.addEventListener("DOMContentLoaded", () => {
         dropdown.appendChild(li);
       }
     });
-    dropdown.style.display = "none"; // ensure hidden by default
+    dropdown.style.display = "none"; // hidden by default
   }
 
-  updateCurrentFlag();
-  buildDropdown();
+  // Apply translations and update HTML lang
+  function applyLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem("selectedLanguage", lang); // remember selection
+    document.documentElement.setAttribute("lang", lang); // accessibility & SEO
+    updateCurrentFlag();
+    buildDropdown();
+    if (typeof loadTranslations === "function") loadTranslations(lang); // call your existing translation loader
+  }
+
+  // Initialize
+  applyLanguage(currentLang);
 
   // Toggle dropdown
   btn.addEventListener("click", (e) => {
@@ -52,15 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
     dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
   });
 
-  // Select language
+  // Select language from dropdown
   dropdown.addEventListener("click", (e) => {
     const li = e.target.closest("li");
     if (!li) return;
-    currentLang = li.dataset.lang;
-    updateCurrentFlag();
-    dropdown.style.display = "none";
-    buildDropdown();
-    if (typeof loadTranslations === "function") loadTranslations(currentLang);
+    applyLanguage(li.dataset.lang);
   });
 
   // Close dropdown clicking outside
