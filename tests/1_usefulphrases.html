@@ -1,81 +1,100 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9067674021614925"
-     crossorigin="anonymous"></script>
-<meta name="google-adsense-account" content="ca-pub-9067674021614925">
-
   <meta charset="UTF-8">
   <title>Lesson 1 Test – CzechByLukas</title>
 
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9067674021614925"
+     crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-9067674021614925">
+
   <!-- ✅ Load shared CSS -->
   <link rel="stylesheet" href="../css/style.css">
-
+  <link rel="stylesheet" href="../css/language-selector.css">
 </head>
 <body class="vocab-page">
 
-  <h1>Test – Useful Phrases</h1>
-  <p>You have 10 minutes to complete the test. After submitting, I will see and correct your answers.</p>
+  <header>
+    <h1>Test – Useful Phrases</h1>
 
+    <!-- Language selector -->
+    <div id="language-selector-container" style="margin-bottom: 15px;">
+      <button class="lang-btn" data-lang="en">English</button>
+      <button class="lang-btn" data-lang="cs">Czech</button>
+      <button class="lang-btn" data-lang="es">Español</button>
+      <button class="lang-btn" data-lang="de">Deutsch</button>
+    </div>
 
-<div id="timer" style="font-size: 1.5rem; color: #2b593e; margin-bottom: 15px;">
-  ⏱ Time remaining: 10:00
-</div>
+    <p>You have 10 minutes to complete the test. After submitting, I will see and correct your answers.</p>
+  </header>
 
-<script>
-  // Total time in seconds
-  let timeLeft = 10 * 60; // 10 minutes
+  <!-- Timer -->
+  <div id="timer" style="font-size: 1.5rem; color: #2b593e; margin-bottom: 15px;">
+    ⏱ Time remaining: 10:00
+  </div>
 
-  const timerEl = document.getElementById('timer');
+  <script>
+    // Total time in seconds
+    let timeLeft = 10 * 60; // 10 minutes
+    const timerEl = document.getElementById('timer');
 
-  const countdown = setInterval(() => {
-    const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
-    const seconds = (timeLeft % 60).toString().padStart(2, '0');
-    timerEl.textContent = `⏱ Time remaining: ${minutes}:${seconds}`;
+    const countdown = setInterval(() => {
+      const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+      const seconds = (timeLeft % 60).toString().padStart(2, '0');
+      timerEl.textContent = `⏱ Time remaining: ${minutes}:${seconds}`;
+      timeLeft--;
 
-    timeLeft--;
+      if (timeLeft < 0) {
+        clearInterval(countdown);
+        timerEl.textContent = '⏱ Time’s up! Please submit your answers now.';
+        timerEl.style.color = '#c0392b';
+        alert('⏱ Time’s up! Please submit your answers now.');
+      }
+    }, 1000);
+  </script>
 
-    if (timeLeft < 0) {
-      clearInterval(countdown);
-      timerEl.textContent = '⏱ Time’s up! Please submit your answers now.';
-      timerEl.style.color = '#c0392b';
-      alert('⏱ Time’s up! Please submit your answers now.');
+  <!-- Dynamic Google Form iframe -->
+  <iframe id="testIframe" 
+          style="width: 90%; min-height: 100vh; max-height: 10000px; border: none; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.2); background: white;"></iframe>
+
+  <!-- Load test links -->
+  <script src="../data/translations/tests_links.js"></script>
+  <script>
+    // Function to set iframe based on lesson and language
+    const lesson = "lesson1";
+
+    function updateIframe(lang) {
+      document.getElementById("testIframe").src = testLinks[lesson][lang];
     }
-  }, 1000);
-</script>
 
+    // Initial load based on HTML lang attribute
+    const initialLang = document.documentElement.lang || "en";
+    updateIframe(initialLang);
 
+    // Language selector buttons
+    const buttons = document.querySelectorAll(".lang-btn");
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const newLang = btn.dataset.lang;
+        document.documentElement.lang = newLang;
+        updateIframe(newLang);
+      });
+    });
+  </script>
 
-<!-- 👇 Google Form iframe -->
-<iframe id="testIframe" style="width: 90%; min-height: 100vh; max-height: 10000px; border: none; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.2); background: white;"></iframe>
-
-<!-- ✅ Load test links and set iframe dynamically -->
-<script src="../data/translations/tests_links.js"></script>
-<script>
-  // Detect language from HTML lang attribute
-  const lang = document.documentElement.lang || "en"; // fallback to English
-
-  // Set lesson manually for this page
-  const lesson = "lesson1";
-
-  // Set iframe src dynamically
-  document.getElementById("testIframe").src = testLinks[lesson][lang];
-</script>
-
-
-
-
+  <!-- Big buttons -->
   <div class="big-buttons">
     <a href="../vocabulary/1_usefulphrases.html">📘 Vocabulary</a>
     <a href="../exercise/1_usefulphrases.html">🧠 Practice</a>
   </div>
 
+  <!-- Small buttons -->
   <div class="small-buttons">
     <a href="../index.html">🏠 Home</a>
     <a href="../tests/index.html">📝 All Tests</a>
   </div>
 
+  <!-- Footer -->
   <script>
     fetch("../css/footer.html")
       .then(response => response.text())
