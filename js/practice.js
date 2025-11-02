@@ -1,6 +1,9 @@
-// Get selected language (default = English)
-const lang = localStorage.getItem("selectedLanguage") || "en";
+// -----------------------------
+// practice.js
+// -----------------------------
 
+// Get selected language (default = English)
+let lang = localStorage.getItem("selectedLanguage") || "en";
 let currentIndex = 0;
 
 // Flashcard elements
@@ -9,7 +12,9 @@ const czechCard = document.getElementById("czechCard");
 const progressBar = document.getElementById("progress");
 const progressText = document.getElementById("progressText");
 
-// Map language to flashcard display
+// -----------------------------
+// Helper: get translation by language
+// -----------------------------
 function getTranslation(item) {
   switch(lang) {
     case "de": return item.german;
@@ -18,30 +23,36 @@ function getTranslation(item) {
   }
 }
 
-// Render the cards
+// -----------------------------
+// Render flashcards
+// -----------------------------
 function renderCard(index) {
   const item = vocab[index];
 
-  // Czech card: initially hidden, shows grey "Click to show Czech"
+  // Left card: selected language
+  englishCard.textContent = getTranslation(item);
+
+  // Right card: Czech placeholder
   czechCard.textContent = translations.messages?.clickToShow || "Click to show Czech";
   czechCard.classList.add("click-to-show");
-  
-  // First card shows selected language translation
-  englishCard.textContent = getTranslation(item);
 
   // Update progress
   progressText.textContent = `${index + 1} / ${vocab.length}`;
   progressBar.style.width = ((index + 1) / vocab.length * 100) + "%";
 }
 
-// Show Czech translation when right card is clicked
+// -----------------------------
+// Click to reveal Czech
+// -----------------------------
 czechCard.addEventListener("click", () => {
   const item = vocab[currentIndex];
   czechCard.textContent = item.czech + (item.pronunciation ? ` (${item.pronunciation})` : "");
   czechCard.classList.remove("click-to-show");
 });
 
+// -----------------------------
 // Navigation buttons
+// -----------------------------
 document.getElementById("prevBtn").addEventListener("click", () => {
   if(currentIndex > 0) currentIndex--;
   renderCard(currentIndex);
@@ -52,7 +63,13 @@ document.getElementById("nextBtn").addEventListener("click", () => {
   renderCard(currentIndex);
 });
 
-// Initial render
+// -----------------------------
+// Language change handling
+// -----------------------------
 document.addEventListener("DOMContentLoaded", () => {
+  // Load saved language from translations.js
+  lang = localStorage.getItem("selectedLanguage") || "en";
+
+  // Render first card
   renderCard(currentIndex);
 });

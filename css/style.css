@@ -508,4 +508,9 @@ body.index-page {
     background: #f0f0f0;
 }
 
-
+/* Grey placeholder for "Click to show Czech" */
+.card.click-to-show {
+  color: #888;             /* grey text */
+  font-style: italic;       /* optional */
+  cursor: pointer;          /* indicate it's clickable */
+}
