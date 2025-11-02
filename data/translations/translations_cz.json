@@ -1,85 +1,85 @@
 {
   "menu": {
-    "home": "🏠 Main Page",
-    "vocabulary": "📘 Vocabulary",
-    "practicing": "❓ Practicing",
-    "testing": "💬 Testing",
-    "support": "🛠 Support"
+    "home": "🏠 Hlavní stránka",
+    "vocabulary": "📘 Slovní zásoba",
+    "practicing": "❓ Procvičování",
+    "testing": "💬 Testování",
+    "support": "🛠 Podpora"
   },
   "headings": {
-    "welcome": "Welcome to CzechByLukas",
-    "mainPageText": "This is the main page. I will be adding more chapters and content.",
-    "topics": "Topics and applications",
-    "vocabList": "Vocabulary List",
-    "exerciseInstructions": "Choose the correct translation",
-    "exerciseList": "List of Exercises",
-    "testList": "List of Tests",
-    "practice": "Practice",
-    "tests": "Tests",
-    "usefulPhrases": "Useful Phrases",
-    "pastTense": "Past Tense",
-    "questionGenerator": "Question Generator (A0)"
+    "welcome": "Vítejte na CzechByLukas",
+    "mainPageText": "Toto je hlavní stránka. Budu přidávat další kapitoly a obsah.",
+    "topics": "Témata a aplikace",
+    "vocabList": "Seznam slovní zásoby",
+    "exerciseInstructions": "Vyberte správný překlad",
+    "exerciseList": "Seznam cvičení",
+    "testList": "Seznam testů",
+    "practice": "Procvičování",
+    "tests": "Testy",
+    "usefulPhrases": "Užitečné fráze",
+    "pastTense": "Minulý čas",
+    "questionGenerator": "Generátor otázek (A0)"
   },
   "buttons": {
-    "next": "Next",
-    "prev": "Previous",
-    "submit": "Submit",
-    "search": "Search",
-    "home": "🏠 Home",
-    "exerciseList": "🧠 Exercise List",
-    "testList": "📝 All Tests",
-    "vocabulary": "📘 Vocabulary",
-    "practice": "🧠 Practice",
+    "next": "Další",
+    "prev": "Předchozí",
+    "submit": "Odeslat",
+    "search": "Hledat",
+    "home": "🏠 Domů",
+    "exerciseList": "🧠 Seznam cvičení",
+    "testList": "📝 Všechny testy",
+    "vocabulary": "📘 Slovní zásoba",
+    "practice": "🧠 Procvičování",
     "test": "📝 Test"
   },
   "messages": {
-    "loading": "Loading...",
-    "error": "Something went wrong.",
-    "empty": "No items found.",
-    "clickToShow": "Click to show Czech",
-    "timeRemaining": "⏱ Time remaining:",
-    "timesUp": "⏱ Time’s up! Please submit your answers now."
+    "loading": "Načítám...",
+    "error": "Něco se pokazilo.",
+    "empty": "Nebyly nalezeny žádné položky.",
+    "clickToShow": "Klikněte pro zobrazení češtiny",
+    "timeRemaining": "⏱ Zbývající čas:",
+    "timesUp": "⏱ Čas vypršel! Prosím, odešlete své odpovědi."
   },
   "placeholders": {
-    "search": "Type here to search..."
+    "search": "Zadejte text pro hledání..."
   },
   "footer": {
-    "text": "❤️ I build this site myself to help people learn Czech. If you’d like to support my work,",
-    "link": "click here"
+    "text": "❤️ Tento web jsem vytvořil sám, aby pomohl lidem učit se česky. Pokud byste chtěli podpořit mou práci,",
+    "link": "klikněte zde"
   },
   "exercise": {
-    "title": "Practice Useful Phrases",
-    "progress": "Progress",
-    "progressOf": "of",
-    "previous": "← Previous",
-    "next": "Next →",
-    "vocabulary": "📘 Vocabulary",
+    "title": "Procvičování užitečných frází",
+    "progress": "Pokrok",
+    "progressOf": "z",
+    "previous": "← Předchozí",
+    "next": "Další →",
+    "vocabulary": "📘 Slovní zásoba",
     "test": "📝 Test",
-    "home": "🏠 Home",
-    "exerciseList": "🧠 Exercise List",
-    "clickToShow": "Click to show Czech"
+    "home": "🏠 Domů",
+    "exerciseList": "🧠 Seznam cvičení",
+    "clickToShow": "Klikněte pro zobrazení češtiny"
   },
   "test": {
-    "title": "Test – Useful Phrases",
-    "instructions": "You have 10 minutes to complete the test. After submitting, I will see and correct your answers.",
-    "timer": "⏱ Time remaining:",
-    "timesUp": "⏱ Time’s up! Please submit your answers now.",
-    "vocabulary": "📘 Vocabulary",
-    "practice": "🧠 Practice",
-    "home": "🏠 Home",
-    "allTests": "📝 All Tests"
+    "title": "Test – Užitečné fráze",
+    "instructions": "Máte 10 minut na dokončení testu. Po odeslání uvidím a opravím vaše odpovědi.",
+    "timer": "⏱ Zbývající čas:",
+    "timesUp": "⏱ Čas vypršel! Prosím, odešlete své odpovědi.",
+    "vocabulary": "📘 Slovní zásoba",
+    "practice": "🧠 Procvičování",
+    "home": "🏠 Domů",
+    "allTests": "📝 Všechny testy"
   },
   "exerciseIndex": {
-    "title": "Practice",
-    "listHeading": "List of Exercises",
-    "usefulPhrases": "Useful Phrases",
-    "pastTense": "Past Tense",
-    "questionGenerator": "Question Generator (A0)"
+    "title": "Procvičování",
+    "listHeading": "Seznam cvičení",
+    "usefulPhrases": "Užitečné fráze",
+    "pastTense": "Minulý čas",
+    "questionGenerator": "Generátor otázek (A0)"
   },
   "testIndex": {
-    "title": "Tests",
-    "listHeading": "List of Tests",
-    "usefulPhrases": "Useful Phrases",
-    "pastTense": "Past Tense"
+    "title": "Testy",
+    "listHeading": "Seznam testů",
+    "usefulPhrases": "Užitečné fráze",
+    "pastTense": "Minulý čas"
   }
 }
