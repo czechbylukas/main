@@ -30,8 +30,8 @@
 
   <!-- Navigation buttons -->
   <div class="big-buttons">
-    <button id="prevBtn"></button>
-    <button id="nextBtn"></button>
+    <button id="btn-prev"></button>
+    <button id="btn-next"></button>
   </div>
 
   <!-- Progress bar -->
@@ -55,7 +55,12 @@
   </div>
 </main>
 
-<footer class="support-note" id="footer-container"></footer>
+<footer class="support-note">
+  <span id="footer-text">
+    ❤️ I build this site myself to help people learn Czech. 
+    <a id="footer-link" href="../support.html">click here</a>
+  </span>
+</footer>
 
 <!-- Vocabulary data -->
 <script src="../data/1_usefulphrases.js"></script>
@@ -66,30 +71,55 @@
 <!-- Language selector -->
 <script src="../js/language-selector.js"></script>
 
-<!-- Practice logic with translations -->
+<!-- Practice logic -->
 <script src="../js/practice.js"></script>
 
 <script>
-  function applyPracticeTranslations() {
-    const lang = localStorage.getItem("selectedLanguage") || "en";
-    const t = translations[lang];
+  // Map element IDs to translation keys
+  const btnMap = {
+    "btn-prev": "prev",
+    "btn-next": "next",
+    "btn-vocab": "vocabulary",
+    "btn-test": "test",
+    "btn-home": "home",
+    "btn-exerciseList": "exerciseList"
+  };
 
-    document.getElementById("heading-practice").textContent = t["heading-practice"];
-    document.getElementById("prevBtn").textContent = t["button-prev"];
-    document.getElementById("nextBtn").textContent = t["button-next"];
-    document.getElementById("btn-vocab").textContent = t["button-vocab"];
-    document.getElementById("btn-test").textContent = t["button-test"];
-    document.getElementById("btn-home").textContent = t["button-home"];
-    document.getElementById("btn-exerciseList").textContent = t["button-exerciseList"];
-    
+  function applyPracticeTranslations() {
+    if (!translations) return;
+
+    // Page title
+    const pageTitle = document.querySelector("title");
+    if (pageTitle && translations.pageTitle) pageTitle.textContent = translations.pageTitle;
+
+    // Header
+    const heading = document.getElementById("heading-practice");
+    if (heading && translations["heading-useful-phrases"]) heading.textContent = translations["heading-useful-phrases"];
+
+    // Buttons
+    for (const [id, key] of Object.entries(btnMap)) {
+      const el = document.getElementById(id);
+      if (el && translations.buttons && translations.buttons[key]) el.textContent = translations.buttons[key];
+    }
+
     // Footer
-    document.getElementById("footer-container").innerHTML = `
-      <span>${t["footer-text"]} <a href="../support.html">${t["footer-link"]}</a></span>
-    `;
+    const footerText = document.getElementById("footer-text");
+    const footerLink = document.getElementById("footer-link");
+    if (footerText && footerLink) {
+      footerText.childNodes[0].nodeValue = (translations["footer-text"] || "") + " ";
+      footerLink.textContent = translations["footer-link"] || footerLink.textContent;
+    }
+
+    // Call page-specific rendering if exists (flashcards, progress, etc.)
+    if (typeof renderVocab === "function") {
+      try { renderVocab(); } catch(e) { /* ignore */ }
+    }
   }
 
+  // Load saved language on page load
   document.addEventListener("DOMContentLoaded", () => {
-    applyPracticeTranslations();
+    const savedLang = localStorage.getItem("selectedLanguage") || "en";
+    if (typeof loadTranslations === "function") loadTranslations(savedLang);
   });
 </script>
 
