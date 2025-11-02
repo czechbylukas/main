@@ -55,14 +55,13 @@
   },
 
   "footer-text": "❤️ Creé esta página yo mismo para ayudar a las personas a aprender checo. Si quieres apoyar mi trabajo,",
-  "footer-link": "haz clic aquí"
-}, 
+  "footer-link": "haz clic aquí",
 
+  "tableHeadings": {
+    "czech": "Checo",
+    "pronunciation": "Pronunciación",
+    "english": "Inglés"
+  },
 
-"tableHeadings": {
-  "czech": "Checo",
-  "pronunciation": "Pronunciación",
-  "english": "Inglés"
-  }
+  "pageTitle": "Frases útiles | CzechByLukas"
 }
-
