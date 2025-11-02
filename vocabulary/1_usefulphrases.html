@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9067674021614925" crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-9067674021614925">
-
   <meta charset="UTF-8">
   <title>Useful Phrases | CzechByLukas</title>
 
-  <!-- ✅ Shared CSS -->
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          client="ca-pub-9067674021614925" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-9067674021614925">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/language-selector.css">
 </head>
@@ -46,19 +47,41 @@
     <span id="footer-text">❤️ I build this site myself to help people learn Czech. If you’d like to support my work, <a id="footer-link" href="../support.html">click here</a>.</span>
   </footer>
 
-  <!-- ✅ Load Vocabulary Data -->
-  <script src="../data/1_usefulphrases.js"></script>
+  <!-- Vocabulary data -->
+  <script src="../data/1_usefulphrases_multilang.js"></script>
+  <!-- Translations -->
+  <script src="../js/translations.js"></script>
+  <!-- Language selector -->
+  <script src="../js/language-selector.js"></script>
+
   <script>
-    const tbody = document.getElementById("vocabBody");
-    vocab.forEach(w => {
-      const row = document.createElement("tr");
-      row.innerHTML = `<td>${w.czech}</td><td>${w.pronunciation}</td><td>${w.english}</td>`;
-      tbody.appendChild(row);
-    });
+    function renderVocab() {
+      const lang = localStorage.getItem("language") || "en";
+      const tbody = document.getElementById("vocabBody");
+      tbody.innerHTML = ""; // clear table
+      vocab[lang].forEach(w => {
+        const row = document.createElement("tr");
+        row.innerHTML = `<td>${w.czech}</td><td>${w.pronunciation}</td><td>${w.english}</td>`;
+        tbody.appendChild(row);
+      });
+
+      // Update header and buttons text
+      document.getElementById("heading-vocabTitle").textContent = translations[lang].headings.usefulPhrases;
+      document.getElementById("table-czech").textContent = translations[lang].headings.czech;
+      document.getElementById("table-pronunciation").textContent = translations[lang].headings.pronunciation;
+      document.getElementById("table-english").textContent = translations[lang].headings.english;
+      document.getElementById("btn-practice").textContent = translations[lang].buttons.practice;
+      document.getElementById("btn-test").textContent = translations[lang].buttons.test;
+      document.getElementById("btn-home").textContent = translations[lang].buttons.home;
+      document.getElementById("btn-vocabList").textContent = translations[lang].buttons.vocabulary;
+      document.getElementById("footer-text").innerHTML = translations[lang].footer.text + ' <a href="../support.html">' + translations[lang].footer.link + '</a>';
+    }
+
+    renderVocab();
+
+    // Rerender when language changes
+    document.addEventListener("languageChanged", renderVocab);
   </script>
 
-  <!-- ✅ Translation & Selector -->
-  <script src="../js/translations.js"></script>
-  <script src="../js/language-selector.js"></script>
 </body>
 </html>
