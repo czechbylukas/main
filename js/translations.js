@@ -1,8 +1,9 @@
 let translations = {};
-let currentLang = "en"; // default
+let currentLang = "en";
 
 async function loadTranslations(lang) {
   try {
+    // Single JSON for all pages
     const res = await fetch(`/data/translations/translations_${lang}.json`);
     translations = await res.json();
     currentLang = lang;
@@ -15,13 +16,13 @@ async function loadTranslations(lang) {
 function applyTranslations() {
   if (!translations) return;
 
-  // --- Page title ---
+  // Update page title
   const pageTitle = document.querySelector("title");
   if (pageTitle && translations["page-title"]) {
     pageTitle.textContent = translations["page-title"];
   }
 
-  // --- All headings and text elements ---
+  // List of all possible IDs in all pages
   const idsToTranslate = [
     "heading-welcome",
     "heading-mainText",
@@ -44,14 +45,14 @@ function applyTranslations() {
     if (el && translations[id]) el.textContent = translations[id];
   });
 
-  // --- Menu ---
+  // Menu
   const menuItems = ["home", "vocabulary", "practicing", "testing"];
   menuItems.forEach(item => {
     const el = document.getElementById(`menu-${item}`);
     if (el && translations.menu && translations.menu[item]) el.textContent = translations.menu[item];
   });
 
-  // --- Footer ---
+  // Footer
   const footerText = document.getElementById("footer-text");
   const footerLink = document.getElementById("footer-link");
   if (footerText && footerLink) {
@@ -60,7 +61,6 @@ function applyTranslations() {
   }
 }
 
-// Load default language on DOM ready
 document.addEventListener("DOMContentLoaded", () => {
   loadTranslations(currentLang);
 });
