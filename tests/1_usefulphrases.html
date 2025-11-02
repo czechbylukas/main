@@ -6,17 +6,25 @@
 
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-     client="ca-pub-9067674021614925" crossorigin="anonymous"></script>
+          client="ca-pub-9067674021614925" crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-9067674021614925">
 
-  <!-- ✅ Load shared CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/language-selector.css">
 </head>
-
 <body class="vocab-page">
 
   <header>
     <h1>Test – Useful Phrases</h1>
+
+    <!-- Language selector -->
+    <div id="language-selector-container" style="margin-bottom: 15px;">
+      <button class="lang-btn" data-lang="en">English</button>
+      <button class="lang-btn" data-lang="es">Español</button>
+      <button class="lang-btn" data-lang="de">Deutsch</button>
+    </div>
+
     <p>You have 10 minutes to complete the test. After submitting, I will see and correct your answers.</p>
   </header>
 
@@ -26,7 +34,6 @@
   </div>
 
   <script>
-    // Total time in seconds
     let timeLeft = 10 * 60; // 10 minutes
     const timerEl = document.getElementById('timer');
 
@@ -45,18 +52,31 @@
     }, 1000);
   </script>
 
-  <!-- Google Form iframe -->
+  <!-- Dynamic Google Form iframe -->
   <iframe id="testIframe" 
           style="width: 90%; min-height: 100vh; max-height: 10000px; border: none; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.2); background: white;"></iframe>
 
-  <!-- Load test links and set iframe -->
+  <!-- Load test links -->
   <script src="../data/translations/tests_links.js"></script>
   <script>
     const lesson = "lesson1";
-    const defaultLang = "en"; // Only English by default
 
-    // Set iframe src
-    document.getElementById("testIframe").src = testLinks[lesson][defaultLang];
+    function updateIframe(lang) {
+      const link = testLinks[lesson][lang] || testLinks[lesson]["en"];
+      document.getElementById("testIframe").src = link;
+    }
+
+    // Initial load
+    updateIframe("en");
+
+    // Language selector buttons
+    const buttons = document.querySelectorAll(".lang-btn");
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const newLang = btn.dataset.lang;
+        updateIframe(newLang);
+      });
+    });
   </script>
 
   <!-- Big buttons -->
