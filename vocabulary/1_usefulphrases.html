@@ -15,6 +15,7 @@
 </head>
 
 <body class="vocab-page">
+
 <header>
   <h1 id="heading-vocab">Useful Phrases – Vocabulary</h1>
   <div id="language-selector-container"></div>
@@ -51,26 +52,19 @@
 </footer>
 
 <!-- Vocabulary data -->
-<script src="../data/1_usefulphrases.js"></script>
-
-<!-- Shared translations -->
-<script src="../js/translations.js"></script>
-
-<!-- Shared language selector -->
-<script src="../js/language-selector.js"></script>
+<script src="../data/1_usefulphrases.js" defer></script>
 
 <!-- Vocabulary table renderer -->
-<script>
+<script defer>
   function renderVocab() {
     const lang = localStorage.getItem("selectedLanguage") || "en";
     const tbody = document.getElementById("vocabBody");
     tbody.innerHTML = "";
 
-    // render table rows
     vocab.forEach(item => {
       const row = document.createElement("tr");
-
       let translation;
+
       switch (lang) {
         case "cz": translation = item.english; break;
         case "de": translation = item.german; break;
@@ -78,23 +72,28 @@
         default:   translation = item.english; break;
       }
 
-      // If Czech version — show Czech first, English last
-      if (lang === "cz") {
-        row.innerHTML = `<td>${item.czech}</td><td>${item.pronunciation}</td><td>${translation}</td>`;
-      } else {
-        row.innerHTML = `<td>${item.czech}</td><td>${item.pronunciation}</td><td>${translation}</td>`;
-      }
-
+      row.innerHTML = `
+        <td>${item.czech}</td>
+        <td>${item.pronunciation}</td>
+        <td>${translation}</td>
+      `;
       tbody.appendChild(row);
     });
 
-    // Table headings and buttons are handled by translations.js
-    applyTranslations();
+    // Update translated labels and buttons
+    if (typeof applyTranslations === "function") {
+      applyTranslations();
+    }
   }
 
   document.addEventListener("DOMContentLoaded", () => {
     renderVocab();
   });
 </script>
+
+<!-- Shared translations and language selector -->
+<script src="../js/translations.js" defer></script>
+<script src="../js/language-selector.js" defer></script>
+
 </body>
 </html>
