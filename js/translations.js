@@ -40,16 +40,20 @@ function applyTranslations() {
     "link-ex-question-generator",
     "link-test-useful-phrases",
     "link-test-past-tense",
-    "heading-vocabTitle" // add if used on pages
+    "heading-vocabTitle",
+    "heading-practice"
   ];
 
-  idsToTranslate.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) {
-      // translations may be nested (some keys are at top-level or nested)
-      if (translations[id]) el.textContent = translations[id];
+idsToTranslate.forEach(id => {
+  const el = document.getElementById(id);
+  if (el) {
+    if (translations[id]) {
+      el.textContent = translations[id];
+    } else if (id === "heading-practice" && translations["heading-useful-phrases"]) {
+      el.textContent = translations["heading-useful-phrases"];
     }
-  });
+  }
+});
 
   // ---------- MENU ----------
   const menuItems = ["home", "vocabulary", "practicing", "testing", "support"];
