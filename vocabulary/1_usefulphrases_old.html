@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title id="page-title">Useful Phrases | CzechByLukas</title>
 
+
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
           client="ca-pub-9067674021614925" crossorigin="anonymous"></script>
@@ -18,7 +19,6 @@
 <header>
   <h1 id="heading-vocab">Useful Phrases – Vocabulary</h1>
   <div id="language-selector-container"></div>
-
 
 
 <p>
@@ -55,7 +55,7 @@
 
 <footer class="support-note">
   <span id="footer-text">
-   ❤️ I build this site myself to help people learn Czech.
+    ❤️ I build this site myself to help people learn Czech.
     If you’d like to support my work, <a id="footer-link" href="../support.html">click here</a>.
   </span>
 </footer>
@@ -66,39 +66,8 @@
 <!-- Shared translations -->
 <script src="../js/translations.js"></script>
 
-<!-- Optimized language selector -->
-<script>
-  // Create selector dynamically
-  const languages = [
-    { code: "en", label: "English" },
-    { code: "cz", label: "Czech" },
-    { code: "de", label: "German" },
-    { code: "es", label: "Spanish" }
-  ];
-
-  const selectorContainer = document.getElementById("language-selector-container");
-  const selector = document.createElement("select");
-  selector.id = "language-selector";
-
-  languages.forEach(lang => {
-    const option = document.createElement("option");
-    option.value = lang.code;
-    option.textContent = lang.label;
-    selector.appendChild(option);
-  });
-
-  selectorContainer.appendChild(selector);
-
-  // Set selected language from localStorage or default
-  selector.value = localStorage.getItem("selectedLanguage") || "en";
-
-  // Update table when language changes
-  selector.addEventListener("change", () => {
-    const lang = selector.value;
-    localStorage.setItem("selectedLanguage", lang);
-    renderVocab();
-  });
-</script>
+<!-- Shared language selector -->
+<script src="../js/language-selector.js"></script>
 
 <!-- Vocabulary table renderer -->
 <script>
@@ -107,29 +76,30 @@
     const tbody = document.getElementById("vocabBody");
     tbody.innerHTML = "";
 
-    const fragment = document.createDocumentFragment();
-
+    // render table rows
     vocab.forEach(item => {
       const row = document.createElement("tr");
-      let translation;
 
+      let translation;
       switch (lang) {
         case "cz": translation = item.english; break;
         case "de": translation = item.german; break;
         case "es": translation = item.spanish; break;
-        default: translation = item.english; break;
+        default:   translation = item.english; break;
       }
 
-      row.innerHTML = `<td>${item.czech}</td><td>${item.pronunciation}</td><td>${translation}</td>`;
-      fragment.appendChild(row);
+      // If Czech version — show Czech first, English last
+      if (lang === "cz") {
+        row.innerHTML = `<td>${item.czech}</td><td>${item.pronunciation}</td><td>${translation}</td>`;
+      } else {
+        row.innerHTML = `<td>${item.czech}</td><td>${item.pronunciation}</td><td>${translation}</td>`;
+      }
+
+      tbody.appendChild(row);
     });
 
-    tbody.appendChild(fragment);
-
-    // Apply translations for other page elements (buttons, headings, etc.)
-    if (typeof applyTranslations === "function") {
-      applyTranslations();
-    }
+    // Table headings and buttons are handled by translations.js
+    applyTranslations();
   }
 
   document.addEventListener("DOMContentLoaded", () => {
