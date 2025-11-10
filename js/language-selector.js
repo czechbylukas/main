@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const languages = [
     { code: "en", flag: "../images/flags/en.png" },
     { code: "cz", flag: "../images/flags/cz.png" },
-    { code: "es", flag: "images/flags/es.png" },
-    { code: "de", flag: "images/flags/de.png" }
+    { code: "es", flag: "../images/flags/es.png" },
+    { code: "de", flag: "../images/flags/de.png" }
   ];
 
   const container = document.getElementById("language-selector-container");
