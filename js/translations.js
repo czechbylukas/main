@@ -69,7 +69,7 @@ idsToTranslate.forEach(id => {
   // ---------- VOCAB PAGE BUTTONS ----------
   const btnMap = {
     "btn-practice": "practice",
-    "btn-btn-vocab": "vocabulary",
+    "btn-vocab": "vocabulary",
     "btn-test": "test",
     "btn-home": "home",
     "prevBtn": "prev",
