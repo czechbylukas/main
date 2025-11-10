@@ -91,16 +91,22 @@
     });
 
     tbody.appendChild(fragment);
-
-    // Apply translations for other page elements (buttons, headings, etc.)
-    if (typeof applyTranslations === "function") {
-      applyTranslations();
-    }
+    // DO NOT call applyTranslations() here to avoid recursion.
   }
 
+  // initial render after DOM ready
   document.addEventListener("DOMContentLoaded", () => {
     renderVocab();
+    // applyTranslations once on load if available
+    if (typeof applyTranslations === "function") applyTranslations();
+  });
+
+  // listen for language changes dispatched by the selector
+  document.addEventListener("languageChanged", () => {
+    renderVocab();
+    if (typeof applyTranslations === "function") applyTranslations();
   });
 </script>
+
 </body>
 </html>
