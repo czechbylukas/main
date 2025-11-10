@@ -2,16 +2,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const languages = [
     { code: "en", flag: "../images/flags/en.png" },
     { code: "cz", flag: "../images/flags/cz.png" },
-    { code: "es", flag: "../images/flags/es.png" },
-    { code: "de", flag: "../images/flags/de.png" }
+    { code: "es", flag: "images/flags/es.png" },
+    { code: "de", flag: "images/flags/de.png" }
   ];
 
   const container = document.getElementById("language-selector-container");
   if (!container) return;
 
+  // Load saved language or default
   let currentLang = localStorage.getItem("selectedLanguage") || "en";
 
-  // Create button for current language
+  // Create current flag button
   const btn = document.createElement("button");
   btn.id = "current-lang-btn";
   btn.type = "button";
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btn.style.cursor = "pointer";
   container.appendChild(btn);
 
-  // Dropdown list
+  // Create dropdown list
   const dropdown = document.createElement("ul");
   dropdown.id = "lang-dropdown";
   container.appendChild(dropdown);
@@ -43,15 +44,24 @@ document.addEventListener("DOMContentLoaded", () => {
     dropdown.style.display = "none";
   }
 
-  function changeLanguage(lang) {
-    localStorage.setItem("selectedLanguage", lang);
-    // Reload the page to apply the language globally
-    location.reload();
+  async function applyLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem("selectedLanguage", lang); // <-- store as selectedLanguage
+    document.documentElement.setAttribute("lang", lang);
+    updateCurrentFlag();
+    buildDropdown();
+
+    // Wait for translations to load
+    if (typeof loadTranslations === "function") {
+      await loadTranslations(lang);
+    }
+
+    // Render the vocab table using the correct localStorage key
+    if (typeof renderVocab === "function") renderVocab();
   }
 
-  // Initialize
-  updateCurrentFlag();
-  buildDropdown();
+  // Initialize selector
+  applyLanguage(currentLang);
 
   // Toggle dropdown
   btn.addEventListener("click", e => {
@@ -63,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
   dropdown.addEventListener("click", e => {
     const li = e.target.closest("li");
     if (!li) return;
-    changeLanguage(li.dataset.lang);
+    applyLanguage(li.dataset.lang);
   });
 
   // Close dropdown clicking outside
