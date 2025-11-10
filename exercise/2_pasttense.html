@@ -2,32 +2,40 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
-  <title>Practice: Past Tense – CzechByLukas</title>
+  <title id="page-title">Practice: Past Tense – CzechByLukas</title>
 
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          client="ca-pub-9067674021614925" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-9067674021614925">
 
-  <!-- ✅ Shared & Practice-Specific CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/practice.css">
+  <link rel="stylesheet" href="../css/language-selector.css">
 </head>
 
 <body class="vocab-page">
 
-  <!-- ✅ Page Title -->
-  <h1>Practice: Past Tense</h1>
+<header>
+  <h1 id="heading-practice">Practice Past Tense</h1>
+  <div id="language-selector-container"></div>
+</header>
 
-  <!-- ✅ Navigation Buttons (Previous / Next) -->
-  <div class="big-buttons">
-    <button id="prevBtn">← Previous</button>
-    <button id="nextBtn">Next →</button>
-  </div>
-
-  <!-- ✅ Flashcards -->
+<main>
+  <!-- Flashcards -->
   <div class="vocab-container">
     <div id="englishCard" class="card"></div>
     <div id="czechCard" class="card"></div>
   </div>
 
-  <!-- ✅ Progress Bar + Numeric Counter -->
+  <!-- Navigation buttons -->
+  <div class="big-buttons">
+    <button id="prevBtn"></button>
+    <button id="nextBtn"></button>
+  </div>
+
+  <!-- Progress bar -->
   <div class="progress-wrapper">
     <div class="progress-bar">
       <div id="progress" class="progress"></div>
@@ -35,31 +43,86 @@
     <div id="progressText" class="progress-text"></div>
   </div>
 
-  <!-- ✅ Vocabulary & Test Buttons -->
+  <!-- Vocabulary & Test buttons -->
   <div class="big-buttons">
-    <a href="../vocabulary/2_pasttense.html">📘 Vocabulary</a>
-    <a href="../tests/2_pasttense.html">📝 Test</a>
+    <a id="btn-vocab" href="../vocabulary/2_pasttense.html"></a>
+    <a id="btn-test" href="../tests/2_pasttense.html"></a>
   </div>
 
-  <!-- ✅ Small Buttons: Home & Exercise List -->
+  <!-- Small buttons: Home & Exercise List -->
   <div class="small-buttons">
-    <a href="../index.html">🏠 Home</a>
-    <a href="../exercise/index.html">🧠 Exercise List</a>
+    <a id="btn-home" href="../index.html"></a>
+    <a id="btn-exerciseList" href="../exercise/index.html"></a>
   </div>
+</main>
 
-  <!-- ✅ Load Vocabulary Data First -->
-  <script src="../data/2_pasttense.js"></script>
+<footer class="support-note">
+  <span id="footer-text">
+    ❤️ I build this site myself to help people learn Czech. 
+    <a id="footer-link" href="../support.html">click here</a>
+  </span>
+</footer>
 
-  <!-- ✅ Then Load Shared Practice Logic -->
-  <script src="../js/practice.js"></script>
+<!-- Vocabulary data -->
+<script src="../data/2_pasttense.js"></script>
 
-  <!-- ✅ Footer (Fetched Dynamically) -->
-  <script>
-    fetch("../css/footer.html")
-      .then(res => res.text())
-      .then(data => document.body.insertAdjacentHTML("beforeend", data))
-      .catch(err => console.error("Footer failed to load:", err));
-  </script>
+<!-- Translations -->
+<script src="../js/translations.js"></script>
+
+<!-- Language selector -->
+<script src="../js/language-selector.js"></script>
+
+<!-- Practice logic -->
+<script src="../js/practice.js"></script>
+
+<script>
+  // Map element IDs to translation keys
+  const btnMap = {
+    "prevBtn": "prev",
+    "nextBtn": "next",
+    "btn-vocab": "vocabulary",
+    "btn-test": "test",
+    "btn-home": "home",
+    "btn-exerciseList": "exerciseList"
+  };
+
+  function applyPracticeTranslations() {
+    if (!translations) return;
+
+    // Page title
+    const pageTitle = document.querySelector("title");
+    if (pageTitle && translations.pageTitle) pageTitle.textContent = translations.pageTitle;
+
+    // Header
+    const heading = document.getElementById("heading-practice");
+    if (heading && translations["heading-past-tense"]) heading.textContent = translations["heading-past-tense"];
+
+    // Buttons
+    for (const [id, key] of Object.entries(btnMap)) {
+      const el = document.getElementById(id);
+      if (el && translations.buttons && translations.buttons[key]) el.textContent = translations.buttons[key];
+    }
+
+    // Footer
+    const footerText = document.getElementById("footer-text");
+    const footerLink = document.getElementById("footer-link");
+    if (footerText && footerLink) {
+      footerText.childNodes[0].nodeValue = (translations["footer-text"] || "") + " ";
+      footerLink.textContent = translations["footer-link"] || footerLink.textContent;
+    }
+
+    // Optional vocab rendering for current exercise
+    if (typeof renderVocab === "function") {
+      try { renderVocab(); } catch(e) { /* ignore */ }
+    }
+  }
+
+  // Load saved language on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem("selectedLanguage") || "en";
+    if (typeof loadTranslations === "function") loadTranslations(savedLang);
+  });
+</script>
 
 </body>
 </html>
