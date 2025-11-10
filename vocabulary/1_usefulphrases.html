@@ -63,39 +63,7 @@
 <!-- Shared translations -->
 <script src="../js/translations.js defer"></script>
 
-<!-- Optimized language selector -->
-<script>
-  // Create selector dynamically
-  const languages = [
-    { code: "en", label: "English" },
-    { code: "cz", label: "Czech" },
-    { code: "de", label: "German" },
-    { code: "es", label: "Spanish" }
-  ];
-
-  const selectorContainer = document.getElementById("language-selector-container");
-  const selector = document.createElement("select");
-  selector.id = "language-selector";
-
-  languages.forEach(lang => {
-    const option = document.createElement("option");
-    option.value = lang.code;
-    option.textContent = lang.label;
-    selector.appendChild(option);
-  });
-
-  selectorContainer.appendChild(selector);
-
-  // Set selected language from localStorage or default
-  selector.value = localStorage.getItem("selectedLanguage") || "en";
-
-  // Update table when language changes
-  selector.addEventListener("change", () => {
-    const lang = selector.value;
-    localStorage.setItem("selectedLanguage", lang);
-    renderVocab();
-  });
-</script>
+<script src="../js/language-selector.js"></script>
 
 <!-- Vocabulary table renderer -->
 <script>
