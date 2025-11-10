@@ -9,10 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("language-selector-container");
   if (!container) return;
 
-  // Load saved language or default
   let currentLang = localStorage.getItem("selectedLanguage") || "en";
 
-  // Create current flag button
+  // Create button for current language
   const btn = document.createElement("button");
   btn.id = "current-lang-btn";
   btn.type = "button";
@@ -21,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btn.style.cursor = "pointer";
   container.appendChild(btn);
 
-  // Create dropdown list
+  // Dropdown list
   const dropdown = document.createElement("ul");
   dropdown.id = "lang-dropdown";
   container.appendChild(dropdown);
@@ -44,24 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
     dropdown.style.display = "none";
   }
 
-  async function applyLanguage(lang) {
-    currentLang = lang;
-    localStorage.setItem("selectedLanguage", lang); // <-- store as selectedLanguage
-    document.documentElement.setAttribute("lang", lang);
-    updateCurrentFlag();
-    buildDropdown();
-
-    // Wait for translations to load
-    if (typeof loadTranslations === "function") {
-      await loadTranslations(lang);
-    }
-
-    // Render the vocab table using the correct localStorage key
-    if (typeof renderVocab === "function") renderVocab();
+  function changeLanguage(lang) {
+    localStorage.setItem("selectedLanguage", lang);
+    // Reload the page to apply the language globally
+    location.reload();
   }
 
-  // Initialize selector
-  applyLanguage(currentLang);
+  // Initialize
+  updateCurrentFlag();
+  buildDropdown();
 
   // Toggle dropdown
   btn.addEventListener("click", e => {
@@ -73,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   dropdown.addEventListener("click", e => {
     const li = e.target.closest("li");
     if (!li) return;
-    applyLanguage(li.dataset.lang);
+    changeLanguage(li.dataset.lang);
   });
 
   // Close dropdown clicking outside

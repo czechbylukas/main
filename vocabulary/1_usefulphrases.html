@@ -1,137 +1,34 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-  <meta charset="UTF-8">
-  <title id="page-title">Useful Phrases | CzechByLukas</title>
-
- 
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/language-selector.css">
-
-
-</head>
-
-<body class="vocab-page">
-<header>
-  <h1 id="heading-vocab">Useful Phrases – Vocabulary</h1>
-  <div id="language-selector-container"></div>
-
-<p>
-  This page helps you learn and review Czech past tense forms with English translations.
-  Scroll down to explore the vocabulary.
-</p>
-
-
-
-</header>
-
-<main>
-  <table id="vocabTable">
-    <thead>
-      <tr>
-        <th id="table-czech">Czech</th>
-        <th id="table-pronunciation">Pronunciation</th>
-        <th id="table-english">English</th>
-      </tr>
-    </thead>
-    <tbody id="vocabBody"></tbody>
-  </table>
-
-  <div class="big-buttons">
-    <a id="btn-practice" href="../exercise/1_usefulphrases.html">🧠 Practice</a>
-    <a id="btn-test" href="../tests/1_usefulphrases.html">📝 Test</a>
-  </div>
-
-  <div class="small-buttons">
-    <a id="btn-home" href="../index.html">🏠 Home</a>
-    <a id="btn-vocabList" href="../vocabulary/index.html">📘 Vocabulary List</a>
-  </div>
-</main>
-
-<footer class="support-note">
-  <span id="footer-text">
-   ❤️ I build this site myself to help people learn Czech.
-    If you’d like to support my work, <a id="footer-link" href="../support.html">click here</a>.
-  </span>
-</footer>
-
-<!-- Vocabulary data -->
-<script src="../data/1_usefulphrases.js"></script>
-
-<!-- Shared translations -->
-<script src="../js/translations.js"></script>
-
-<!-- Optimized language selector -->
 <script>
-  // Create selector dynamically
-  const languages = [
-    { code: "en", label: "English" },
-    { code: "cz", label: "Czech" },
-    { code: "de", label: "German" },
-    { code: "es", label: "Spanish" }
-  ];
+  const lang = localStorage.getItem("selectedLanguage") || "en";
 
-  const selectorContainer = document.getElementById("language-selector-container");
-  const selector = document.createElement("select");
-  selector.id = "language-selector";
-
-  languages.forEach(lang => {
-    const option = document.createElement("option");
-    option.value = lang.code;
-    option.textContent = lang.label;
-    selector.appendChild(option);
-  });
-
-  selectorContainer.appendChild(selector);
-
-  // Set selected language from localStorage or default
-  selector.value = localStorage.getItem("selectedLanguage") || "en";
-
-  // Update table when language changes
-  selector.addEventListener("change", () => {
-    const lang = selector.value;
-    localStorage.setItem("selectedLanguage", lang);
-    renderVocab();
-  });
-</script>
-
-<!-- Vocabulary table renderer -->
-<script>
   function renderVocab() {
-    const lang = localStorage.getItem("selectedLanguage") || "en";
     const tbody = document.getElementById("vocabBody");
     tbody.innerHTML = "";
 
     const fragment = document.createDocumentFragment();
 
     vocab.forEach(item => {
-      const row = document.createElement("tr");
       let translation;
-
       switch (lang) {
-        case "cz": translation = item.english; break;
+        case "cz": translation = item.czech; break;
         case "de": translation = item.german; break;
         case "es": translation = item.spanish; break;
         default: translation = item.english; break;
       }
 
+      const row = document.createElement("tr");
       row.innerHTML = `<td>${item.czech}</td><td>${item.pronunciation}</td><td>${translation}</td>`;
       fragment.appendChild(row);
     });
 
     tbody.appendChild(fragment);
 
-    // Apply translations for other page elements (buttons, headings, etc.)
+    // Apply other page translations
     if (typeof applyTranslations === "function") {
-      applyTranslations();
+      applyTranslations(lang);
     }
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    renderVocab();
-  });
+  // Immediately render vocab without waiting for DOMContentLoaded
+  renderVocab();
 </script>
-</body>
-</html>
