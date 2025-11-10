@@ -3,7 +3,7 @@
     "home": "🏠 Startseite",
     "vocabulary": "📘 Wortschatz",
     "practicing": "❓ Üben",
-    "testing": "💬 Tests",
+    "testing": "💬 Tests (aktuell nur für Abonenten verfügbar)",
     "support": "🛠 Unterstützung"
   },
 
@@ -53,7 +53,7 @@
   "link-ex-numbers": "Zahlen",
 
   "heading-tests": "Tests",
-  "heading-testList": "Testübersicht",
+  "heading-testList": "Testübersicht (aktuell nur für Abonenten verfügbar)",
   "link-test-useful-phrases": "Nützliche Ausdrücke",
   "link-test-past-tense": "Vergangenheit",
   "link-test-question-words": "Fragewörter",
@@ -78,10 +78,10 @@
     "search": "Suchen",
     "home": "🏠 Startseite",
     "exerciseList": "🧠 Übungsübersicht",
-    "testList": "📝 Alle Tests",
+    "testList": "📝 Alle Tests (aktuell nur für Abonenten verfügbar)",
     "vocabulary": "📘 Wortschatz",
     "practice": "🧠 Üben",
-    "test": "📝 Test",
+    "test": "📝 Test (aktuell nur für Abonenten verfügbar)",
     "vocabList": "📘 Wortschatz"
   },
 
