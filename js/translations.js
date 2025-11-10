@@ -71,7 +71,7 @@ idsToTranslate.forEach(id => {
     "btn-practice": "practice",
     "btn-test": "test",
     "btn-home": "home",
-    "btn-vocab": "vocabulary",
+    "btn-vocablist": "vocabulary",
     "prevBtn": "prev",
     "nextBtn": "next",
     "btn-exerciseList": "exerciseList"
