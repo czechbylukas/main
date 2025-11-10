@@ -1,10 +1,8 @@
 let translations = {};
-// prefer saved selection if present
 let currentLang = localStorage.getItem("selectedLanguage") || "en";
 
 async function loadTranslations(lang) {
   try {
-    // Adjust path if your files are in a different location.
     const res = await fetch(`/data/translations/translations_${lang}.json`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     translations = await res.json();
@@ -18,7 +16,7 @@ async function loadTranslations(lang) {
 function applyTranslations() {
   if (!translations || Object.keys(translations).length === 0) return;
 
-  // Page title
+  // ---------- PAGE TITLE ----------
   const pageTitle = document.querySelector("title");
   if (pageTitle && translations["pageTitle"]) {
     pageTitle.textContent = translations["pageTitle"];
@@ -38,24 +36,52 @@ function applyTranslations() {
     "link-ex-useful-phrases",
     "link-ex-past-tense",
     "link-ex-question-generator",
+    "link-ex-question-words",
+    "link-ex-verbs-a",
+    "link-ex-verbs-i",
+    "link-ex-verbs-e",
+    "link-ex-genitive",
+    "link-ex-accusative",
+    "link-ex-instrumental",
+    "link-ex-dative",
+    "link-ex-locative",
+    "link-ex-prefixes",
+    "link-ex-perfective-imperfective",
+    "link-ex-adverbs-adjectives",
+    "link-ex-pronouns",
+    "link-ex-numbers",
     "link-test-useful-phrases",
     "link-test-past-tense",
+    "link-test-question-words",
+    "link-test-verbs-a",
+    "link-test-verbs-i",
+    "link-test-verbs-e",
+    "link-test-genitive",
+    "link-test-accusative",
+    "link-test-instrumental",
+    "link-test-dative",
+    "link-test-locative",
+    "link-test-prefixes",
+    "link-test-perfective-imperfective",
+    "link-test-adverbs-adjectives",
+    "link-test-pronouns",
+    "link-test-numbers",
     "heading-vocabTitle",
     "heading-practice",
-   "heading-test-title",
-   "heading-test-instructions"
+    "heading-test-title",
+    "heading-test-instructions"
   ];
 
-idsToTranslate.forEach(id => {
-  const el = document.getElementById(id);
-  if (el) {
-    if (translations[id]) {
-      el.textContent = translations[id];
-    } else if (id === "heading-practice" && translations["heading-useful-phrases"]) {
-      el.textContent = translations["heading-useful-phrases"];
+  idsToTranslate.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      if (translations[id]) {
+        el.textContent = translations[id];
+      } else if (id === "heading-practice" && translations["heading-useful-phrases"]) {
+        el.textContent = translations["heading-useful-phrases"];
+      }
     }
-  }
-});
+  });
 
   // ---------- MENU ----------
   const menuItems = ["home", "vocabulary", "practicing", "testing", "support"];
@@ -66,7 +92,7 @@ idsToTranslate.forEach(id => {
     }
   });
 
-  // ---------- VOCAB PAGE BUTTONS ----------
+  // ---------- VOCAB / PRACTICE / TEST BUTTONS ----------
   const btnMap = {
     "btn-practice": "practice",
     "btn-vocab": "vocabulary",
@@ -76,7 +102,6 @@ idsToTranslate.forEach(id => {
     "nextBtn": "next",
     "btn-exerciseList": "exerciseList",
     "btn-vocabList": "vocabList"
-
   };
 
   if (translations.buttons) {
@@ -105,7 +130,6 @@ idsToTranslate.forEach(id => {
   const footerLink = document.getElementById("footer-link");
   if (footerText) {
     if (translations["footer-text"]) {
-      // preserve the anchor node if present (node 1), replace leading text
       if (footerText.childNodes && footerText.childNodes.length > 0 && footerLink) {
         footerText.childNodes[0].nodeValue = translations["footer-text"] + " ";
       } else {
@@ -116,9 +140,9 @@ idsToTranslate.forEach(id => {
     if (footerLink && translations["footer-link"]) footerLink.textContent = translations["footer-link"];
   }
 
-  // If a page-specific function exists (like renderVocab), call it to update content that depends on translations
+  // ---------- CALL PAGE-SPECIFIC FUNCTIONS ----------
   if (typeof renderVocab === "function") {
-    try { renderVocab(); } catch (e) { /* ignore */ }
+    try { renderVocab(); } catch (e) { }
   }
 }
 
