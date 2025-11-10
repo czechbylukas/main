@@ -1,49 +1,49 @@
 // data/2_basicverbs.js
 const vocab = [
   {
-    czech: "Běhat (1. osoba)",
+    czech: "Běhat (1. osoba) - běhám",
     english: "běhám — I run / am running",
     spanish: "Corro / Estoy corriendo",
     german: "Ich laufe"
   },
   {
-    czech: "Dělat (1. osoba)",
+    czech: "Dělat (1. osoba) - dělám",
     english: "dělám — I do / am doing",
     spanish: "Hago / Estoy haciendo",
     german: "Ich mache"
   },
   {
-    czech: "Dát (1. osoba)",
+    czech: "Dát (1. osoba) - dám",
     english: "dám — I give / I will give",
     spanish: "Doy / Daré",
     german: "Ich gebe"
   },
   {
-    czech: "Dát si (1. osoba)",
+    czech: "Dát si (1. osoba) - dám si",
     english: "dám si — I’ll have / I take (food, drink)",
     spanish: "(Tomo) / Me tomaré",
     german: "Ich nehme / Ich bestelle"
   },
   {
-    czech: "Koukat se (1. osoba)",
+    czech: "Koukat se (1. osoba) - koukám se",
     english: "koukám se — I watch / am watching",
     spanish: "Veo / Estoy viendo",
     german: "Ich schaue"
   },
   {
-    czech: "Dívat se (1. osoba)",
+    czech: "Dívat se (1. osoba) - dívám se",
     english: "dívám se — I watch / am watching",
     spanish: "Veo / Estoy viendo",
     german: "Ich sehe"
   },
   {
-    czech: "Odpočívat (1. osoba)",
+    czech: "Odpočívat (1. osoba) - odpočívám",
     english: "odpočívám — I rest / am resting",
     spanish: "Descanso / Estoy descansando",
     german: "Ich ruhe mich aus"
   },
   {
-    czech: "Mít (1. osoba)",
+    czech: "Mít (1. osoba) - mám",
     english: "mám — I have",
     spanish: "Tengo",
     german: "Ich habe"

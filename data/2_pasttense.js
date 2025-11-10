@@ -1,64 +1,64 @@
 // data/2_actions.js
 const vocab = [
   {
-    czech:   "Dělat (1. osoba) dělám",
-    english: "to do / I do",
-    spanish: "hacer / yo hago",
-    german:  "machen / ich mache"
+    czech:   "Dělat (1. osoba) - dělal jsem",
+    english: "to do / I did",
+    spanish: "hacer / yo hice",
+    german:  "machen / ich habe gemacht"
   },
   {
-    czech:   "Plavat (1. osoba) plavu",
-    english: "to swim / I swim",
-    spanish: "nadar / yo nado",
-    german:  "schwimmen / ich schwimme"
+    czech:   "Plavat (1. osoba) - plaval jsem",
+    english: "to swim / I swam",
+    spanish: "nadar / yo nadé",
+    german:  "schwimmen / ich bin geschwommen"
   },
   {
-    czech:   "Pracovat (1. osoba) pracuji / pracuju",
-    english: "to work / I work",
-    spanish: "trabajar / yo trabajo",
-    german:  "arbeiten / ich arbeite"
+    czech:   "Pracovat (1. osoba) - pracoval jsem",
+    english: "to work / I worked",
+    spanish: "trabajar / yo trabajé",
+    german:  "arbeiten / ich habe gearbeitet"
   },
   {
-    czech:   "Koukat se, dívat se (1. osoba) koukám / dívám se",
-    english: "to watch / I watch",
-    spanish: "mirar / yo miro",
-    german:  "schauen / ich schaue"
+    czech:   "Koukat se, dívat se (1. osoba) - koukal jsem se / díval jsem se",
+    english: "to watch / I watched",
+    spanish: "mirar / yo miré",
+    german:  "schauen / ich habe geschaut"
   },
   {
-    czech:   "Spát (1. osoba) spím",
-    english: "to sleep / I sleep",
-    spanish: "dormir / yo duermo",
-    german:  "schlafen / ich schlafe"
+    czech:   "Spát (1. osoba) - spal jsem",
+    english: "to sleep / I slept",
+    spanish: "dormir / yo dormí",
+    german:  "schlafen / ich habe geschlafen"
   },
   {
-    czech:   "Odpočívat (1. osoba) odpočívám",
-    english: "to rest / I rest",
-    spanish: "descansar / yo descanso",
-    german:  "sich ausruhen / ich ruhe mich aus"
+    czech:   "Odpočívat (1. osoba) - odpočíval jsem",
+    english: "to rest / I rested",
+    spanish: "descansar / yo descansé",
+    german:  "sich ausruhen / ich habe mich ausgeruht"
   },
   {
-    czech:   "Sportovat (1. osoba) sportuju / sportuji",
-    english: "to do sports / I do sports",
-    spanish: "hacer deporte / yo hago deporte",
-    german:  "Sport treiben / ich treibe Sport"
+    czech:   "Sportovat (1. osoba) - sportoval jsem",
+    english: "to do sports / I did sports",
+    spanish: "hacer deporte / yo hice deporte",
+    german:  "Sport treiben / ich habe Sport getrieben"
   },
   {
-    czech:   "Studovat, učit se (1. osoba) studuji / učím se",
-    english: "to study, to learn / I study, I learn",
-    spanish: "estudiar, aprender / yo estudio, yo aprendo",
-    german:  "studieren, lernen / ich studiere, ich lerne"
+    czech:   "Studovat, učit se (1. osoba) - studoval jsem / učil jsem se",
+    english: "to study, to learn / I studied, I learned",
+    spanish: "estudiar, aprender / yo estudié, yo aprendí",
+    german:  "studieren, lernen / ich habe studiert, ich habe gelernt"
   },
   {
-    czech:   "Vařit (1. osoba) vařím",
-    english: "to cook / I cook",
-    spanish: "cocinar / yo cocino",
-    german:  "kochen / ich koche"
+    czech:   "Vařit (1. osoba) - vařil jsem",
+    english: "to cook / I cooked",
+    spanish: "cocinar / yo cociné",
+    german:  "kochen / ich habe gekocht"
   },
   {
-    czech:   "Telefonovat (1. osoba) telefonuji / telefonuju",
-    english: "to call / I call",
-    spanish: "llamar por teléfono / yo llamo",
-    german:  "telefonieren / ich telefoniere"
+    czech:   "Telefonovat (1. osoba) - telefonoval jsem",
+    english: "to call / I called",
+    spanish: "llamar por teléfono / yo llamé",
+    german:  "telefonieren / ich habe telefoniert"
   },
   {
     czech:   "Co jsi dělal/a včera?",
@@ -67,43 +67,43 @@ const vocab = [
     german:  "Was hast du gestern gemacht?"
   },
   {
-    czech:   "O víkendu jsem pracovala.",
+    czech:   "O víkendu jsem pracoval/a.",
     english: "I was working at the weekend.",
     spanish: "El fin de semana estuve trabajando.",
     german:  "Am Wochenende habe ich gearbeitet."
   },
   {
-    czech:   "Včera večer jsem se dívala na televizi.",
+    czech:   "Včera večer jsem se díval/a na televizi.",
     english: "Yesterday evening I was watching TV.",
     spanish: "Anoche estuve viendo la televisión.",
     german:  "Gestern Abend habe ich ferngesehen."
   },
   {
-    czech:   "V noci jsem spala.",
+    czech:   "V noci jsem spal/a.",
     english: "At night I was sleeping.",
     spanish: "Por la noche estuve durmiendo.",
     german:  "In der Nacht habe ich geschlafen."
   },
   {
-    czech:   "V pondělí jsem odpočívala.",
+    czech:   "V pondělí jsem odpočíval/a.",
     english: "On Monday, I was resting.",
     spanish: "El lunes estuve descansando.",
     german:  "Am Montag habe ich mich ausgeruht."
   },
   {
-    czech:   "Ve středu jsem studovala / se učila češtinu.",
+    czech:   "Ve středu jsem studoval/a / se učil/a češtinu.",
     english: "On Wednesday, I was studying / learning Czech.",
     spanish: "El miércoles estuve estudiando checo.",
     german:  "Am Mittwoch habe ich Tschechisch gelernt."
   },
   {
-    czech:   "V pátek jsem vařila kuře.",
+    czech:   "V pátek jsem vařil/a kuře.",
     english: "On Friday, I was cooking chicken.",
     spanish: "El viernes estuve cocinando pollo.",
     german:  "Am Freitag habe ich Hähnchen gekocht."
   },
   {
-    czech:   "V sobotu jsem telefonovala rodině.",
+    czech:   "V sobotu jsem telefonoval/a rodině.",
     english: "On Saturday, I was calling my family.",
     spanish: "El sábado estuve llamando a mi familia.",
     german:  "Am Samstag habe ich mit meiner Familie telefoniert."
