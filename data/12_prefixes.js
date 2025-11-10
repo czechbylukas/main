@@ -5,7 +5,7 @@ const vocab = [
     czech: "do-",
     english: "1. to reach a limit, 2. to finish doing something",
     spanish: "1. alcanzar un límite, 2. terminar de hacer algo",
-    german: "1. ein Limit erreichen, 2. etwas fertig machen"
+    german: "1. ein Limit /Grenze erreichen, 2. etwas fertig machen"
   },
   {
     czech: "na-, ná-",
@@ -23,7 +23,7 @@ const vocab = [
     czech: "ob-",
     english: "round, around",
     spanish: "alrededor",
-    german: "umher, herum"
+    german: "umher, herum, rundherum"
   },
   {
     czech: "od-",
@@ -47,7 +47,7 @@ const vocab = [
     czech: "pře-",
     english: "1. across, over, 2. re-, again",
     spanish: "1. a través de, 2. volver a",
-    german: "1. über, hinweg, 2. erneut, wieder"
+    german: "1. über/quer, hinweg, 2. erneut, wieder"
   },
   {
     czech: "před-",
@@ -65,13 +65,13 @@ const vocab = [
     czech: "roz-",
     english: "1. movement to various places, 2. beginning of an activity",
     spanish: "1. movimiento a varios lugares, 2. comienzo de una actividad",
-    german: "1. Bewegung zu verschiedenen Orten, 2. Beginn einer Aktivität"
+    german: "1. Bewegung zu verschiedenen Richtungen, 2. Anfang einer Aktivität"
   },
   {
     czech: "s-",
-    english: "1. down, 2. movement towards oneself",
-    spanish: "1. hacia abajo, 2. movimiento hacia uno mismo",
-    german: "1. nach unten, 2. Bewegung zu sich selbst"
+    english: "1. down, 2. movement towards oneself/together",
+    spanish: "1. hacia abajo, 2. movimiento hacia uno mismo/junto",
+    german: "1. nach unten, 2. Bewegung zu sich selbst/zusamen"
   },
   {
     czech: "v-",
@@ -83,13 +83,13 @@ const vocab = [
     czech: "vy-, vý-",
     english: "1. outside, 2. up, upwards, 3. beginning of an activity",
     spanish: "1. fuera, 2. arriba, 3. inicio de una actividad",
-    german: "1. draußen, 2. nach oben, 3. Beginn einer Aktivität"
+    german: "1. draußen, 2. nach oben / hinauf, 3. Beginn einer Aktivität"
   },
   {
     czech: "za-",
     english: "1. behind, 2. into, in, inside",
     spanish: "1. detrás, 2. dentro, en",
-    german: "1. hinter, 2. hinein, in"
+    german: "1. hinter, 2. hinein, in / drinnen"
   },
 
   // Example sentences
@@ -103,7 +103,7 @@ const vocab = [
     czech: "nadělat",
     english: "to do things into reserve / on stock",
     spanish: "hacer cosas como reserva / en stock",
-    german: "etwas auf Lager / Reserve machen"
+    german: "etwas auf Lager / Vorrat machen"
   },
   {
     czech: "nadzvednout koberec",
@@ -121,13 +121,13 @@ const vocab = [
     czech: "odejít z hospody",
     english: "to leave the pub (to go away from here)",
     spanish: "salir del bar (irse de aquí)",
-    german: "aus der Kneipe gehen (weggehen)"
+    german: "aus der Kneipe gehen (weggehen) / die Kneipe verlassen"
   },
   {
     czech: "podepsat smlouvu",
     english: "to sign a contract (to write your name under a text)",
     spanish: "firmar un contrato (poner tu nombre debajo del texto)",
-    german: "einen Vertrag unterschreiben (Name unter einen Text schreiben)"
+    german: "einen Vertrag unterschreiben"
   },
   {
     czech: "projít parkem",
@@ -143,9 +143,9 @@ const vocab = [
   },
   {
     czech: "předepsat",
-    english: "to prescribe (pre- the one before eg: the final)",
-    spanish: "prescribir (pre- el anterior, ej. final)",
-    german: "verschreiben (vorherige, z.B. finale)"
+    english: "to prescribe",
+    spanish: "prescribir",
+    german: "verschreiben"
   },
   {
     czech: "přijít",
@@ -163,7 +163,7 @@ const vocab = [
     czech: "sejít se",
     english: "to gather / to come together",
     spanish: "reunirse / juntarse",
-    german: "sich treffen / zusammenkommen"
+    german: "sich treffen / zusammenkommen / sich versammeln"
   },
   {
     czech: "vejít",
@@ -181,6 +181,6 @@ const vocab = [
     czech: "zapít prášek vodou",
     english: "to drink water after (behind) taking the pill",
     spanish: "tomar agua después de la pastilla",
-    german: "ein Pulver / Tablette mit Wasser nachträglich trinken"
+    german: "eine Tablette mit Wasser hinunterspülen"
   }
 ];
