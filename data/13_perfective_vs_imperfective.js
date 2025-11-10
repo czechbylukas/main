@@ -2,41 +2,18 @@
 const vocab = [
   // Questions about verb aspect
   {
-    czech: "Question: a verb that is PERFECTIVE shows that the action is:",
+    czech: "ukončený (jednou)",
     english: "Question: a verb that is PERFECTIVE shows that the action is:",
     spanish: "Pregunta: un verbo PERFECTIVO muestra que la acción es:",
     german: "Frage: Ein perfektives Verb zeigt an, dass die Handlung ist:"
   },
   {
-    czech: "a) ended / once",
-    english: "a) ended / once",
-    spanish: "a) terminó / una vez",
-    german: "a) abgeschlossen / einmalig"
-  },
-  {
-    czech: "b) unended / repeated",
-    english: "b) unended / repeated",
-    spanish: "b) interminable / repetido",
-    german: "b) unvollständig / wiederholt"
-  },
-  {
-    czech: "?",
-    english: "?",
-    spanish: "?",
-    german: "?"
-  },
-  {
-    czech: "Question: a verb that is IMperfective shows that the action is:",
+    czech: "neukončený (opakovaný)",
     english: "Question: a verb that is IMperfective shows that the action is:",
     spanish: "Preguta: un verbo IMperfectivo muestra que la acción es:",
     german: "Frage: Ein imperfektives Verb zeigt an, dass die Handlung ist:"
   },
-  {
-    czech: "?",
-    english: "?",
-    spanish: "?",
-    german: "?"
-  },
+
 
   // Perfective / Imperfective verb pairs
   { czech: "přečíst (perf.)", english: "to read (perf.)", spanish: "přečíst (perf.)", german: "lesen (perf.)" },
