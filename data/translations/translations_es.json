@@ -3,7 +3,7 @@
     "home": "🏠 Inicio",
     "vocabulary": "📘 Vocabulario",
     "practicing": "❓ Practicar",
-    "testing": "💬 Pruebas",
+    "testing": "💬 Pruebas (Actualmente solo disponible para suscriptores)",
     "support": "🛠 Soporte"
   },
 
@@ -78,10 +78,10 @@
     "search": "Buscar",
     "home": "🏠 Inicio",
     "exerciseList": "🧠 Lista de ejercicios",
-    "testList": "📝 Todas las pruebas",
+    "testList": "📝 Todas las pruebas (Actualmente solo disponible para suscriptores)",
     "vocabulary": "📘 Vocabulario",
     "practice": "🧠 Práctica",
-    "test": "📝 Prueba",
+    "test": "📝 Prueba (Actualmente solo disponible para suscriptores)",
     "vocabList": "📘 Vocabulario"
   },
 
