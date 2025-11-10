@@ -15,6 +15,8 @@
   "heading-vocabList": "Vocabulary List",
   "heading-useful-phrases": "Useful Phrases",
   "heading-past-tense": "Past Tense",
+  "heading-question-generator": "Question Generator (A0)",
+
   "heading-question-words": "Question Words",
   "heading-verbs-a": "Verbs (A)",
   "heading-verbs-i": "Verbs (I)",
@@ -29,12 +31,12 @@
   "heading-adverbs-adjectives": "Adverbs & Adjectives",
   "heading-pronouns": "Pronouns",
   "heading-numbers": "Numbers",
-  "heading-question-generator": "Question Generator (A0)",
 
   "heading-exercise": "Practice",
   "heading-exList": "List of Exercises",
   "link-ex-useful-phrases": "Useful Phrases",
   "link-ex-past-tense": "Past Tense",
+  "link-ex-question-generator": "Question Generator (A0)",
   "link-ex-question-words": "Question Words",
   "link-ex-verbs-a": "Verbs (A)",
   "link-ex-verbs-i": "Verbs (I)",
@@ -49,7 +51,6 @@
   "link-ex-adverbs-adjectives": "Adverbs & Adjectives",
   "link-ex-pronouns": "Pronouns",
   "link-ex-numbers": "Numbers",
-  "link-ex-question-generator": "Question Generator (A0)",
 
   "heading-tests": "Tests",
   "heading-testList": "List of Tests",

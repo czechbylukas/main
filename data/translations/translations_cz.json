@@ -15,6 +15,8 @@
   "heading-vocabList": "Seznam slovíček",
   "heading-useful-phrases": "Užitečné fráze",
   "heading-past-tense": "Minulý čas",
+  "heading-question-generator": "Generátor otázek (A0)",
+
   "heading-question-words": "Otázková slova",
   "heading-verbs-a": "Slovesa (A)",
   "heading-verbs-i": "Slovesa (I)",
@@ -29,12 +31,12 @@
   "heading-adverbs-adjectives": "Příslovce a Přídavná jména",
   "heading-pronouns": "Zájmena",
   "heading-numbers": "Čísla",
-  "heading-question-generator": "Generátor otázek (A0)",
 
   "heading-exercise": "Procvičování",
   "heading-exList": "Přehled cvičení",
   "link-ex-useful-phrases": "Užitečné fráze",
   "link-ex-past-tense": "Minulý čas",
+  "link-ex-question-generator": "Generátor otázek (A0)",
   "link-ex-question-words": "Otázková slova",
   "link-ex-verbs-a": "Slovesa (A)",
   "link-ex-verbs-i": "Slovesa (I)",
@@ -49,7 +51,6 @@
   "link-ex-adverbs-adjectives": "Příslovce a Přídavná jména",
   "link-ex-pronouns": "Zájmena",
   "link-ex-numbers": "Čísla",
-  "link-ex-question-generator": "Generátor otázek (A0)",
 
   "heading-tests": "Testy",
   "heading-testList": "Přehled testů",
@@ -106,5 +107,5 @@
     "english": "Angličtina"
   },
 
-  "pageTitle": "Slovní zásoba | CzechByLukas"
+  "pageTitle": "Užitečné fráze | CzechByLukas"
 }

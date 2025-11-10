@@ -15,6 +15,8 @@
   "heading-vocabList": "Wortschatzliste",
   "heading-useful-phrases": "Nützliche Ausdrücke",
   "heading-past-tense": "Vergangenheit",
+  "heading-question-generator": "Fragegenerator (A0)",
+
   "heading-question-words": "Fragewörter",
   "heading-verbs-a": "Verben (A)",
   "heading-verbs-i": "Verben (I)",
@@ -29,12 +31,12 @@
   "heading-adverbs-adjectives": "Adverbien & Adjektive",
   "heading-pronouns": "Pronomen",
   "heading-numbers": "Zahlen",
-  "heading-question-generator": "Fragegenerator (A0)",
 
   "heading-exercise": "Übung",
   "heading-exList": "Übungsübersicht",
   "link-ex-useful-phrases": "Nützliche Ausdrücke",
   "link-ex-past-tense": "Vergangenheit",
+  "link-ex-question-generator": "Fragegenerator (A0)",
   "link-ex-question-words": "Fragewörter",
   "link-ex-verbs-a": "Verben (A)",
   "link-ex-verbs-i": "Verben (I)",
@@ -49,7 +51,6 @@
   "link-ex-adverbs-adjectives": "Adverbien & Adjektive",
   "link-ex-pronouns": "Pronomen",
   "link-ex-numbers": "Zahlen",
-  "link-ex-question-generator": "Fragegenerator (A0)",
 
   "heading-tests": "Tests",
   "heading-testList": "Testübersicht",
