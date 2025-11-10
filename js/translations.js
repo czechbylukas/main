@@ -74,7 +74,9 @@ idsToTranslate.forEach(id => {
     "btn-vocablist": "vocabulary",
     "prevBtn": "prev",
     "nextBtn": "next",
-    "btn-exerciseList": "exerciseList"
+    "btn-exerciseList": "exerciseList",
+    "btn-vocabList": "vocabList"
+
   };
 
   if (translations.buttons) {
