@@ -1,71 +1,110 @@
 {
   "menu": {
-    "home": "🏠 Inicio",
-    "vocabulary": "📘 Vocabulario",
-    "practicing": "❓ Practicar",
-    "testing": "💬 Pruebas",
-    "support": "🛠 Apoyo"
+    "home": "🏠 Home",
+    "vocabulary": "📘 Vocabulary",
+    "practicing": "❓ Practice",
+    "testing": "💬 Tests",
+    "support": "🛠 Support"
   },
 
-  "heading-test-title": "Frases útiles – Prueba",
-  "heading-test-instructions": "Tienes 10 minutos para completar la prueba. Después de enviarla, revisaré y corregiré tus respuestas.",
+  "heading-welcome": "Welcome to CzechByLukas",
+  "heading-mainPageText": "This is the main page. More chapters and content will be added.",
+  "heading-topics": "Topics and Applications",
 
-  "heading-welcome": "Bienvenido a CzechByLukas",
-  "heading-mainPageText": "Esta es la página principal. Agregaré más capítulos y contenido.",
-  "heading-topics": "Temas y aplicaciones",
+  "heading-vocab": "Vocabulary",
+  "heading-vocabList": "Vocabulary List",
+  "heading-useful-phrases": "Useful Phrases",
+  "heading-past-tense": "Past Tense",
+  "heading-question-words": "Question Words",
+  "heading-verbs-a": "Verbs (A)",
+  "heading-verbs-i": "Verbs (I)",
+  "heading-verbs-e": "Verbs (E)",
+  "heading-genitive": "Genitive (2nd Case)",
+  "heading-accusative": "Accusative (4th Case)",
+  "heading-instrumental": "Instrumental (7th Case)",
+  "heading-dative": "Dative (3rd Case)",
+  "heading-locative": "Locative (6th Case)",
+  "heading-prefixes": "Prefixes",
+  "heading-perfective-imperfective": "Perfective vs Imperfective",
+  "heading-adverbs-adjectives": "Adverbs & Adjectives",
+  "heading-pronouns": "Pronouns",
+  "heading-numbers": "Numbers",
+  "heading-question-generator": "Question Generator (A0)",
 
-  "heading-vocab": "Vocabulario",
-  "heading-vocabList": "Lista de vocabulario",
-  "heading-useful-phrases": "Frases útiles",
-  "heading-past-tense": "Pasado",
-  "heading-question-generator": "Generador de preguntas (A0)",
+  "heading-exercise": "Practice",
+  "heading-exList": "List of Exercises",
+  "link-ex-useful-phrases": "Useful Phrases",
+  "link-ex-past-tense": "Past Tense",
+  "link-ex-question-words": "Question Words",
+  "link-ex-verbs-a": "Verbs (A)",
+  "link-ex-verbs-i": "Verbs (I)",
+  "link-ex-verbs-e": "Verbs (E)",
+  "link-ex-genitive": "Genitive (2nd Case)",
+  "link-ex-accusative": "Accusative (4th Case)",
+  "link-ex-instrumental": "Instrumental (7th Case)",
+  "link-ex-dative": "Dative (3rd Case)",
+  "link-ex-locative": "Locative (6th Case)",
+  "link-ex-prefixes": "Prefixes",
+  "link-ex-perfective-imperfective": "Perfective vs Imperfective",
+  "link-ex-adverbs-adjectives": "Adverbs & Adjectives",
+  "link-ex-pronouns": "Pronouns",
+  "link-ex-numbers": "Numbers",
+  "link-ex-question-generator": "Question Generator (A0)",
 
-  "heading-exercise": "Practicar",
-  "heading-exList": "Lista de ejercicios",
-  "link-ex-useful-phrases": "Frases útiles",
-  "link-ex-past-tense": "Pasado",
-  "link-ex-question-generator": "Generador de preguntas (A0)",
-
-  "heading-tests": "Pruebas",
-  "heading-testList": "Lista de pruebas",
-  "link-test-useful-phrases": "Frases útiles",
-  "link-test-past-tense": "Pasado",
+  "heading-tests": "Tests",
+  "heading-testList": "List of Tests",
+  "link-test-useful-phrases": "Useful Phrases",
+  "link-test-past-tense": "Past Tense",
+  "link-test-question-words": "Question Words",
+  "link-test-verbs-a": "Verbs (A)",
+  "link-test-verbs-i": "Verbs (I)",
+  "link-test-verbs-e": "Verbs (E)",
+  "link-test-genitive": "Genitive (2nd Case)",
+  "link-test-accusative": "Accusative (4th Case)",
+  "link-test-instrumental": "Instrumental (7th Case)",
+  "link-test-dative": "Dative (3rd Case)",
+  "link-test-locative": "Locative (6th Case)",
+  "link-test-prefixes": "Prefixes",
+  "link-test-perfective-imperfective": "Perfective vs Imperfective",
+  "link-test-adverbs-adjectives": "Adverbs & Adjectives",
+  "link-test-pronouns": "Pronouns",
+  "link-test-numbers": "Numbers",
 
   "buttons": {
-    "next": "Siguiente",
-    "prev": "Anterior",
-    "submit": "Enviar",
-    "search": "Buscar",
-    "home": "🏠 Inicio",
-    "exerciseList": "🧠 Lista de ejercicios",
-    "testList": "📝 Todas las pruebas",
-    "vocabulary": "📘 Vocabulario",
-    "practice": "🧠 Practicar",
+    "next": "Next",
+    "prev": "Previous",
+    "submit": "Submit",
+    "search": "Search",
+    "home": "🏠 Home",
+    "exerciseList": "🧠 Exercises List",
+    "testList": "📝 All Tests",
+    "vocabulary": "📘 Vocabulary",
+    "practice": "🧠 Practice",
     "test": "📝 Test",
-    "vocabList": "📘 Vocabulario"
+    "vocabList": "📘 Vocabulary"
   },
 
   "messages": {
-    "loading": "Cargando...",
-    "error": "Algo salió mal.",
-    "empty": "No se encontraron entradas.",
-    "clickToShow": "Haz clic para mostrar en checo",
-    "timeRemaining": "⏱ Tiempo restante:",
-    "timesUp": "⏱ ¡Se acabó el tiempo! Por favor, envía tus respuestas ahora."
+    "loading": "Loading...",
+    "error": "An error occurred.",
+    "empty": "No items found.",
+    "clickToShow": "Click to show in Czech",
+    "timeRemaining": "⏱ Time Remaining:",
+    "timesUp": "⏱ Time is up! Please submit your answers."
   },
 
   "placeholders": {
-    "search": "Escribe aquí para buscar..."
+    "search": "Enter search term..."
   },
 
-  "footer-text": "❤️ Creé esta página yo mismo para ayudar a las personas a aprender checo. Si quieres apoyar mi trabajo,",
-  "footer-link": "haz clic aquí",
+  "footer-text": "❤️ I created this site to help people learn Czech. If you’d like to support me,",
+  "footer-link": "click here",
 
   "tableHeadings": {
-    "czech": "Checo",
-    "pronunciation": "Pronunciación",
-    "english": "Español"
+    "czech": "Czech",
+    "pronunciation": "Pronunciation",
+    "english": "English"
   },
 
-  "pageTitle": "Frases útiles | CzechByLukas"
+  "pageTitle": "Vocabulary | CzechByLukas"
 }

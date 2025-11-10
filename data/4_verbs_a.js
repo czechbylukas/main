@@ -21,7 +21,7 @@ const vocab = [
   {
     czech: "Dát si (1. osoba) - dám si",
     english: "dám si — I’ll have / I take (food, drink)",
-    spanish: "(Tomo) / Me tomaré",
+    spanish: "Tomar / Me tomaré",
     german: "Ich nehme / Ich bestelle"
   },
   {

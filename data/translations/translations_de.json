@@ -1,68 +1,110 @@
 {
   "menu": {
     "home": "🏠 Startseite",
-    "vocabulary": "📘 Vokabeln",
+    "vocabulary": "📘 Wortschatz",
     "practicing": "❓ Üben",
-    "testing": "💬 Testen",
+    "testing": "💬 Tests",
     "support": "🛠 Unterstützung"
   },
 
   "heading-welcome": "Willkommen bei CzechByLukas",
-  "heading-mainPageText": "Dies ist die Hauptseite. Ich werde weitere Kapitel und Inhalte hinzufügen.",
+  "heading-mainPageText": "Dies ist die Hauptseite. Weitere Kapitel und Inhalte werden hinzugefügt.",
   "heading-topics": "Themen und Anwendungen",
 
-  "heading-vocab": "Vokabeln",
-  "heading-vocabList": "Vokabelliste",
-  "heading-useful-phrases": "Nützliche Phrasen",
+  "heading-vocab": "Wortschatz",
+  "heading-vocabList": "Wortschatzliste",
+  "heading-useful-phrases": "Nützliche Ausdrücke",
   "heading-past-tense": "Vergangenheit",
+  "heading-question-words": "Fragewörter",
+  "heading-verbs-a": "Verben (A)",
+  "heading-verbs-i": "Verben (I)",
+  "heading-verbs-e": "Verben (E)",
+  "heading-genitive": "Genitiv (2. Fall)",
+  "heading-accusative": "Akkusativ (4. Fall)",
+  "heading-instrumental": "Instrumental (7. Fall)",
+  "heading-dative": "Dativ (3. Fall)",
+  "heading-locative": "Lokativ (6. Fall)",
+  "heading-prefixes": "Präfixe",
+  "heading-perfective-imperfective": "Perfektiv vs Imperfektiv",
+  "heading-adverbs-adjectives": "Adverbien & Adjektive",
+  "heading-pronouns": "Pronomen",
+  "heading-numbers": "Zahlen",
   "heading-question-generator": "Fragegenerator (A0)",
 
-  "heading-exercise": "Üben",
+  "heading-exercise": "Übung",
   "heading-exList": "Übungsübersicht",
-  "link-ex-useful-phrases": "Nützliche Phrasen",
+  "link-ex-useful-phrases": "Nützliche Ausdrücke",
   "link-ex-past-tense": "Vergangenheit",
+  "link-ex-question-words": "Fragewörter",
+  "link-ex-verbs-a": "Verben (A)",
+  "link-ex-verbs-i": "Verben (I)",
+  "link-ex-verbs-e": "Verben (E)",
+  "link-ex-genitive": "Genitiv (2. Fall)",
+  "link-ex-accusative": "Akkusativ (4. Fall)",
+  "link-ex-instrumental": "Instrumental (7. Fall)",
+  "link-ex-dative": "Dativ (3. Fall)",
+  "link-ex-locative": "Lokativ (6. Fall)",
+  "link-ex-prefixes": "Präfixe",
+  "link-ex-perfective-imperfective": "Perfektiv vs Imperfektiv",
+  "link-ex-adverbs-adjectives": "Adverbien & Adjektive",
+  "link-ex-pronouns": "Pronomen",
+  "link-ex-numbers": "Zahlen",
   "link-ex-question-generator": "Fragegenerator (A0)",
 
-  "heading-tests": "Teste",
+  "heading-tests": "Tests",
   "heading-testList": "Testübersicht",
-  "link-test-useful-phrases": "Nützliche Phrasen",
+  "link-test-useful-phrases": "Nützliche Ausdrücke",
   "link-test-past-tense": "Vergangenheit",
+  "link-test-question-words": "Fragewörter",
+  "link-test-verbs-a": "Verben (A)",
+  "link-test-verbs-i": "Verben (I)",
+  "link-test-verbs-e": "Verben (E)",
+  "link-test-genitive": "Genitiv (2. Fall)",
+  "link-test-accusative": "Akkusativ (4. Fall)",
+  "link-test-instrumental": "Instrumental (7. Fall)",
+  "link-test-dative": "Dativ (3. Fall)",
+  "link-test-locative": "Lokativ (6. Fall)",
+  "link-test-prefixes": "Präfixe",
+  "link-test-perfective-imperfective": "Perfektiv vs Imperfektiv",
+  "link-test-adverbs-adjectives": "Adverbien & Adjektive",
+  "link-test-pronouns": "Pronomen",
+  "link-test-numbers": "Zahlen",
 
   "buttons": {
     "next": "Weiter",
     "prev": "Zurück",
     "submit": "Absenden",
     "search": "Suchen",
-    "home": "🏠 Start",
+    "home": "🏠 Startseite",
     "exerciseList": "🧠 Übungsübersicht",
-    "testList": "📝 Alle Teste",
-    "vocabulary": "📘 Vokabeln",
+    "testList": "📝 Alle Tests",
+    "vocabulary": "📘 Wortschatz",
     "practice": "🧠 Üben",
     "test": "📝 Test",
-    "vocabList": "📘 Vokabeln"
+    "vocabList": "📘 Wortschatz"
   },
 
   "messages": {
-    "loading": "Laden...",
-    "error": "Etwas ist schiefgelaufen.",
+    "loading": "Lädt...",
+    "error": "Ein Fehler ist aufgetreten.",
     "empty": "Keine Einträge gefunden.",
-    "clickToShow": "Klicken zum Anzeigen auf Tschechisch",
+    "clickToShow": "Klicke, um auf Tschechisch anzuzeigen",
     "timeRemaining": "⏱ Verbleibende Zeit:",
-    "timesUp": "⏱ Zeit abgelaufen! Bitte reiche deine Antworten jetzt ein."
+    "timesUp": "⏱ Die Zeit ist abgelaufen! Bitte reiche deine Antworten ein."
   },
 
   "placeholders": {
-    "search": "Hier zum Suchen eingeben..."
+    "search": "Suchbegriff eingeben..."
   },
 
-  "footer-text": "❤️ Ich habe diese Seite selbst erstellt, um Menschen beim Lernen von Tschechisch zu helfen. Wenn du meine Arbeit unterstützen möchtest,",
+  "footer-text": "❤️ Ich habe diese Seite erstellt, um Menschen beim Tschechischlernen zu helfen. Wenn du mich unterstützen möchtest,",
   "footer-link": "klicke hier",
 
   "tableHeadings": {
     "czech": "Tschechisch",
     "pronunciation": "Aussprache",
-    "english": "Deutsch"
+    "english": "Englisch"
   },
 
-  "pageTitle": "Nützliche Phrasen | CzechByLukas"
+  "pageTitle": "Wortschatz | CzechByLukas"
 }
