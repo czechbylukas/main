@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title id="page-title">Locative (6th Case) | CzechByLukas</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/language-selector.css">
+</head>
+
+<body class="vocab-page">
+<header>
+  <h1 id="heading-vocab">Locative (6th Case) – Vocabulary</h1>
+  <div id="language-selector-container"></div>
+</header>
+
+<main>
+  <table id="vocabTable">
+    <thead>
+      <tr>
+        <th id="table-czech">Czech</th>
+        <th id="table-pronunciation">Pronunciation</th>
+        <th id="table-english">English</th>
+      </tr>
+    </thead>
+    <tbody id="vocabBody"></tbody>
+  </table>
+
+  <div class="big-buttons">
+    <a id="btn-practice" href="../exercise/11_locative6pad.html">🧠 Practice</a>
+    <a id="btn-test" href="../tests/11_locative6pad.html">📝 Test</a>
+  </div>
+
+  <div class="small-buttons">
+    <a id="btn-home" href="../index.html">🏠 Home</a>
+    <a id="btn-vocabList" href="../vocabulary/index.html">📘 Vocabulary List</a>
+  </div>
+</main>
+
+<footer class="support-note">
+  <span id="footer-text">
+    ❤️ I build this site myself to help people learn Czech.
+    If you’d like to support my work, <a id="footer-link" href="../support.html">click here</a>.
+  </span>
+</footer>
+
+<script src="../data/11_locative6pad.js" defer></script>
+<script src="../js/language-selector.js"></script>
+<script src="../js/translations.js" defer></script>
+
+<script>
+  function renderVocab() {
+    const lang = localStorage.getItem("selectedLanguage") || "en";
+    const tbody = document.getElementById("vocabBody");
+    tbody.innerHTML = "";
+    const fragment = document.createDocumentFragment();
+    vocab.forEach(item => {
+      const row = document.createElement("tr");
+      let translation;
+      switch (lang) {
+        case "cz": translation = item.english; break;
+        case "de": translation = item.german; break;
+        case "es": translation = item.spanish; break;
+        default: translation = item.english; break;
+      }
+      row.innerHTML = `<td>${item.czech}</td><td>${item.pronunciation}</td><td>${translation}</td>`;
+      fragment.appendChild(row);
+    });
+    tbody.appendChild(fragment);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    renderVocab();
+    if (typeof applyTranslations === "function") applyTranslations();
+  });
+
+  document.addEventListener("languageChanged", () => {
+    renderVocab();
+    if (typeof applyTranslations === "function") applyTranslations();
+  });
+</script>
+
+</body>
+</html>
