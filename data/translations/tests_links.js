@@ -56,13 +56,13 @@ const testLinks = {
   },
   lessonPrefixes: {
     en: "https://docs.google.com/forms/d/e/1FAIpQLSfP2hhM1BBX7lg0H5dED3ecuMSIevxSYa9z2hIdtKHcdUoEsg/viewform?embedded=true",
-    es: "https://docs.google.com/forms/d/e/.../viewform?embedded=true",
-    de: "https://docs.google.com/forms/d/e/.../viewform?embedded=true"
+    es: "https://docs.google.com/forms/d/e/1FAIpQLSfP2hhM1BBX7lg0H5dED3ecuMSIevxSYa9z2hIdtKHcdUoEsg/viewform?embedded=true",
+    de: "https://docs.google.com/forms/d/e/1FAIpQLSfP2hhM1BBX7lg0H5dED3ecuMSIevxSYa9z2hIdtKHcdUoEsg/viewform?embedded=true"
   },
   lessonPerfective: {
     en: "https://docs.google.com/forms/d/e/1FAIpQLSdFGV7vQiaJFlPXJ3n7PBL4V-ATDklJbHqgrMht55_goy7K2A/viewform?embedded=true",
-    es: "https://docs.google.com/forms/d/e/.../viewform?embedded=true",
-    de: "https://docs.google.com/forms/d/e/.../viewform?embedded=true"
+    es: "https://docs.google.com/forms/d/e/1FAIpQLSdFGV7vQiaJFlPXJ3n7PBL4V-ATDklJbHqgrMht55_goy7K2A/viewform?embedded=true",
+    de: "https://docs.google.com/forms/d/e/1FAIpQLSdFGV7vQiaJFlPXJ3n7PBL4V-ATDklJbHqgrMht55_goy7K2A/viewform?embedded=true"
   },
   lessonAdverbsAdjectives: {
     en: "https://docs.google.com/forms/d/e/1FAIpQLSdIA29U2pCtwzCsQqcLewVIB8KDGEpYJwckVpxM_UNRn8Jh7w/viewform?embedded=true",
@@ -76,7 +76,7 @@ const testLinks = {
   },
   lessonNumbers: {
     en: "https://docs.google.com/forms/d/e/1FAIpQLSdlU6eIqujGLZkZu5i9B-W89DZXFkhO5UhFai7xpIKB4h8mzg/viewform?embedded=true",
-    es: "https://docs.google.com/forms/d/e/.../viewform?embedded=true",
-    de: "https://docs.google.com/forms/d/e/.../viewform?embedded=true"
+    es: "https://docs.google.com/forms/d/e/1FAIpQLSdlU6eIqujGLZkZu5i9B-W89DZXFkhO5UhFai7xpIKB4h8mzg/viewform?embedded=true",
+    de: "https://docs.google.com/forms/d/e/1FAIpQLSdlU6eIqujGLZkZu5i9B-W89DZXFkhO5UhFai7xpIKB4h8mzg/viewform?embedded=true"
   }
 };
