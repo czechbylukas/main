@@ -3,15 +3,15 @@
      xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CzechByLukas Blog</title>
-    <link>https://www.tvoje-domena.cz/</link>
+    <link>https://czechbylukas.github.io/blog/index.html</link>
     <description>Short updates about learning Czech and building my site.</description>
     <language>cs</language>
-    <atom:link href="https://www.tvoje-domena.cz/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://czechbylukas.github.io/rss.xml" rel="self" type="application/rss+xml" />
     <lastBuildDate>Tue, 11 Nov 2025 12:00:00 +0000</lastBuildDate>
 
     <item>
       <title>Začínám blog a učím se web</title>
-      <link>https://https://czechbylukas.github.io/blog/index.html</link>
+      <link>https://czechbylukas.github.io/blog/index.html</link>
       <guid isPermaLink="false">post-1-20251111</guid>
       <pubDate>Tue, 11 Nov 2025 12:00:00 +0000</pubDate>
       <description>A1–B1: My first blog post about starting this project and learning to build the website.</description>
