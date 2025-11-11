@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Past Tense – Test</title>
+  <title>Prefixes – Test</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="vocab-page">
 
   <header>
-    <h1 id="heading-test-title">Past Tense – Test</h1>
+    <h1 id="heading-test-title">Prefixes – Test</h1>
     <p id="heading-test-instructions"></p>
     <div id="language-selector-container" class="language-selector"></div>
   </header>
@@ -22,8 +22,8 @@
   </iframe>
 
   <div class="big-buttons">
-    <a id="btn-vocab" href="../vocabulary/2_pasttense.html"></a>
-    <a id="btn-practice" href="../exercise/2_pasttense.html"></a>
+    <a id="btn-vocab" href="../vocabulary/12_prefixes.html"></a>
+    <a id="btn-practice" href="../exercise/12_prefixes.html"></a>
   </div>
 
   <div class="small-buttons">
@@ -54,10 +54,10 @@
     async function updatePage(lang){
       if(typeof loadTranslations === "function") await loadTranslations(lang);
 
-      const lesson = "lessonPastTense";
+      const lesson = "lessonPrefixes";
       document.getElementById("testIframe").src = testLinks[lesson][lang] || testLinks[lesson]["en"];
 
-      document.getElementById("heading-test-title").textContent = translations.test?.title || "Past Tense – Test";
+      document.getElementById("heading-test-title").textContent = translations.test?.title || "Prefixes – Test";
       document.getElementById("heading-test-instructions").textContent = translations.test?.instructions || "";
 
       document.getElementById("btn-vocab").textContent = translations.buttons?.vocabulary || "📘 Vocabulary";
@@ -65,7 +65,7 @@
       document.getElementById("btn-home").textContent = translations.buttons?.home || "🏠 Home";
       document.getElementById("btn-all-tests").textContent = translations.buttons?.testList || "📝 All Tests";
 
-      document.querySelector("title").textContent = translations.pageTitle || "Past Tense – Test";
+      document.querySelector("title").textContent = translations.pageTitle || "Prefixes – Test";
     }
 
     document.addEventListener("DOMContentLoaded", () => { updatePage(lang); });
