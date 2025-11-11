@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <link rel="alternate" type="application/rss+xml" title="Začínám blog a učím se web (RSS)" href="/rss.xml">
+  <title>A1 Level Completed – CzechByLukas Blog</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/language-selector.css">
+  <style>
+    .container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .column {
+      flex: 1;
+      min-width: 300px;
+      border: 1px solid #ccc;
+      padding: 15px;
+      box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+    }
+    .level-buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .level-buttons button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body class="vocab-page">
+
+<header>
+  <h1 id="heading-vocab">Začínám blog a učím se web</h1>
+  <div id="language-selector-container"></div>
+</header>
+
+<main>
+  <div class="level-buttons">
+    <button onclick="showLevel('A1')">A1</button>
+    <button onclick="showLevel('A2')">A2</button>
+    <button onclick="showLevel('B1')">B1</button>
+  </div>
+
+  <div class="container">
+    <div class="column" id="czech">
+      <!-- A1 -->
+      <div class="level A1">
+        <p>Skvělá zpráva! Úroveň A1 je dokončena.</p>
+        <p>Všechny základní slovíčka, cvičení a testy jsou nyní online.</p>
+        <p>Studenti mohou projít materiály a procvičit si slovní zásobu, gramatiku a jednoduché věty.</p>
+        <p>Po dokončení A1 budete připraveni na další úroveň: A2.</p>
+        <p>Nezapomeňte pravidelně cvičit a opakovat, co jste se naučili.</p>
+        <p>Těším se, až společně pokročíme na A2!</p>
+      </div>
+      <!-- A2 -->
+      <div class="level A2 hidden">
+        <p>The A2 level is coming soon. Students will be able to practice more complex sentences, vocabulary, and grammar.</p>
+      </div>
+      <!-- B1 -->
+      <div class="level B1 hidden">
+        <p>B1 content will be gradually added in the future as students progress beyond A2.</p>
+      </div>
+    </div>
+
+    <div class="column" id="english">
+      <!-- A1 -->
+      <div class="level A1">
+        <p>Great news! The A1 level is completed.</p>
+        <p>All basic vocabulary, exercises, and tests are now online.</p>
+        <p>Students can go through the materials and practice vocabulary, grammar, and simple sentences.</p>
+        <p>After finishing A1, you will be ready for the next level: A2.</p>
+        <p>Remember to practice regularly and review what you have learned.</p>
+        <p>I look forward to progressing together to A2!</p>
+      </div>
+      <!-- A2 -->
+      <div class="level A2 hidden">
+        <p>The A2 level is coming soon. Students will be able to practice more complex sentences, vocabulary, and grammar.</p>
+      </div>
+      <!-- B1 -->
+      <div class="level B1 hidden">
+        <p>B1 content will be gradually added in the future as students progress beyond A2.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+function showLevel(level) {
+  const levels = ['A1', 'A2', 'B1'];
+  levels.forEach(l => {
+    document.querySelectorAll('.level.' + l).forEach(el => {
+      el.classList.add('hidden');
+    });
+  });
+  document.querySelectorAll('.level.' + level).forEach(el => {
+    el.classList.remove('hidden');
+  });
+}
+</script>
+
+</body>
+</html>
