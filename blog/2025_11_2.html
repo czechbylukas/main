@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title id="page-title">I am starting a blog a learning web</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/language-selector.css">
+  <style>
+    /* dodatečný styl pro vedle sebe sloupce */
+    .container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .column {
+      flex: 1;
+      min-width: 300px;
+      border: 1px solid #ccc;
+      padding: 15px;
+      box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+    }
+    .level-buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .level-buttons button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body class="vocab-page">
+
+<header>
+  <h1 id="heading-vocab">Začínám blog a učím se web</h1>
+  <div id="language-selector-container"></div>
+</header>
+
+<main>
+  <div class="level-buttons">
+    <button onclick="showLevel('A1')">A1</button>
+    <button onclick="showLevel('A2')">A2</button>
+    <button onclick="showLevel('B1')">B1</button>
+  </div>
+
+  <div class="container">
+    <div class="column" id="czech">
+      <!-- A1 -->
+      <div class="level A1">
+        <p>Chci začít blog.</p>
+        <p>Každý týden napíšu krátkou zprávu.</p>
+        <p>Lidé si mohou vybrat úroveň: A1, A2, B1.</p>
+        <p>Na stránce bude český text a překlad do angličtiny.</p>
+        <p>Učím se dělat web.</p>
+        <p>Chci začít, i když je to těžké.</p>
+      </div>
+      <!-- A2 -->
+      <div class="level A2 hidden">
+        <p>Chci začít blog nebo newsletter. Každý týden napíšu zprávu.</p>
+        <p>Texty budou mít různé úrovně: A1, A2, B1 a někdy i C1.</p>
+        <p>Na stránce bude český text a překlad do angličtiny, později také němčiny nebo španělštiny.</p>
+        <p>Učím se vytvářet web, i když nejsem programátor.</p>
+        <p>Někdy je těžké všechno zvládnout, ale chci, aby studenti mohli číst a učit se slovíčka a gramatiku.</p>
+      </div>
+      <!-- B1 -->
+      <div class="level B1 hidden">
+        <p>Rozhodl jsem se začít blog nebo newsletter. Každý týden budu nahrávat zprávu, kterou studenti mohou číst ve své úrovni: A1, A2, B1 a někdy i C1.</p>
+        <p>Na jedné straně stránky bude český text a na druhé straně překlad do angličtiny, a později i do němčiny nebo španělštiny.</p>
+        <p>Právě teď se učím, jak vytvářet web, protože nejsem webový developer. Každý kód musím hledat a i malá chyba může stránku poškodit.</p>
+        <p>Cítím stres, že se stránka nebude lidem líbit nebo že nestihnu všechno připravit. Přesto chci začít a postupně přidávat slovíčka, cvičení a gramatiku, aby studenti mohli lépe studovat.</p>
+      </div>
+    </div>
+
+    <div class="column" id="english">
+      <!-- A1 -->
+      <div class="level A1">
+        <p>I want to start a blog.</p>
+        <p>Every week I will write a short post.</p>
+        <p>People can choose a level: A1, A2, B1.</p>
+        <p>On the page, there will be Czech text and English translation.</p>
+        <p>I am learning to make a website.</p>
+        <p>I want to start, even if it is hard.</p>
+      </div>
+      <!-- A2 -->
+      <div class="level A2 hidden">
+        <p>I want to start a blog or newsletter. Every week I will write a post.</p>
+        <p>The texts will have different levels: A1, A2, B1, and sometimes C1.</p>
+        <p>On the page, there will be Czech text and translation into English, later also German or Spanish.</p>
+        <p>I am learning to make a website, even though I am not a programmer.</p>
+        <p>Sometimes it is hard to manage everything, but I want students to read and learn vocabulary and grammar.</p>
+      </div>
+      <!-- B1 -->
+      <div class="level B1 hidden">
+        <p>I decided to start a blog or newsletter. Every week I will upload a post that students can read at their level: A1, A2, B1, and sometimes C1.</p>
+        <p>On one side of the page there will be Czech text and on the other side a translation into English, and later I will also add German or Spanish.</p>
+        <p>Right now I am learning how to make a website because I am not a web developer. I have to search for every piece of code, and even a small mistake can break the page.</p>
+        <p>I feel stressed that the page might not be liked or that I will not have time to prepare everything. Nevertheless, I want to start and gradually add vocabulary, exercises, and grammar so students can study better.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="support-note">
+  <span id="footer-text">
+   ❤️ I build this site myself to help people learn Czech.
+    If you’d like to support my work, <a id="footer-link" href="../support.html">click here</a>.
+  </span>
+</footer>
+
+<script>
+function showLevel(level) {
+  const levels = ['A1', 'A2', 'B1'];
+  levels.forEach(l => {
+    document.querySelectorAll('.level.' + l).forEach(el => el.classList.add('hidden'));
+  });
+  document.querySelectorAll('.level.' + level).forEach(el => el.classList.remove('hidden'));
+}
+</script>
+
+</body>
+</html>
