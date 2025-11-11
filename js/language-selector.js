@@ -44,28 +44,33 @@ document.addEventListener("DOMContentLoaded", () => {
     dropdown.style.display = "none";
   }
 
-  async function applyLanguage(lang) {
+  async function applyLanguage(lang, reload = false) {
     currentLang = lang;
-    localStorage.setItem("selectedLanguage", lang); // <-- store as selectedLanguage
+    localStorage.setItem("selectedLanguage", lang);
     document.documentElement.setAttribute("lang", lang);
     updateCurrentFlag();
     buildDropdown();
 
-    // Wait for translations to load (optional)
+    // Optional: load translations immediately if needed
     if (typeof loadTranslations === "function") {
       await loadTranslations(lang);
     }
 
-    // Dispatch a global event so other scripts can react
+    // Let other scripts know
     document.dispatchEvent(new Event("languageChanged"));
 
-    // Render the vocab table using the correct localStorage key
+    // Re-render vocab table if relevant
     if (typeof renderVocab === "function") renderVocab();
+
+    // 🔄 If reload requested (user clicked a new language), reload page
+    if (reload) {
+      // Small timeout ensures localStorage update completes before reload
+      setTimeout(() => location.reload(), 150);
+    }
   }
 
-
   // Initialize selector
-  applyLanguage(currentLang);
+  applyLanguage(currentLang, false);
 
   // Toggle dropdown
   btn.addEventListener("click", e => {
@@ -77,8 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
   dropdown.addEventListener("click", e => {
     const li = e.target.closest("li");
     if (!li) return;
-    applyLanguage(li.dataset.lang);
+    const newLang = li.dataset.lang;
+
+    // ✅ Apply language and reload page
+    applyLanguage(newLang, true);
   });
+
 
   // Close dropdown clicking outside
   document.addEventListener("click", e => {
