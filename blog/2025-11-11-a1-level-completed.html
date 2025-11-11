@@ -191,6 +191,21 @@
 
 </main>
 
+
+<div id="footer-placeholder"></div>
+
+<script>
+  // Load footer.html dynamically
+  fetch("/footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    })
+    .catch(error => console.error("Error loading footer:", error));
+</script>
+
+
+
 <script>
   function showLevel(level) {
     const levels = ['A1','A2','B1'];
