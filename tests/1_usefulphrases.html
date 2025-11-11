@@ -60,7 +60,7 @@
     async function updatePage(lang){
       if(typeof loadTranslations === "function") await loadTranslations(lang);
 
-      const lesson = "lesson1";
+      const lesson = "lessonUsefulPhrases";
       document.getElementById("testIframe").src = testLinks[lesson][lang] || testLinks[lesson]["en"];
 
       // Header

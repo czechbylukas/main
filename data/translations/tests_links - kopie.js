@@ -62,21 +62,4 @@ const testLinks = {
   lessonPerfective: {
     en: "https://docs.google.com/forms/d/e/.../viewform?embedded=true",
     es: "https://docs.google.com/forms/d/e/.../viewform?embedded=true",
-    de: "https://docs.google.com/forms/d/e/.../viewform?embedded=true"
-  },
-  lessonAdverbsAdjectives: {
-    en: "https://docs.google.com/forms/d/e/.../viewform?embedded=true",
-    es: "https://docs.google.com/forms/d/e/.../viewform?embedded=true",
-    de: "https://docs.google.com/forms/d/e/.../viewform?embedded=true"
-  },
-  lessonPronouns: {
-    en: "https://docs.google.com/forms/d/e/.../viewform?embedded=true",
-    es: "https://docs.google.com/forms/d/e/.../viewform?embedded=true",
-    de: "https://docs.google.com/forms/d/e/.../viewform?embedded=true"
-  },
-  lessonNumbers: {
-    en: "https://docs.google.com/forms/d/e/.../viewform?embedded=true",
-    es: "https://docs.google.com/forms/d/e/.../viewform?embedded=true",
-    de: "https://docs.google.com/forms/d/e/.../viewform?embedded=true"
-  }
-};
+    de: "https://do
