@@ -211,14 +211,19 @@
     }
   </script>
 
+
+<div id="footer-placeholder"></div>
+
 <script>
-  fetch("../../css/footer.html")
+  // Load footer.html dynamically
+  fetch("/footer.html")
     .then(response => response.text())
     .then(data => {
-      document.body.insertAdjacentHTML("beforeend", data);
+      document.getElementById("footer-placeholder").innerHTML = data;
     })
-    .catch(error => console.error("Footer failed to load:", error));
+    .catch(error => console.error("Error loading footer:", error));
 </script>
+
 
 
 
