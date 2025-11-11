@@ -11,8 +11,9 @@
 
     <item>
       <title>Začínám blog a učím se web</title>
-      <link>https://czechbylukas.github.io/blog/index.html</link>
-<guid isPermaLink="true">https://czechbylukas.github.io/blog/index.html</guid>
+       <link>https://czechbylukas.github.io/blog/</link>
+       <guid isPermaLink="true">https://czechbylukas.github.io/blog/</guid>
+
       <pubDate>Tue, 11 Nov 2025 12:00:00 +0000</pubDate>
       <description>A1–B1: My first blog post about starting this project and learning to build the website.</description>
     </item>
