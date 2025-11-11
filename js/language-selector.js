@@ -51,14 +51,18 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCurrentFlag();
     buildDropdown();
 
-    // Wait for translations to load
+    // Wait for translations to load (optional)
     if (typeof loadTranslations === "function") {
       await loadTranslations(lang);
     }
 
+    // Dispatch a global event so other scripts can react
+    document.dispatchEvent(new Event("languageChanged"));
+
     // Render the vocab table using the correct localStorage key
     if (typeof renderVocab === "function") renderVocab();
   }
+
 
   // Initialize selector
   applyLanguage(currentLang);
