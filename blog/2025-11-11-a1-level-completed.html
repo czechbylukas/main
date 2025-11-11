@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>A1 Level Completed – CzechByLukas</title>
+  
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="Začínám blog a učím se web (RSS)" href="/rss.xml">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/language-selector.css">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -41,6 +48,7 @@
       display: none;
     }
   </style>
+
   <script>
     function showLevel(level) {
       const levels = ['A1', 'A2', 'B1'];
@@ -51,49 +59,77 @@
     }
   </script>
 </head>
+
 <body class="vocab-page">
 
 <header>
-  <h1>Úroveň A1 je dokončena</h1>
+  <h1 id="heading-vocab">Úroveň A1 je dokončena</h1>
+  <div id="language-selector-container"></div>
 </header>
 
-<div class="level-buttons">
-  <button onclick="showLevel('A1')">A1</button>
-  <button onclick="showLevel('A2')">A2</button>
-  <button onclick="showLevel('B1')">B1</button>
-</div>
+<main>
+  <!-- Level Buttons -->
+  <div class="level-buttons">
+    <button onclick="showLevel('A1')">A1</button>
+    <button onclick="showLevel('A2')">A2</button>
+    <button onclick="showLevel('B1')">B1</button>
+  </div>
 
-<div class="container">
-  <div class="column" id="czech">
-    <div class="level A1">
-      <p>Úroveň A1 je dokončena.</p>
-      <p>test</p>
+  <!-- Content Columns -->
+  <div class="container">
+    <!-- Czech Column -->
+    <div class="column" id="czech">
+      <div class="level A1">
+        <p>Úroveň A1 je dokončena.</p>
+        <p>test</p>
+      </div>
+      <div class="level A2 hidden">
+        <p>Úroveň A2 je dokončena. Text je delší a obsahuje více slov.</p>
+        <p>test</p>
+      </div>
+      <div class="level B1 hidden">
+        <p>Úroveň B1 je dokončena. Text je složitější a obsahuje věty s různými strukturami.</p>
+        <p>test</p>
+      </div>
     </div>
-    <div class="level A2 hidden">
-      <p>Úroveň A2 je dokončena. Text je delší a obsahuje více slov.</p>
-      <p>test</p>
-    </div>
-    <div class="level B1 hidden">
-      <p>Úroveň B1 je dokončena. Text je složitější a obsahuje věty s různými strukturami.</p>
-      <p>test</p>
+
+    <!-- English Column -->
+    <div class="column" id="english">
+      <div class="level A1">
+        <p>A1 level is completed.</p>
+        <p>test</p>
+      </div>
+      <div class="level A2 hidden">
+        <p>A2 level is completed. The text is longer and contains more words.</p>
+        <p>test</p>
+      </div>
+      <div class="level B1 hidden">
+        <p>B1 level is completed. The text is more complex and contains sentences with various structures.</p>
+        <p>test</p>
+      </div>
     </div>
   </div>
 
-  <div class="column" id="english">
-    <div class="level A1">
-      <p>A1 level is completed.</p>
-      <p>test</p>
-    </div>
-    <div class="level A2 hidden">
-      <p>A2 level is completed. The text is longer and contains more words.</p>
-      <p>test</p>
-    </div>
-    <div class="level B1 hidden">
-      <p>B1 level is completed. The text is more complex and contains sentences with various structures.</p>
-      <p>test</p>
-    </div>
-  </div>
-</div>
+  <!-- Subscribe Form (Mailerlite Embed) -->
+  <div id="mlb2-33190729" class="ml-form-embedContainer ml-subscribe-form"></div>
+  <script src="https://assets.mailerlite.com/js/universal.js" type="text/javascript"></script>
+  <script>
+    (function(m,a,i,l,e,r){
+      m['MailerLiteObject']=e;function f(){
+        var c={};c.async=true;c.src='https://assets.mailerlite.com/js/universal.js';
+        var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(c,s);
+      }
+      m[e]=m[e]||function(){(m[e].q=m[e].q||[]).push(arguments)};
+      m[e].l=+new Date();f();
+    })(window,document,'script','ml','ml');
+    ml('account', '33190729', 'load');
+  </script>
+</main>
+
+<!-- Footer -->
+<footer>
+  <p style="text-align:center; margin-top:30px;">&copy; 2025 CzechByLukas. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
