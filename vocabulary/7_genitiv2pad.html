@@ -35,12 +35,20 @@
   </div>
 </main>
 
-<footer class="support-note">
-  <span id="footer-text">
-    ❤️ I build this site myself to help people learn Czech.
-    If you’d like to support my work, <a id="footer-link" href="../support.html">click here</a>.
-  </span>
-</footer>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  // Load footer.html dynamically
+  fetch("/footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    })
+    .catch(error => console.error("Error loading footer:", error));
+</script>
+
+
 
 <script src="../data/7_genitiv2pad.js" defer></script>
 <script src="../js/language-selector.js"></script>
