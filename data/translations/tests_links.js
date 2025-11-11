@@ -5,9 +5,9 @@ const testLinks = {
     de: "https://docs.google.com/forms/d/e/1FAIpQLSc-ZrNV1mSxv13fdT_MJ4Ejk6rFNkqieWSvFUPeIF7ogG4Mcw/viewform?embedded=true"
   },
   lessonPastTense: {
-    en: "https://docs.google.com/forms/d/e/1FAIpQLSfra5G2LjBzrseHYAZvA7J7f7LxG8NwJgsIvq-fIKXtEZ_gdQ/viewform?embedded=true",
-    es: "https://docs.google.com/forms/d/e/1FAIpQLSdnlKBKukZhaCntXIsbwAvk0Ot6E7DhjZIJVB4GxcxAo6_m2Q/viewform?embedded=true",
-    de: "https://docs.google.com/forms/d/e/1FAIpQLScqel__49sAKmpt7mPuSAasaBdwosgI1JXnU-eDvEjj-QDMcw/viewform?embedded=true"
+    en: "<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfra5G2LjBzrseHYAZvA7J7f7LxG8NwJgsIvq-fIKXtEZ_gdQ/viewform?embedded=true" width="640" height="1494" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>",
+    es: "<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdnlKBKukZhaCntXIsbwAvk0Ot6E7DhjZIJVB4GxcxAo6_m2Q/viewform?embedded=true" width="640" height="1494" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>",
+    de: "<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScqel__49sAKmpt7mPuSAasaBdwosgI1JXnU-eDvEjj-QDMcw/viewform?embedded=true" width="640" height="1494" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>"
   },
   lessonQuestionWords: {
     en: "https://docs.google.com/forms/d/e/1FAIpQLScsVbPr5F5YKSyODNvkWTJtjmS3hhN4x9g3kBUQqqn35l_ETg/viewform?embedded=true",
